@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Cta from "../component/Cta";
+import JumboCliente from "../component/Jumbocliente";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -22,6 +23,7 @@ export const Home = () => {
 					Read documentation
 				</a>
 			</p>
+			<JumboCliente />
 			<Cta />
 		</div>
 	);
