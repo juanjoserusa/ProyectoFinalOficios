@@ -17,6 +17,7 @@
     background-color: #D0F3C6;
     color:black;
     border: 0;
+    border-radius: 10px;
 }
 .nav-bt:hover{
     background-color: hwb(107 67% 7%);
@@ -25,7 +26,19 @@
 
 .nav-title{
     color:#FCFBF6;
+    font-size: 25px;
+    margin-left: 5px;
 }
 .nav-title:hover {
     color:#FCFBF6;
+}
+
+.navbar-toggler-icon{
+    background-color: #D0F3C6;
+    color:#FCFBF6;
+    border-radius: 10px;
+}
+
+.nav-item {
+    font-size: 15px;
 }
