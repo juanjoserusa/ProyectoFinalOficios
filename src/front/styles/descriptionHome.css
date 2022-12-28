@@ -1,0 +1,25 @@
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#FCF5AB;
+}
+
+p{
+    color: #FCF5AB
+}
+
+h3{
+    color:#FCF5AB
+}
+
+.description{
+    background-color: #07AA7C;
+    
+}
+
+
+.cards{
+    border: 1px solid #FCF5AB;
+    padding: 2vw;
+}
