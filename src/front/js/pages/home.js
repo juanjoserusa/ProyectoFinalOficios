@@ -5,6 +5,7 @@ import "../../styles/home.css";
 import Cta from "../component/Cta";
 import JumboCliente from "../component/Jumbocliente";
 import JumboProfesional from "../component/Jumboprofesional";
+import DescriptionHome from "../component/DescriptionHome";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -12,7 +13,9 @@ export const Home = () => {
 	return (
 		<div className="container-flex">
 			<JumboCliente />
+			<DescriptionHome />
 			<JumboProfesional />
+			
 			<Cta />
 		</div>
 	);
