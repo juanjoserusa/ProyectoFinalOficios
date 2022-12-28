@@ -1,0 +1,50 @@
+
+.card-img{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:80vw;
+    height: 39vw;
+    border:0;
+}
+
+.btnLoginCliente{
+    width: 35vw;
+    background-color: #FCF5AB;
+    color: #044E39;
+    border:0;
+    
+}
+
+.btnLoginCliente:hover{
+    background-color: #07AA7C;
+    color: #FCF5AB;
+}
+
+
+.btn-outline-success{
+    background-color: #FCF5AB;
+    color: #044E39;
+    border:0;
+    
+}
+
+.btn-outline-success:hover{
+    background-color: #07AA7C;
+    color: #FCF5AB;
+}
+
+
+.form-control{
+    width: 29vw;
+} 
+
+.card-title{
+    color: #044E39;
+}
+
+.card-img-overlay{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
