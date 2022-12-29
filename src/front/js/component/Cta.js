@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/cta.css"
 
 import mano from"../../assets/CTA/manomovil.png"
 
@@ -12,7 +13,7 @@ const Cta = () => {
     }
 
     return(
-        <div className="container-flex col-xxl-12 px-4  bg-white text-dark" >
+        <div className="container-flex  bg-white text-dark" >
             <div className="row flex-lg-row align-items-center g-5 ">
                 <div className="col-lg-5 textCtaTitle">
                 <h1 className="display-4 fw-bold lh-1 mb-3 ">Descarga HandleHome en tus dispositivos moviles</h1>
