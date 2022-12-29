@@ -10,8 +10,8 @@ const Cta = () => {
     }
 
     return(
-        <div className="container-flex col-xxl-12 px-4 py-5 bg-white text-dark" >
-            <div className="row flex-lg-row align-items-center g-5 py-5">
+        <div className="container-flex col-xxl-12 px-4  bg-white text-dark" >
+            <div className="row flex-lg-row align-items-center g-5 ">
                 <div className="col-lg-5 textCtaTitle">
                 <h1 className="display-4 fw-bold lh-1 mb-3 ">Descarga HandleHome en tus dispositivos moviles</h1>
                     <p className="textCtaParr">Ahora puedes descargarte nuestra aplicacion desde la apple store y play store de Google, para usarla donde quieras</p>
