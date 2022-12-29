@@ -15,7 +15,6 @@ export const Home = () => {
 			<JumboCliente />
 			<DescriptionHome />
 			<JumboProfesional />
-			
 			<Cta />
 		</div>
 	);
