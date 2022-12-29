@@ -1,145 +1,21 @@
 import React from "react";
+import CardAnuncioTablon from "./CardAnuncioTablon.js";
 
 const AnunciosProfesiones = () => {
   return (
-    <div className="container p-5 m-5">
-      <div className="row">
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
+    <div className="container ">
+      <div className="row d-flex justify-content-center mt-5">
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
+        <CardAnuncioTablon />
       </div>
-
-
-      <div className="row">
-      <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-        <div className="col card m-2" style={{ backgroundColor: "#ffface" }} >
-          <div className="card-body">
-            <h5 className="card-title">Carpintero 1</h5>
-            <p className="card-text text-dark">
-              Me especializo en Carpinteria, mi especialidad son los muebles de
-              cocina.
-            </p>
-            <a href="#" className="btn btn-outline-success">
-              Pedir presupuesto
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-
     </div>
   );
 };
