@@ -1,5 +1,5 @@
 import React from "react";
-import background2 from "/workspace/ProyectoFinalOficios/src/front/img/profesional.jpg";
+import background2 from "/workspace/ProyectoFinalOficios/src/front/assets/profesional.jpg";
 import "../../styles/jumbo.css";
 
 const JumboProfesional = () => {
