@@ -8,9 +8,16 @@
 
 .nav-link {
     color:#FCFBF6;
+    text-decoration: none;
 }
 .nav-link:hover {
     color:#FCFBF6;
+    text-decoration: none
+}
+
+.enlacesNavbar{
+    color:#FCFBF6;
+    text-decoration: none;
 }
 
 .nav-bt{
