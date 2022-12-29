@@ -1,5 +1,7 @@
 import React from "react";
 
+import mano from"../../assets/CTA/manomovil.png"
+
 const Cta = () => {
 
 
@@ -17,7 +19,7 @@ const Cta = () => {
                     <p className="textCtaParr">Ahora puedes descargarte nuestra aplicacion desde la apple store y play store de Google, para usarla donde quieras</p>
                 </div>
                 <div className="col-3 col-lg-3 me-5">
-                    <img className="imagenCta"src="https://img.freepik.com/fotos-premium/mano-sujetando-telefono-celular-pantalla-blanco-aislado-sobre-fondo-blanco_104677-421.jpg" />
+                    <img className="imagenCta"src={mano}/>
                 </div>
                 <div className="col-lg-3 ms-5">
                             <button 

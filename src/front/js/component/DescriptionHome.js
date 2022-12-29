@@ -6,7 +6,7 @@ const DescriptionHome = () => {
     <section className=" mt-5 mb-5 py-4 py-md-11 description">
       <div className="container-flex">
         <div className="row d-flex justify-content-evenly">
-          <div className="col-3 col-md-3 cards me-2">
+          <div className="col-3 col-md-3 cardsDescription me-2">
             <div className="icon mb-3 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const DescriptionHome = () => {
             </p>
           </div>
           <div
-            className="col-3 col-md-3 cards me-2">
+            className="col-3 col-md-3 cardsDescription me-2">
             <div className="icon mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const DescriptionHome = () => {
             </p>
           </div>
           <div
-            className="col-3 col-md-3 cards me-2"
+            className="col-3 col-md-3 cardsDescription me-2"
           >
             <div className="icon mb-3">
               <svg
