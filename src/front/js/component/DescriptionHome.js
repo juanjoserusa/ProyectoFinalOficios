@@ -3,7 +3,7 @@ import "../../styles/descriptionHome.css"
 
 const DescriptionHome = () => {
   return (
-    <section className=" mt-5 mb-5 py-4 py-md-11 description">
+    <section className=" mt-5 mb-5 1 description">
       <div className="container-flex">
         <div className="row d-flex justify-content-evenly">
           <div className="col-3 col-md-3 cardsDescription me-2">
