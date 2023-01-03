@@ -11,7 +11,9 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
+import { PerfilCliente } from "./pages/perfilCliente"
 import {FormularioRegistroCliente} from "./component/FormularioRegistroCliente.js";
+
 
 //create your first component
 function Layout() {
@@ -30,6 +32,7 @@ function Layout() {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Profesiones />} path="/profesiones" />
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
+                        <Route element={<PerfilCliente />} path="/perfilcliente" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
