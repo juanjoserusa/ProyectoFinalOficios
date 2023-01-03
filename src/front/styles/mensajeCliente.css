@@ -1,0 +1,27 @@
+.tituloMensaje {
+    color: #044E39;
+}
+
+.textoMensaje {
+    color:#044E39;
+}
+
+.cardMensaje{
+    background-color:#FCFBF6;
+}
+.mensajesRecibidos{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.tabCliente {
+    background-color: #D0F3C6;
+    
+} 
+
+.title {
+    color: black;
+  
+}
