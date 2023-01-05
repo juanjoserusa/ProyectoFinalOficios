@@ -1,19 +1,19 @@
-.form form-horizontal{
+.form form-horizontal_Reg{
     background-color: white;
 }
-.form-control{
+.form-controlReg{
 width: 600px;
 height: 30px;
 border-color: gainsboro;
 }
-.form-actions center{
+.form-actions center_form_Reg{
     padding: 10px;
 }
-.btn btn-warning mr-1{
+.btn btn-primary_form_Reg1{
     padding:10px;
     background-color: rgb(207, 64, 12);
 }
-.btn btn-primary{
+.btn btn-primary_form_Reg2{
     padding: 10px;
     background-color: #07AA7C;
 }

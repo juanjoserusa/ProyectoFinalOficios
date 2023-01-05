@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+		
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
@@ -46,7 +47,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			SignUp: async() => {
+				try{
+					// fetching data from the backend
+					const resp = await fetch(process.env.BACKEND_URL + "/api/SignUp",
+					{
+							headers:{
+								"Content-Type":"application/json"
+							},
+							method :"POST",
+								body:JSON.stringify({
+									email: email,
+									password: password
+							})
+					    }				
+					);
+					const data = await resp.json();
+					setStore({ token: data.token ,
+							   user: data.user		
+					});
+					// don't forget to return something, that is how the async resolves
+					if(data.status == 204){
+						return true;
+					}
+					return false;
+				} catch (error){
+					console.log("Error loading message from backend", error);
+				 }
+			},
 		}
 	};
 };
