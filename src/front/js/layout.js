@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
+import Single from "./pages/single";
 import {Profesiones} from "./pages/profesiones.js"
 import injectContext from "./store/appContext";
 
@@ -14,6 +14,7 @@ import { Anuncios } from "./pages/anuncios";
 import { PerfilCliente } from "./pages/perfilCliente"
 import {FormularioRegistroCliente} from "./component/FormularioRegistroCliente.js";
 import PerfilProfesional from "./pages/perfilProfesional";
+import { PublicarAnuncio } from "./pages/publicarAnuncio";
 
 
 //create your first component
@@ -30,7 +31,8 @@ function Layout() {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Single />} path="/single" />
+                        <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
                         <Route element={<Profesiones />} path="/profesiones" />
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
                         <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />

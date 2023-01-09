@@ -1,0 +1,58 @@
+.formulario {
+    display:table-column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.botonEnviar {
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin:0;
+    margin-bottom: 1rem;
+    padding: 0;
+    
+}
+
+.anuncio{
+    color:black;
+    font-size: medium;
+}
+
+.cardAnuncioEjemplo{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+
+
+.tituloCard{
+    font-size:x-large;
+    text-decoration:underline;
+    margin-bottom: 1rem;
+}
+
+.datosCard{
+    font-size: small;
+    display: block;
+    align-items: center;
+    text-align: center;
+    
+}
+
+textarea {
+    resize: none;
+  }
