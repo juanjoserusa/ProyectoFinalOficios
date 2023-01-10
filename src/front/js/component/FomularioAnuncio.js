@@ -6,6 +6,8 @@ import ModalProfesiones from './ModalProfesiones';
 
 const Formulario = (props) => {
 
+    
+
 
     const [datos, setDatos] = useState({
         nombre: '',
@@ -27,6 +29,22 @@ const Formulario = (props) => {
     const enviarDatos = (event) => {
         event.preventDefault()
         console.log('enviando datos...' + datos.nombre + ' ' + datos.profesion + ' ' + datos.anuncio + ' ' + datos.precio + ' ' + datos.codigoPostal)
+        var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify(datos);
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://3001-juanjoserus-proyectofin-lp09obilmic.ws-eu81.gitpod.io/api/publicarAnuncio", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
     }
 
     return (
@@ -35,19 +53,19 @@ const Formulario = (props) => {
             <div className='container d-flex justify-content-center align-items-center'>
             <form className="formulario" onSubmit={enviarDatos}>
                 <div className="">
-                    <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
+                    <input id='name' type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
                 </div>
                 <div className="">
-                    <input type="text" placeholder="Profesion" className="form-control" onChange={handleInputChange} name="profesion"></input>
+                    <input id='profession' type="text" placeholder="Profesion" className="form-control" onChange={handleInputChange} name="profesion"></input>
                 </div>
                 <div className="">
-                    <input type="text" placeholder="Codigo postal" className="form-control" onChange={handleInputChange} name="codigoPostal"></input>
+                    <input id='zipcode' type="text" placeholder="Codigo postal" className="form-control" onChange={handleInputChange} name="codigoPostal"></input>
                 </div>
                 <div className="">
-                    <input type="text" placeholder="Precio por hora" className="form-control" onChange={handleInputChange} name="precio"></input>
+                    <input id='price' type="text" placeholder="Precio por hora" className="form-control" onChange={handleInputChange} name="precio"></input>
                 </div>
                 <div className="">
-                    <textarea rows="5" cols="30" type="text" placeholder="Anuncio" className="form-control" onChange={handleInputChange} name="anuncio"></textarea>
+                    <textarea id='announce' rows="5" cols="30" type="text" placeholder="Anuncio" className="form-control" onChange={handleInputChange} name="anuncio"></textarea>
                 </div>
                
                 <button type="submit" className="btn btn-primary botonEnviar">Enviar</button>
