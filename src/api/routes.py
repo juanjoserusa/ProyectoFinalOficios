@@ -5,7 +5,7 @@ from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identit
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
-api = Blueprint('api', name)
+api = Blueprint('api', __name__)
 
 
 @api.route('/signup', methods=['POST'])
