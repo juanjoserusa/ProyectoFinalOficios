@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 
-
-
 const SignUp = () => {
-
   const [datos, setDatos] = useState({
     email: "",
     password: "",
   });
-
-
 
   const handleInputChange = (event) => {
     setDatos({
@@ -33,10 +28,7 @@ const SignUp = () => {
       redirect: "follow",
     };
 
-    fetch(
-      "https://3001-juanjoserus-proyectofin-y8sa3194yhv.ws-eu81.gitpod.io/api/signup",
-      requestOptions
-    )
+    fetch(process.env.BACKEND_URL + "/api/signup", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
@@ -46,7 +38,7 @@ const SignUp = () => {
     <div>
       <h1 className="text-center">Sign Up User</h1>
       <div className="container d-flex justify-content-center align-items-center">
-        <form className="formulario" onSubmit={enviarDatos}  >
+        <form className="formulario" onSubmit={enviarDatos}>
           <div className="">
             <input
               id="email"
@@ -68,11 +60,9 @@ const SignUp = () => {
             ></input>
           </div>
 
-
-            <button type="submit" className="btn btn-primary" >
-              Enviar
-            </button>
-        
+          <button type="submit" className="btn btn-primary">
+            Enviar
+          </button>
         </form>
       </div>
     </div>
