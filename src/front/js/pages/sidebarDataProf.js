@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export const SidebarDataProf = [
+export const SidebarDataProf = () =>  {[
     {
         title: "Perfil",
         link: "/perfil"
@@ -30,4 +30,5 @@ export const SidebarDataProf = [
         title: "Trabajos Realizados",
         link: "/home"
     }, 
-];
+]
+};

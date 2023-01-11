@@ -1,18 +1,25 @@
 import React from "react";
-import Tab from 'react-bootstrap/Tab';
-
-import React from "react";
-import StatusProfesional from "../component/StatusProfesional";
-import { SidebarDataProf } from "./sidebarDataProf";
-
+import { Sidebar } from "../component/sidebar";
+import { Footer } from "../component/footer";
 
 const PerfilProfesional = () => {
   return (
-    <div className="container-flex">
-      {SidebarDataProf}
-      <h4 className="text-center m-5">STATUS</h4>
-      <StatusProfesional/>
-    </div>
+    <>
+      <div className="container-flex">
+        <div className="row">
+          <div className="col-2">
+            <Sidebar />
+          </div>
+          <div className="col-10">
+            <h4 className="text-center m-5">STATUS</h4>
+            <h4 className="text-center m-5">mensaje</h4>
+            <h4 className="text-center m-5">valoraciones</h4>
+           
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

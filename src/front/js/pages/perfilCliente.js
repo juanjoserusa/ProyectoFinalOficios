@@ -1,12 +1,14 @@
 import React from "react";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import { Footer } from "../component/footer";
 
 import MensajesClientes from "../component/MensajesClientes";
 
 export const PerfilCliente = () => {
 
     return(
+        <>
         <div className="container mt-5">
         <Tabs
       defaultActiveKey="home"
@@ -32,6 +34,7 @@ export const PerfilCliente = () => {
         </div>
       </Tab>
       </Tabs>
-      </div>
+      </div><Footer />
+        </>
     )
 }

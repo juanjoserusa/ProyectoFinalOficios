@@ -4,14 +4,12 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import {Profesiones} from "./pages/profesiones.js"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
-
+import PerfilProfesional from "./pages/PerfilProfesional.js";
 
 //create your first component
 function Layout() {
@@ -27,12 +25,11 @@ function Layout() {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Profesiones />} path="/profesiones" />
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
+                        <Route element=<PerfilProfesional /> path="/perfilprofesional"/>
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
                 </ScrollToTop>
             </BrowserRouter>
         </div>

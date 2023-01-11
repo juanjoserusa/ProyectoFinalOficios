@@ -4,7 +4,7 @@ import "../../styles/footer.css";
 export const Footer = () => (
   <footer className="footer mt-auto  text-center">
     <section className=" mt-5 mb-5  description">
-      <div className="container-flex">
+      <div className="container-flex ms-2" >
         <div className="row d-flex justify-content-evenly">
           <div className="col-3 col-md-3 cards me-2">
             <h3>Suport</h3>
