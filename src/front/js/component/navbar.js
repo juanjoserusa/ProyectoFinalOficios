@@ -30,7 +30,9 @@ export const Navbar = () => {
        
         </li>
         <li className="nav-item me-5 ">
+          <Link to="/sidebar">
           <a className="nav-link enlacesNavbar" href="#">Mi perfil</a>
+          </Link>
         </li>
 
       </ul>
