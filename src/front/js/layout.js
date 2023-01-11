@@ -11,7 +11,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
-import {FormularioRegistroCliente} from "./component/FormularioRegistroCliente.js";
+
 
 //create your first component
 function Layout() {
