@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
@@ -12,9 +12,11 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
 import { PerfilCliente } from "./pages/perfilCliente"
-import {FormularioRegistroCliente} from "./component/FormularioRegistroCliente.js";
+
 import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
+import { Login } from "./pages/login";
+import SignUp from "./pages/signup";
 
 
 //create your first component
@@ -26,7 +28,7 @@ function Layout() {
     return (
         <div>
             <BrowserRouter basename={basename}>
-                <ScrollToTop>
+          
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
@@ -38,11 +40,14 @@ function Layout() {
                         <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />
 
                         <Route element={<PerfilCliente />} path="/perfilcliente" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<SignUp />} path="/signup" />
+                    
 
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
-                </ScrollToTop>
+           
             </BrowserRouter>
         </div>
     );

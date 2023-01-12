@@ -8,53 +8,45 @@ from werkzeug.security import check_password_hash, generate_password_hash
 api = Blueprint('api', __name__)
 
 
-@api.route('/signup', methods=['POST'])
-def create_user():
 
-    email = request.json.get('email', None)
-    password = request.json.get('password', None)
-
-    if not (email and password):
-        return jsonify({'message': 'Missing data'}), 400
-
-
-    newuser = User(email=email, password =password )
-
-    try:
-        db.session.add(newuser)
-        db.session.commit()
-        access_token = create_access_token(identity=newuser.serialize())
-        return jsonify(access_token= access_token), 201
-    except Exception as err:
-        print(str(err))
-        return jsonify({'message': str(err)}), 500
+@api.route("/signup", methods=["POST"])
+def signUp():
+    body = request.get_json()
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    access_token = create_access_token(identity=email)
+    signup = User(email=body["email"], password=body["password"])
+    db.session.add(signup)
+    db.session.commit()
+    
+    return jsonify({"mensaje": "User registered succesfully", "token": access_token}),200
 
 
+@api.route("/sessionlogin", methods=["GET"])
+@jwt_required()
+def get_hello():
+    dictionary= {
+        "message": "This is your private page, for users only"
+    }
+    return jsonify(dictionary)
 
 
-@api.route('/login', methods=['POST'])
-def login_user():
-
-    email=request.json.get("email", None)
-    password=request.json.get("password", None)
-    user=User.query.filter_by(email=email).filter_by(password=password).first()
-    if user:
-        if password ==  user.password:
-            token=create_access_token(identity=user.serialize())
-            return jsonify({"token":token,"identity":user.serialize()}),200
-        else:
-            return jsonify({"msg":"bad password"}),401
-    else:
-        return jsonify({"msg":"bad user name or password"}),401
+@api.route("/token", methods=["POST"])
+def create_token():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
 
 
-@api.route('/private', methods=['POST'])
+
+""" @api.route('/private', methods=['POST'])
 @jwt_required() 
 def handle_private():
    current_user_id = get_jwt_identity()
    user = User.query.get(current_user_id)
    return jsonify({"mensaje": "el usuario es quien dice ser","user":user.serialize()}),200
-
+ """
 
 
 @api.route('/publicarAnuncio', methods=['POST'])
