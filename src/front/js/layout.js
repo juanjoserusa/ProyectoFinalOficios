@@ -35,7 +35,7 @@ function Layout() {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single" />
                         <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
-                        <Route element={<Profesiones />} path="/profesiones" />
+                        {/* <Route element={<Profesiones />} path="/profesiones" /> */}
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
                         <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />
 
