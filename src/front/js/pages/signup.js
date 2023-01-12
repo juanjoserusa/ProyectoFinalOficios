@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [datos, setDatos] = useState({
@@ -15,7 +16,7 @@ const SignUp = () => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    console.log("enviando datos..." + datos.email + " " + datos.password);
+
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -32,6 +33,9 @@ const SignUp = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+    alert("te registraste con exito");
+    location.href = "/login";
   };
 
   return (
