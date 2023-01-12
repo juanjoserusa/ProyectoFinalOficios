@@ -12,7 +12,7 @@ const AnunciosProfesiones = () => {
       redirect: 'follow'
     };
     
-      fetch("https://3001-juanjoserus-proyectofin-lp09obilmic.ws-eu81.gitpod.io/api/anuncios", requestOptions)
+      fetch(process.env.BACKEND_URL + "/api/anuncios", requestOptions)
       .then(response => response.json())
       .then(result => {
         setDatos(result)
