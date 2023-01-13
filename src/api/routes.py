@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Announce
+from api.models import db, User, Announce, Message
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -53,3 +53,12 @@ def anuncios():
     all_anuncio = Announce.query.all()
     all_anuncio = list(map(lambda x: x.serialize(), all_anuncio))
     return jsonify(all_anuncio)
+
+
+@api.route('/enviarMensaje', methods=['POST'])
+def enviar_mensaje():
+    body = request.get_json()
+    mensaje = Message( mail=body['nombre'], profession=body['profesion'], message=body['mensaje'])
+    db.session.add(mensaje)
+    db.session.commit()
+    return jsonify({"mensaje": "Check!"}),200

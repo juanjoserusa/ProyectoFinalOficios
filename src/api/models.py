@@ -42,3 +42,22 @@ class Announce(db.Model):
             "description": self.description,
             # do not serialize the password, its a security breach
         }
+
+
+class Message(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    mail = db.Column(db.String(50), unique=False, nullable=False)
+    profession = db.Column(db.String(20), unique=False, nullable=False)
+    message = db.Column(db.String(500), unique=False, nullable=False)
+   
+
+    def __repr__(self):
+        return f'<Message {self.mail}>'
+
+    def serialize(self):
+        return {
+            "mail": self.mail,
+            "profession": self.profession,
+            "message": self.message,
+            # do not serialize the password, its a security breach
+        }
