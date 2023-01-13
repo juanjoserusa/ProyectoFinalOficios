@@ -40,14 +40,14 @@ const SignUp = () => {
 
   return (
     <div>
-      <h1 className="text-center">Sign Up User</h1>
+      <h1 className="text-center">Crear Usuario</h1>
       <div className="container d-flex justify-content-center align-items-center">
         <form className="formulario" onSubmit={enviarDatos}>
           <div className="">
             <input
               id="email"
               type="text"
-              placeholder="Email"
+              placeholder="Ingrese su email"
               className="form-control"
               onChange={handleInputChange}
               name="email"
@@ -57,7 +57,7 @@ const SignUp = () => {
             <input
               id="password"
               type="text"
-              placeholder="Password"
+              placeholder="Ingrese su password"
               className="form-control"
               onChange={handleInputChange}
               name="password"

@@ -26,7 +26,7 @@ def signUp():
 @jwt_required()
 def get_hello():
     dictionary= {
-        "message": "This is your private page, for users only"
+        "message": "Has iniciado sesion con éxito"
     }
     return jsonify(dictionary)
 
@@ -40,22 +40,13 @@ def create_token():
 
 
 
-""" @api.route('/private', methods=['POST'])
-@jwt_required() 
-def handle_private():
-   current_user_id = get_jwt_identity()
-   user = User.query.get(current_user_id)
-   return jsonify({"mensaje": "el usuario es quien dice ser","user":user.serialize()}),200
- """
-
-
 @api.route('/publicarAnuncio', methods=['POST'])
 def publicar_anuncio():
     body = request.get_json()
     anuncio = Announce( mail=body['nombre'], profession=body['profesion'], description=body['anuncio'], price=body['precio'], zipcode=body['codigoPostal'])
     db.session.add(anuncio)
     db.session.commit()
-    return jsonify({"mensaje": "tururu"}),200
+    return jsonify({"mensaje": "Check!"}),200
 
 @api.route('/anuncios', methods=['GET'])
 def anuncios():
