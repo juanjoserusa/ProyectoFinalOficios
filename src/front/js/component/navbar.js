@@ -62,10 +62,15 @@ export const Navbar = () => {
         </div>
         <div className="d-flex justify-content-end ">
           <div className="ml-auto">
+          <Link to="/signup">
+                <button className="btn btn-danger nav-bt me-3" type="button">
+                  Crear Usuario
+                </button>
+              </Link>
             {!token ? (
               <Link to="/login">
-                <button className="btn btn-danger nav-bt" type="button">
-                  Log In
+                <button className="btn btn-danger nav-bt me-3" type="button">
+                  Inicia Sesión
                 </button>
               </Link>
             ) : (
@@ -76,7 +81,7 @@ export const Navbar = () => {
                 className="btn btn-warning nav-bt"
                 type="button"
               >
-                Logout
+                Cerrar Sesión
               </button>
             )}
           </div>

@@ -5,6 +5,7 @@ import "../../styles/home.css";
 import "../../styles/descriptionHome.css"
 
 import JumboCliente from "../component/Jumbocliente";
+import RegistroUsuario from "./registroUsuario";
 
 
 
@@ -13,6 +14,7 @@ export const Home = () => {
 
 	return (
 		<div className="container-flex">
+      <RegistroUsuario/>
 			<JumboCliente />
 			
 

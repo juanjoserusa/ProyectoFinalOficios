@@ -18,8 +18,8 @@ export const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="container-fluid text-center">
+      <h1>Iniciar Sesion</h1>
 
       {token && token != "" && token != undefined ? (
         "You are logged in with this token" + token
@@ -27,17 +27,17 @@ export const Login = () => {
         <div>
           <input
             type="text"
-            placeholder="email"
+            placeholder="Ingrese su email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
           ></input>
           <input
             type="password"
-            placeholder="password"
+            placeholder="Ingrese su password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           ></input>
-          <button onClick={handleClick}>Login</button>{" "}
+          <button className="btn btn-warning" onClick={handleClick}>Enviar</button>{" "}
         </div>
       )}
     </div>
