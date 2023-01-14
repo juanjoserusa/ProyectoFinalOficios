@@ -48,21 +48,24 @@ const SignUp = () => {
           <div className="">
             <input
               id="email"
-              type="text"
+              type="email"
               placeholder="Ingrese su email"
               className="form-control"
               onChange={handleInputChange}
               name="email"
+              required
             ></input>
           </div>
           <div className="">
             <input
               id="password"
-              type="text"
+              minlength="2"
+              type="password"
               placeholder="Ingrese su password"
               className="form-control"
               onChange={handleInputChange}
               name="password"
+              required
             ></input>
           </div>
           <div className="d-flex justify-content-around">

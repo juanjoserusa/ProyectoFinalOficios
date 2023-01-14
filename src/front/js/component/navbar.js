@@ -6,7 +6,9 @@ import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appC
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
 
-  const token = store.token
+  const token = store.token;
+  const user_type = store.user_type;
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -52,23 +54,49 @@ export const Navbar = () => {
                   <a className="nav-link enlacesNavbar">Profesiones</a>
                 </Link>
               </li>
-              <li className="nav-item me-5 ">
-              <Link to="/profesiones/anuncios/perfil_profesional">
-                <a className="nav-link enlacesNavbar" >
-                  Mi perfil
-                </a>
-              </Link>
-              </li>
+
+              {token ? (
+                <li className="nav-item me-5 ">
+                  {user_type === true ? (
+                    <Link to="profesiones/anuncios/perfil_profesional">
+                      <a className="nav-link enlacesNavbar">
+                        Mi perfil profesional{" "}
+                      </a>
+                    </Link>
+                  ) : (
+                    <Link to="/perfilcliente">
+                      <a className="nav-link enlacesNavbar">
+                        Mi perfil cliente{" "}
+                      </a>
+                    </Link>
+                  )}
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
         <div className="d-flex justify-content-end ">
           <div className="ml-auto">
-          <Link to="/signup">
+            {!token ? (
+              <Link to="/signup">
                 <button className="btn btn-danger nav-bt me-3" type="button">
                   Crear Usuario
                 </button>
               </Link>
+            ) : (
+              <Link to="/publicarAnuncio">
+                {user_type === true ? (
+                  <button className="btn btn-warning nav-bt" type="button">
+                    Crear Anuncio
+                  </button>
+                ) : (
+                  ""
+                )}
+              </Link>
+            )}
+
             {!token ? (
               <Link to="/login">
                 <button className="btn btn-danger nav-bt me-3" type="button">
@@ -80,7 +108,7 @@ export const Navbar = () => {
                 onClick={() => {
                   actions.logout();
                 }}
-                className="btn btn-warning nav-bt"
+                className="btn btn-danger nav-bt"
                 type="button"
               >
                 Cerrar Sesión
