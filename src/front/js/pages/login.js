@@ -26,16 +26,18 @@ export const Login = () => {
       ) : (
         <div>
           <input
-            type="text"
+            type="email"
             placeholder="Ingrese su email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
           ></input>
           <input
             type="password"
             placeholder="Ingrese su password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            required
           ></input>
           <button className="btn btn-warning" onClick={handleClick}>Enviar</button>{" "}
         </div>

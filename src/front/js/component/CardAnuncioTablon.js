@@ -2,7 +2,7 @@ import React from "react";
 import ModalProfesiones from "./ModalProfesiones";
 
 
-const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio}) => {
+const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, id}) => {
   return (
 
     <div className="col-2 card m-2" style={{ backgroundColor: "#ffface" }}>
@@ -18,7 +18,7 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio})
     <li>{precio}</li>
   </ul>
   
-      <ModalProfesiones />
+      <ModalProfesiones userid={id} />
     </div>
   </div>
 

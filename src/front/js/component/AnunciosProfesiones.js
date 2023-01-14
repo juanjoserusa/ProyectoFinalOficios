@@ -30,7 +30,7 @@ const AnunciosProfesiones = () => {
       <div className="row d-flex justify-content-center mt-5">
         {
           datos.map((element, index) => {
-            return <CardAnuncioTablon key={index} description={element.description} mail={element.mail} codigoPostal={element.zipcode} precio={element.price} profesion={element.profession} />
+            return <CardAnuncioTablon key={index} description={element.description} mail={element.mail} codigoPostal={element.zipcode} precio={element.price} profesion={element.profession} id={element.user_id} />
           })
         }
         
