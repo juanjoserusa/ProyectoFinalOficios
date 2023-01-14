@@ -15,7 +15,7 @@ def signUp():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     user_type = request.json.get("type", None)
-    signup = User(email=body["email"], password=body["password"], user_type=body.get("type", False))
+    signup = User(email=body["email"], password=body["password"], user_type=body.get("user_type", False))
     db.session.add(signup)
     db.session.commit()
     access_token = create_access_token(identity=email)

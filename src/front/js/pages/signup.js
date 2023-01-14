@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 const SignUp = () => {
   const [datos, setDatos] = useState({
     email: "",
     password: "",
+    user_type: false
   });
 
   const handleInputChange = (event) => {
@@ -34,8 +35,9 @@ const SignUp = () => {
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
 
-    alert("te registraste con exito");
+ 
     location.href = "/login";
+    alert("te registraste con exito");
   };
 
   return (
@@ -63,6 +65,19 @@ const SignUp = () => {
               name="password"
             ></input>
           </div>
+          <div className="d-flex justify-content-around">
+            ¿Eres un profesional? 
+            <input
+              type="checkbox"
+              onClick={()=>{
+                setDatos({...datos, user_type: !datos.user_type})
+              }}
+              name="user_type"
+
+            ></input>
+            
+          </div>
+      
 
           <button type="submit" className="btn btn-primary">
             Enviar
