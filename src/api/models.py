@@ -7,7 +7,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
- 
+    user_type = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -28,7 +28,8 @@ class Announce(db.Model):
     price= db.Column(db.Integer, unique=False, nullable=False)
     zipcode = db.Column(db.Integer, unique=False, nullable=False)
     description = db.Column(db.String(250), unique=False, nullable=True)
-    # user_id = db.Column(db.Integer, db.ForeignKey("UserAnnounceRelation.user_id") , nullable=True, unique=True, )
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
+    user = db.relationship('User', backref= 'announce')
 
     def __repr__(self):
         return f'<Announce {self.mail}>'
@@ -40,15 +41,18 @@ class Announce(db.Model):
             "price": self.price,
             "zipcode": self.zipcode,
             "description": self.description,
+            "user_id" : self.user_id
             # do not serialize the password, its a security breach
         }
 
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    mail = db.Column(db.String(50), unique=False, nullable=False)
-    profession = db.Column(db.String(20), unique=False, nullable=False)
+    mail = db.Column(db.String(100), unique=False, nullable=False)
+    subject = db.Column(db.String(100), unique=False, nullable=False)
     message = db.Column(db.String(500), unique=False, nullable=False)
+    userEnvio = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
+    userRecibe = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
    
 
     def __repr__(self):
@@ -57,7 +61,7 @@ class Message(db.Model):
     def serialize(self):
         return {
             "mail": self.mail,
-            "profession": self.profession,
+            "subject": self.subject,
             "message": self.message,
             # do not serialize the password, its a security breach
         }

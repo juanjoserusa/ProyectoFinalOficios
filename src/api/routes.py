@@ -14,10 +14,11 @@ def signUp():
     body = request.get_json()
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    access_token = create_access_token(identity=email)
-    signup = User(email=body["email"], password=body["password"])
+    user_type = request.json.get("type", None)
+    signup = User(email=body["email"], password=body["password"], user_type=body.get("type", False))
     db.session.add(signup)
     db.session.commit()
+    access_token = create_access_token(identity=email)
     
     return jsonify({"mensaje": "User registered succesfully", "token": access_token}),200
 
@@ -25,8 +26,11 @@ def signUp():
 @api.route("/sessionlogin", methods=["GET"])
 @jwt_required()
 def get_hello():
+    email= get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
     dictionary= {
-        "message": "Has iniciado sesion con éxito"
+        "message": "Has iniciado sesion con éxito",
+        "email" : user.email
     }
     return jsonify(dictionary)
 
@@ -34,9 +38,12 @@ def get_hello():
 @api.route("/token", methods=["POST"])
 def create_token():
     email = request.json.get("email", None)
-    password = request.json.get("password", None)
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    password = request.json.get("password", None)   
+    user = User.query.filter_by(email=email, password=password).first()
+    if user:    
+        access_token = create_access_token(identity=email)
+        return jsonify({'access_token':access_token, 'type':user.user_type})
+    return jsonify({'mensaje': 'Datos incorrectos'}), 400
 
 
 
@@ -58,7 +65,7 @@ def anuncios():
 @api.route('/enviarMensaje', methods=['POST'])
 def enviar_mensaje():
     body = request.get_json()
-    mensaje = Message( mail=body['nombre'], profession=body['profesion'], message=body['mensaje'])
+    mensaje = Message( mail=body['mail'], subject=body['asunto'], message=body['mensaje'])
     db.session.add(mensaje)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200

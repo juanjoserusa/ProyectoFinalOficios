@@ -3,14 +3,16 @@ const getState = ({ getStore, setStore }) => {
 	  store: {
 		token: null,
 		message: null,
+		user_type: null,
 	  },
 	  actions: {
 		syncTokenFromSessionStore: () => {
 		  const token = sessionStorage.getItem("token");
+		  const user_type = sessionStorage.getItem("user_type");
 		  console.log("Application just loaded");
   
 		  if (token && token != "" && token != undefined)
-			setStore({ token: token });
+			setStore({ token: token, user_type: user_type });
 		},
 		logout: () => {
 		  const token = sessionStorage.removeItem("token");
@@ -62,7 +64,8 @@ const getState = ({ getStore, setStore }) => {
 			const data = await resp.json();
 			console.log("this came from the backend", data);
 			sessionStorage.setItem("token", data.access_token);
-			setStore({ token: data.access_token });
+			sessionStorage.setItem("user_type", data.type)
+			setStore({ token: data.access_token, user_type: data.type});
 			return true;
 		  } catch (error) {
 			console.error("there hast been an error login");

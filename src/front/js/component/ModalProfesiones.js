@@ -3,7 +3,43 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-function ModalProfesiones() {
+function ModalProfesiones(props) {
+
+  
+const [datos, setDatos] = useState({
+  mail:'',
+  asunto: '',
+  mensaje: '',
+  id: props.userid
+})
+
+const handleInputChange = (event) => {
+setDatos({
+      ...datos,
+      [event.target.name] : event.target.value
+  })
+}
+
+const enviarDatos = (event) => {
+  event.preventDefault()
+  console.log('enviando datos...' + datos.mail + ' ' + datos.asunto + ' ' + datos.mensaje + ' ' + datos.id) 
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var raw = JSON.stringify(datos);
+
+var requestOptions = {
+method: 'POST',
+headers: myHeaders,
+body: raw,
+redirect: 'follow'
+};
+
+fetch("https://3001-juanjoserus-proyectofin-j65vfvn7rqo.ws-eu82.gitpod.io/api/enviarMensaje", requestOptions)
+.then(response => response.text())
+.then(result => console.log(result))
+.catch(error => console.log('error', error));
+}
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -20,18 +56,20 @@ function ModalProfesiones() {
           <Modal.Title>Contacto</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={enviarDatos}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="tunombre@mail.com"
                 autoFocus
+                onChange={handleInputChange}
               />
             </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
+              onChange={handleInputChange}
             >
               <Form.Label>Pide tu presupuesto</Form.Label>
               <Form.Control as="textarea" rows={3} />
@@ -40,7 +78,7 @@ function ModalProfesiones() {
         </Modal.Body>
         <Modal.Footer>
       
-          <Button variant="btn btn-outline-success" onClick={handleClose}>
+          <Button variant="btn btn-outline-success" type= 'submit'>
             Enviar Mensaje
           </Button>
           <Button variant="btn btn-outline-success" onClick={handleClose}>
