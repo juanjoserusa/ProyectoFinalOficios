@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand nav-title" href="#">
+        <a className="navbar-brand nav-title" href="/">
           HandleHome
         </a>
 
@@ -48,14 +48,16 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item me-5">
-                <Link to="/profesiones">
+                <Link to="/profesiones/anuncios">
                   <a className="nav-link enlacesNavbar">Profesiones</a>
                 </Link>
               </li>
               <li className="nav-item me-5 ">
-                <a className="nav-link enlacesNavbar" href="#">
+              <Link to="/profesiones/anuncios/perfil_profesional">
+                <a className="nav-link enlacesNavbar" >
                   Mi perfil
                 </a>
+              </Link>
               </li>
             </ul>
           </div>
