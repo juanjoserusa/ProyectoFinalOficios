@@ -16,10 +16,12 @@ import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
 import SignUp from "./pages/signup";
+
 import AnunciosFontanero from "./pages/AnunciosFontanero";
 import AnunciosElectricista from "./pages/AnunciosElectricista";
 import AnunciosCarpintero from "./pages/AnunciosCarpintero";
 import AnunciosAlbañil from "./pages/AnunciosAlbañil";
+
 
 //create your first component
 function Layout() {
@@ -34,6 +36,7 @@ function Layout() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Demo />} path="/demo" />
+
           <Route element={<Single />} path="/single" />
           <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
 
@@ -55,14 +58,23 @@ function Layout() {
             path="/profesiones/anuncios/albanil"
           />
 
+
+          <Route element={<Single />} path="/single/:user_id" />
+          <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
+      
+
           <Route element={<Anuncios />} path="/profesiones/anuncios" />
           <Route
             element={<PerfilProfesional />}
             path="/profesiones/anuncios/perfil_profesional"
           />
+
           <Route element={<PerfilCliente />} path="/perfilcliente" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
+
+
+
           <Route element={<h1>Not found!</h1>} />
         </Routes>
         <Footer />

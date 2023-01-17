@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Announce, Message
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
-from werkzeug.security import check_password_hash, generate_password_hash
+
 
 
 api = Blueprint('api', __name__)
@@ -48,9 +48,12 @@ def create_token():
 
 
 @api.route('/publicarAnuncio', methods=['POST'])
+@jwt_required()
 def publicar_anuncio():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
     body = request.get_json()
-    anuncio = Announce( mail=body['nombre'], profession=body['profesion'], description=body['anuncio'], price=body['precio'], zipcode=body['codigoPostal'])
+    anuncio = Announce( user_id=user.id, mail=body['nombre'], profession=body['profesion'], description=body['anuncio'], price=body['precio'], zipcode=body['codigoPostal'])
     db.session.add(anuncio)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
@@ -71,4 +74,12 @@ def enviar_mensaje():
     return jsonify({"mensaje": "Check!"}),200
 
 
+@api.route('/search', methods=['POST'])
+def handle_search():
+    body_search=request.json.get("query")
+    print(body_search)
+    zipCode =  Announce.query.filter_by(zipcode=body_search)
+    print(zipCode)
+    search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
+    return jsonify({"result":search_results}), 200
 

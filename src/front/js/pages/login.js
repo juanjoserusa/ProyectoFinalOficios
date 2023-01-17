@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
-
+import '../../styles/login.css'
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -18,19 +18,20 @@ export const Login = () => {
   };
 
   return (
-    <div className="container-fluid text-center">
+    <div className="container text-center pageLogin">
       <h1>Iniciar Sesion</h1>
 
       {token && token != "" && token != undefined ? (
         "You are logged in with this token" + token
       ) : (
-        <div>
+        <div className="formularioLogin">
           <input
             type="email"
             placeholder="Ingrese su email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             required
+            className="inputLogin"
           ></input>
           <input
             type="password"
@@ -38,6 +39,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             required
+            className="inputLogin"
           ></input>
           <button className="btn btn-warning" onClick={handleClick}>Enviar</button>{" "}
         </div>
