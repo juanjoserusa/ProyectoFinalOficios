@@ -69,3 +69,6 @@ def enviar_mensaje():
     db.session.add(mensaje)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
+
+
+
