@@ -35,15 +35,11 @@ function Layout() {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single" />
                         <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
-                        {/* <Route element={<Profesiones />} path="/profesiones" /> */}
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
                         <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />
-
                         <Route element={<PerfilCliente />} path="/perfilcliente" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<SignUp />} path="/signup" />
-                    
-
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
