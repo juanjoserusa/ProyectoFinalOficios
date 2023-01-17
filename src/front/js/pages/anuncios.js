@@ -1,9 +1,33 @@
-import React from "react";
 import AnunciosProfesiones from "../component/AnunciosProfesiones";
-
+import React, { useContext, useState } from 'react';
+import { Context } from "../store/appContext";
 import { BiMap } from "react-icons/bi";
 
 export const Anuncios = () => {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const {actions} = useContext(Context)
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+   
+    fetch('/search', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: query
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(results => {
+        setResults(results);
+      });
+  };
   return (
     <div>
       <div>
@@ -22,8 +46,9 @@ export const Anuncios = () => {
                     <BiMap />
                   </button>
                   <input
+                    onChange={handleChange}
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="autoSizingInputGroup"
                     placeholder="Selecciona tu ciudad..."
                   ></input>
@@ -35,7 +60,7 @@ export const Anuncios = () => {
               </label> */}
                 <input
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="autoSizingInput"
                   placeholder="Elige tu presupuesto"
                 ></input>
@@ -64,7 +89,10 @@ export const Anuncios = () => {
                 </div>
               </div>
               <div className="col-auto">
-                <button type="submit" className="btn btn-success">
+                <button className="btn btn-success" onClick={(event) => {
+                  //event.preventDefault()
+                  actions.search(query)}}
+                  type="button">
                   Buscar
                 </button>
               </div>

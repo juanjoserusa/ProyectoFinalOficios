@@ -4,8 +4,25 @@ const getState = ({ getStore, setStore }) => {
 		token: null,
 		message: null,
 		user_type: null,
+		search: []
+
 	  },
 	  actions: {
+		loadAnnounces: ()=> {
+			var requestOptions = {
+				method: 'GET',
+				redirect: 'follow'
+			  };
+			  
+				fetch(process.env.BACKEND_URL + "/api/anuncios", requestOptions)
+				.then(response => response.json())
+				.then(result => {
+				  setStore({search:result})
+				  console.log(result)
+				})
+				.catch(error => console.log('error', error));
+		},
+
 		syncTokenFromSessionStore: () => {
 		  const token = sessionStorage.getItem("token");
 		  const user_type = sessionStorage.getItem("user_type");
@@ -41,7 +58,25 @@ const getState = ({ getStore, setStore }) => {
 			console.log("Error loading message from backend", error);
 		  }
 		},
-  
+		search : (event) => {
+			fetch(process.env.BACKEND_URL + "/api/search", {
+				
+			  method: 'POST',
+			  body: JSON.stringify({
+				query: event
+			  }),
+			  headers: {
+				'Content-Type': 'application/json'
+			  }
+			})
+			  .then(response => response.json())
+			  .then(results => {
+				console.log(results)
+				setStore({search:results.result});
+
+			  });
+		  },
+
 		login: async (email, password) => {
 		  const opts = {
 			method: "POST",
