@@ -43,7 +43,7 @@ export const Navbar = () => {
         </button>
         <div className="d-flex justify-content-center ">
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav ">
               <li className="nav-item me-5">
                 <Link to="/">
                   <a className="nav-link active enlacesNavbar">Inicio</a>
