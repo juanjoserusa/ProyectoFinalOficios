@@ -72,3 +72,12 @@ def enviar_mensaje():
     db.session.add(mensaje)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
+
+@api.route('/search', methods=['POST'])
+def handle_search():
+    body_search=request.json.get("query")
+    print(body_search)
+    zipCode =  Announce.query.filter_by(zipcode=body_search)
+    print(zipCode)
+    search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
+    return jsonify({"result":search_results}), 200
