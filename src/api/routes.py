@@ -48,9 +48,12 @@ def create_token():
 
 
 @api.route('/publicarAnuncio', methods=['POST'])
+@jwt_required()
 def publicar_anuncio():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
     body = request.get_json()
-    anuncio = Announce( mail=body['nombre'], profession=body['profesion'], description=body['anuncio'], price=body['precio'], zipcode=body['codigoPostal'])
+    anuncio = Announce( user_id=user.id, mail=body['nombre'], profession=body['profesion'], description=body['anuncio'], price=body['precio'], zipcode=body['codigoPostal'])
     db.session.add(anuncio)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
