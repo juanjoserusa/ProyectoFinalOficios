@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from itsdangerous import Serializer
 
 
 db = SQLAlchemy()
@@ -6,8 +8,23 @@ db = SQLAlchemy()
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)  
     user_type = db.Column(db.Boolean, default=False)
+    date_created = db.Column(db.DateTime,defaul=datetime.utcnow)
+
+    def get_token(self,expires_sec=300 ):
+        serial=Serializer(app.config[JWT_SECRET_KEY],expires_in=expires_sec)
+        return serial.dumps({'user_id':self.id}).decode('utf-8')
+    
+    @staticmethod
+    def verify_token(token):
+        serial=Serializer(app.config[JWT_SECRET_KEY])
+        try:   
+            user_id=serial.load(token)['user_id']
+        except:
+            return None    
+        return User.query.get(user_id)    
+
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -30,6 +47,7 @@ class Announce(db.Model):
     description = db.Column(db.String(250), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
     user = db.relationship('User', backref= 'announce')
+   
 
     def __repr__(self):
         return f'<Announce {self.mail}>'

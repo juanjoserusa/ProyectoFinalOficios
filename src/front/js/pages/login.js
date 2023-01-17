@@ -42,6 +42,9 @@ export const Login = () => {
           <button className="btn btn-warning" onClick={handleClick}>Enviar</button>{" "}
         </div>
       )}
+      <div>
+        <a href= "/reset_password"> Olvidaste tu contraseña ?</a>
+      </div>
     </div>
   );
 };
