@@ -43,7 +43,7 @@ export const Login = () => {
         </div>
       )}
       <div>
-        <a href= "/reset_password"> Olvidaste tu contraseña ?</a>
+        <a href= "/reset_request"> Olvidaste tu contraseña ?</a>
       </div>
     </div>
   );

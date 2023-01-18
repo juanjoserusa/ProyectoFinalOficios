@@ -70,15 +70,10 @@ def enviar_mensaje():
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
 
-def send_email():
-    pass
 
-  
-@api.route("/reset_password", methods=["GET",'POST'])
-def reset_password():
-    email= get_jwt_identity()
+@api.route("/reset_request", methods=["GET","POST"])
+def reset_request():
+    email = request.json.get("email", None)
     user = User.query.filter_by(email=email).first()
-    if user:
-       send_email/()
-       return redirect (url_for('sessionlogin'))      
-    return jsonify({"mensaje": "Link enviado a su correo regsitrado"}),200
+    return jsonify({"mensaje": "link enviado!"}),200
+

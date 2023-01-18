@@ -10,7 +10,6 @@ const Single = () => {
 			<div className="d-flex justify-content-center">
 			<Mensaje />
 			</div>
-		
 		</div>
 	)
 }

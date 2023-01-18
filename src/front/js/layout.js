@@ -42,9 +42,7 @@ function Layout() {
 
                         <Route element={<PerfilCliente />} path="/perfilcliente" />
                         <Route element={<Login />} path="/login" />
-                        <Route element={<Reset_Request />} path="/reset_request" />
-                        <Route element={<SignUp />} path="/signup" />
-                    
+                        <Route element={<Reset_Request /> } path="/reset_request" />
 
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
