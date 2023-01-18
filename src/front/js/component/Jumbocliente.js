@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import background from "/workspace/ProyectoFinalOficios/src/front/assets/cliente.jpg";
 import "../../styles/jumbo.css";
-
-import Dropdown from "react-bootstrap/Dropdown";
+import DropdownHome from "/workspace/ProyectoFinalOficios/src/front/js/component/DropdownHome.js";
 
 const JumboCliente = () => {
   return (
@@ -24,29 +23,7 @@ const JumboCliente = () => {
               ¿Buscas un profesional?
             </h1>
             <div className="mt-5 d-flex justify-content-center">
-              {/* <form class="d-flex" role="search">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form> */}
-              <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Elije un oficio
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Fontanero</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Electricista</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Albañil</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Carpintero</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <DropdownHome />
             </div>
           </div>
         </div>

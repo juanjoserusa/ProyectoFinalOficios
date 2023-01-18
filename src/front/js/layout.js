@@ -17,6 +17,12 @@ import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
 import SignUp from "./pages/signup";
 
+import AnunciosFontanero from "./pages/AnunciosFontanero";
+import AnunciosElectricista from "./pages/AnunciosElectricista";
+import AnunciosCarpintero from "./pages/AnunciosCarpintero";
+import AnunciosAlbañil from "./pages/AnunciosAlbañil";
+
+
 //create your first component
 function Layout() {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -30,9 +36,33 @@ function Layout() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Demo />} path="/demo" />
+
+          <Route element={<Single />} path="/single" />
+          <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
+
+          <Route
+            element={<AnunciosFontanero />}
+            path="/profesiones/anuncios/fontanero"
+          />
+          <Route
+            element={<AnunciosElectricista />}
+            path="/profesiones/anuncios/electricista"
+          />
+            <Route
+            element={<AnunciosCarpintero />}
+            path="/profesiones/anuncios/carpintero"
+          />
+
+<Route
+            element={<AnunciosAlbañil />}
+            path="/profesiones/anuncios/albanil"
+          />
+
+
           <Route element={<Single />} path="/single/:user_id" />
           <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
-          {/* <Route element={<Profesiones />} path="/profesiones" /> */}
+      
+
           <Route element={<Anuncios />} path="/profesiones/anuncios" />
           <Route
             element={<PerfilProfesional />}
@@ -42,6 +72,8 @@ function Layout() {
           <Route element={<PerfilCliente />} path="/perfilcliente" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
+
+
 
           <Route element={<h1>Not found!</h1>} />
         </Routes>
