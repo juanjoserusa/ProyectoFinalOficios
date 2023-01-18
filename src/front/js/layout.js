@@ -21,7 +21,7 @@ import AnunciosFontanero from "./pages/AnunciosFontanero";
 import AnunciosElectricista from "./pages/AnunciosElectricista";
 import AnunciosCarpintero from "./pages/AnunciosCarpintero";
 import AnunciosAlbañil from "./pages/AnunciosAlbañil";
-
+import { Datos_Perfil } from "./component/datos_perfil";
 
 //create your first component
 function Layout() {
@@ -48,32 +48,26 @@ function Layout() {
             element={<AnunciosElectricista />}
             path="/profesiones/anuncios/electricista"
           />
-            <Route
+          <Route
             element={<AnunciosCarpintero />}
             path="/profesiones/anuncios/carpintero"
           />
 
-<Route
+          <Route
             element={<AnunciosAlbañil />}
             path="/profesiones/anuncios/albanil"
           />
 
-
           <Route element={<Single />} path="/single/:user_id" />
           <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
-      
 
           <Route element={<Anuncios />} path="/profesiones/anuncios" />
-          <Route
-            element={<PerfilProfesional />}
-            path="/profesiones/anuncios/perfil_profesional"
-          />
+          <Route element={<PerfilProfesional />} path="/perfilProfesional" />
 
-          <Route element={<PerfilCliente />} path="/perfilcliente" />
+          <Route element={<PerfilCliente />} path="/perfilCliente" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
-
-
+          <Route element={<Datos_Perfil />} path="/datos_perfil" />
 
           <Route element={<h1>Not found!</h1>} />
         </Routes>

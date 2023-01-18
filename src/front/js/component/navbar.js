@@ -58,13 +58,13 @@ export const Navbar = () => {
               {token ? (
                 <li className="nav-item me-5 ">
                   {user_type === true ? (
-                    <Link to="profesiones/anuncios/perfil_profesional">
+                    <Link to="/perfilProfesional">
                       <a className="nav-link enlacesNavbar">
                         Mi perfil profesional{" "}
                       </a>
                     </Link>
                   ) : (
-                    <Link to="/perfilcliente">
+                    <Link to="/perfilCliente">
                       <a className="nav-link enlacesNavbar">
                         Mi perfil cliente{" "}
                       </a>

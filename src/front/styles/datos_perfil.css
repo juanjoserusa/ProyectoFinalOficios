@@ -1,0 +1,22 @@
+body{
+    background-color: white;
+}
+
+.container_form{
+    height: 100%;
+    width: auto;
+    background-color: beige;
+    display: justify;
+    padding-left: 30px;
+    padding-top: auto;
+    border-color: gainsboro;
+    margin: auto;
+}
+
+.titulo{
+    font-size: x-large;
+    height: fit-content;
+    width: fit-content;
+    padding: auto;
+    margin-bottom: 50px;
+}

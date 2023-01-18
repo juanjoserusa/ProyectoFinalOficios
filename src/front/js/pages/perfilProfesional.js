@@ -2,6 +2,7 @@ import React from "react";
 import { Sidebar } from "../component/sidebar";
 import { Footer } from "../component/footer";
 import StatusProfesional from "../component/StatusProfesional";
+import { Datos_Perfil } from "../component/datos_perfil";
 
 const PerfilProfesional = () => {
   return (
@@ -12,11 +13,9 @@ const PerfilProfesional = () => {
             <Sidebar />
           </div>
           <div className="col-10">
-              <StatusProfesional/>
+            <StatusProfesional />
             <h4 className="text-center m-5">carpeta con otra cosa</h4>
             <h4 className="text-center m-5">algo mas</h4>
-          
-            <Footer />
           </div>
         </div>
       </div>

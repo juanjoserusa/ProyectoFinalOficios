@@ -4,7 +4,6 @@ import "../../styles/sidebar.css";
 
 export const Sidebar = () => {
   return (
-    
     <>
       <header>
         <nav
@@ -16,7 +15,7 @@ export const Sidebar = () => {
                 class="list-group-item list-group-item-action py-2 ripple"
                 aria-current="true"
                 data-mdb-toggle="collapse"
-                href="#collapseExample1"
+                href="/datos_perfil"
                 aria-expanded="true"
                 aria-controls="collapseExample1">
                <i FontAwesomeIcon icon="fa-solid fa-user"></i>
