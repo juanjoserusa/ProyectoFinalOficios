@@ -16,7 +16,7 @@ import { PerfilCliente } from "./pages/perfilCliente"
 import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
-import SignUp from "./pages/signup";
+import {SignUp} from "./pages/signup";
 import { Reset_Request } from "./pages/reset_request";
 
 
@@ -39,7 +39,7 @@ function Layout() {
                         {/* <Route element={<Profesiones />} path="/profesiones" /> */}
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
                         <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />
-
+                        <Route element={<SignUp/>} path="/signup"/>
                         <Route element={<PerfilCliente />} path="/perfilcliente" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Reset_Request /> } path="/reset_request" />
