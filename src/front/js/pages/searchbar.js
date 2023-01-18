@@ -1,9 +1,34 @@
-import React from "react";
-
-
+import React, { useContext, useState } from 'react';
+import { Context } from "../store/appContext";
 import { BiMap } from "react-icons/bi";
 
 export const Searchbar = () => {
+
+
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const {actions} = useContext(Context)
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+   
+    fetch('/search', {
+      method: 'POST',
+      body: JSON.stringify({
+        query: query
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(results => {
+        setResults(results);
+      });
+  };
   return (
     <div>
       <div>
@@ -19,21 +44,22 @@ export const Searchbar = () => {
                     <BiMap />
                   </button>
                   <input
+                    onChange={handleChange}
                     type="text"
-                    class="form-control"
+                    className="form-control"  style={{ width: "500px" }}
                     id="autoSizingInputGroup"
                     placeholder="Selecciona tu ciudad..."
                   ></input>
                 </div>
               </div>
-              <div className="col-auto">
+         {/*      <div className="col-auto">
                 <input
                   type="text"
                   class="form-control"
                   id="autoSizingInput"
                   placeholder="Elige tu presupuesto"
                 ></input>
-              </div>
+              </div> */}
               <div className="col-auto">
                 <label className="visually-hidden" for="autoSizingSelect">
                   Preference
@@ -52,7 +78,10 @@ export const Searchbar = () => {
                 </div>
               </div>
               <div className="col-auto">
-                <button type="submit" className="btn btn-success">
+              <button className="btn btn-warning" onClick={(event) => {
+
+                  actions.search(query)}}
+                  type="button">
                   Buscar
                 </button>
               </div>
