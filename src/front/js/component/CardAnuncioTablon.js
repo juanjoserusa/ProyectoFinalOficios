@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ModalProfesiones from "./ModalProfesiones";
+
 
 
 const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, id}) => {
@@ -21,7 +21,7 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
       <Link to={`/single/${id}`} >
           Enviar Mensaje
       </Link>
-      {/* <ModalProfesiones userid={id} /> */}
+      
     </div>
   </div>
 

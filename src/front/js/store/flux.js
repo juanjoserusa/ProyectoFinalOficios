@@ -4,10 +4,29 @@ const getState = ({ getStore, setStore }) => {
 		token: null,
 		message: null,
 		user_type: null,
-		search: []
+		search: [],
+		mensajeCliente: [],
 
 	  },
 	  actions: {
+
+		loadMessage : () => {
+
+			var requestOptions = {
+				method: 'GET',
+				redirect: 'follow'
+			  };
+			  
+			  fetch("https://3001-juanjoserus-proyectofin-xbkvjh2j7bo.ws-eu83.gitpod.io/api/recibirMensaje", requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					setStore({mensajeCliente:result})
+					console.log(result)
+				  })
+				.catch(error => console.log('error', error));
+		},
+
+		
 		loadAnnounces: ()=> {
 			var requestOptions = {
 				method: 'GET',

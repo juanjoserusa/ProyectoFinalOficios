@@ -3,25 +3,28 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../../styles/mensajeCliente.css"
 import ModalProfesiones from "./ModalProfesiones";
+import { Link } from "react-router-dom";
 
-const MensajesClientes = () => {
+const MensajesClientes = ({mail, subject, message, id}) => {
+
 
 
     return(
       <div class="col mt-5">
         <Card style={{ width: '18rem' }}>
       <Card.Body className="cardMensaje">
-        <Card.Title className="tituloMensaje">Mensajes</Card.Title>
+        <Card.Title className="tituloMensaje">Asunto: {subject} </Card.Title>
         <Card.Text className="textoMensaje">
-          Este es un mensaje de prueba
+          {message}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Enviado por:</ListGroup.Item>
+        <ListGroup.Item>Enviado por:{mail} </ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Leer</Card.Link>
-        <Card.Link href="#"><ModalProfesiones /></Card.Link>
+      <Link to={`/single/${id}`} >
+          Enviar Mensaje
+      </Link>
       </Card.Body>
     </Card>
     </div>

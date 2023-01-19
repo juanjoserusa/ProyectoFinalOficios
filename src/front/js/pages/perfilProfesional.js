@@ -2,6 +2,7 @@ import React from "react";
 import { Sidebar } from "../component/sidebar";
 import { Footer } from "../component/footer";
 import StatusProfesional from "../component/StatusProfesional";
+import MensajesClientes from "../component/MensajesClientes";
 
 const PerfilProfesional = () => {
   return (

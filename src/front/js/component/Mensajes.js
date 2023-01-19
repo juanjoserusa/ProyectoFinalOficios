@@ -4,8 +4,8 @@ export const Mensaje = (props) => {
 
   const [datos, setDatos] = useState({
     mail: "",
-    asunto: "",
-    mensaje: "",
+    subject: "",
+    message: "",
   });
 
   const handleInputChange = (event) => {
@@ -45,7 +45,7 @@ export const Mensaje = (props) => {
           type="mail"
           class="form-control"
           id="exampleFormControlInput1"
-          placeholder="Asunto"
+          placeholder="Mail"
           onChange={handleInputChange}
           name="mail"
         />

@@ -69,12 +69,6 @@ export const Anuncios = () => {
                 <label className="visually-hidden" for="autoSizingSelect">
                   Preference
                 </label>
-                {/* <select className="form-select" id="autoSizingSelect">
-                <option selected>Oficio</option>
-                <option value="1">Carpintero</option>
-                <option value="2">Electricista</option>
-                <option value="3">Cerrajero</option>
-              </select> */}
               </div>
               <div className="col-auto">
                 <div className="form-check">

@@ -68,10 +68,17 @@ def anuncios():
 @api.route('/enviarMensaje', methods=['POST'])
 def enviar_mensaje():
     body = request.get_json()
-    mensaje = Message( mail=body['mail'], subject=body['asunto'], message=body['mensaje'])
+    mensaje = Message( mail=body['mail'], subject=body['subject'], message=body['message'])
     db.session.add(mensaje)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
+
+
+@api.route('/recibirMensaje', methods=['GET'])
+def recibirMensaje():
+    all_mensaje = Message.query.all()
+    all_mensaje = list(map(lambda x: x.serialize(), all_mensaje))
+    return jsonify(all_mensaje)
 
 @api.route('/search', methods=['POST'])
 def handle_search():

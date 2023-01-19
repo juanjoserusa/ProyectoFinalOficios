@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState, useContext }  from "react";
 import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import Tabs from 'react-bootstrap/Tabs'
+import { Context } from"../store/appContext";
+
 
 import MensajesClientes from "../component/MensajesClientes";
 
 export const PerfilCliente = () => {
+
+    
+  const {store,actions}= useContext(Context)
+
+  useEffect(() => {
+    actions.loadMessage()
+  },[])
 
     return(
         <div className="container mt-5">
@@ -17,10 +26,11 @@ export const PerfilCliente = () => {
         <Tab eventKey="home" title="Mensajes" className="mensajesRecibidos border border-top-0" style={{ height: "600px" }}>
             <div className="container">
             <div className="row row-cols-1 row-cols-md-4 g-4 "> 
-        <MensajesClientes />
-        <MensajesClientes />
-        <MensajesClientes />
-        <MensajesClientes />
+            {
+              store.mensajeCliente.map((element, index) => {
+                return <MensajesClientes key={index} mail={element.mail} subject={element.subject} message={element.message} />
+              })
+            }
             </div>
             </div>
       </Tab>
