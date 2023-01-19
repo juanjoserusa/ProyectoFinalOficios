@@ -19,6 +19,8 @@ app = Flask(__name__)
 ENV = os.getenv("FLASK_ENV")
 app.config["JWT_SECRET_KEY"] = "secrete-Create_U"  # Change this!
 jwt = JWTManager(app)
+
+
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app.url_map.strict_slashes = False
 

@@ -12,7 +12,6 @@ const Single = () => {
 			<div className="d-flex justify-content-center">
 			<Mensaje user_id={params.user_id} />
 			</div>
-		
 		</div>
 	)
 }

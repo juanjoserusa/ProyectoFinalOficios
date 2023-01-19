@@ -15,7 +15,9 @@ import { PerfilCliente } from "./pages/perfilCliente";
 import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
-import SignUp from "./pages/signup";
+import {SignUp} from "./pages/signup";
+import { RequestPass } from "./component/request_password";
+import { Reset_Pass } from "./component/reset_password ";
 
 import AnunciosFontanero from "./pages/AnunciosFontanero";
 import AnunciosElectricista from "./pages/AnunciosElectricista";
@@ -25,6 +27,8 @@ import AnunciosAlbañil from "./pages/AnunciosAlbañil";
 
 //create your first component
 function Layout() {
+
+
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
@@ -72,7 +76,8 @@ function Layout() {
           <Route element={<PerfilCliente />} path="/perfilcliente" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
-
+           <Route element={<RequestPass /> } path="/request_password" />
+            <Route element={<Reset_Pass /> } path="/reset_password" />
 
 
           <Route element={<h1>Not found!</h1>} />

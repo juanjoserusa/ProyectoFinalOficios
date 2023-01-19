@@ -74,6 +74,20 @@ def enviar_mensaje():
     return jsonify({"mensaje": "Check!"}),200
 
 
+
+@api.route("/request_password", methods=["GET","POST"])
+def request_password():
+    email = request.json.get("email", None)
+    user = User.query.filter_by(email=email).first()
+    return jsonify({"mensaje": "link enviado!"}),200
+
+@api.route("/reset_password", methods=["GET","POST"])
+def reset_password():
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    return jsonify({"mensaje": "password cambiado"}),200
+
+
 @api.route('/search', methods=['POST'])
 def handle_search():
     body_search=request.json.get("query")
@@ -82,4 +96,5 @@ def handle_search():
     print(zipCode)
     search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
     return jsonify({"result":search_results}), 200
+
 
