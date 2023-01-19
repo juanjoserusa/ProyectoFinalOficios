@@ -1,7 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
+import { Context } from "../store/appContext" 
 import ModalProfesiones from "../component/ModalProfesiones";
 import "../../styles/formulario.css";
 import { Link } from "react-router-dom";
+import context from "react-bootstrap/esm/AccordionContext";
+
 
 
 
@@ -14,6 +17,8 @@ export const PublicarAnuncio = () => {
     codigoPostal: "",
   });
 
+  const {store} = useContext(Context)
+
   const handleInputChange = (event) => {
     setDatos({
       ...datos,
@@ -23,26 +28,16 @@ export const PublicarAnuncio = () => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    console.log(
-      "enviando datos..." +
-        datos.nombre +
-        " " +
-        datos.profesion +
-        " " +
-        datos.anuncio +
-        " " +
-        datos.precio +
-        " " +
-        datos.codigoPostal
-    );
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    
 
     var raw = JSON.stringify(datos);
 
     var requestOptions = {
       method: "POST",
-      headers: myHeaders,
+      headers: {
+        "Content-Type": "application/json",
+			  Authorization: "Bearer " + store.token,
+			},
       body: raw,
       redirect: "follow",
     };
@@ -51,6 +46,7 @@ export const PublicarAnuncio = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
   };
   return (
     <Fragment>
@@ -109,11 +105,11 @@ export const PublicarAnuncio = () => {
               name="anuncio"
             ></textarea>
           </div>
-          <Link to="/profesiones/anuncios">
+          {/* <Link to="/profesiones/anuncios"> */}
             <button type="submit" className="btn btn-primary botonEnviar">
               Enviar
             </button>
-          </Link>
+          {/* </Link> */}
         </form>
       </div>
 
