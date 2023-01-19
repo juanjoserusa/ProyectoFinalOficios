@@ -81,7 +81,6 @@ const SignUp = () => {
             
           </div>
       
-
           <button type="submit" className="btn btn-primary">
             Enviar
           </button>

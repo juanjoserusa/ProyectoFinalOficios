@@ -5,6 +5,7 @@ import StatusProfesional from "../component/StatusProfesional";
 import { Datos_Perfil } from "../component/datos_perfil";
 
 const PerfilProfesional = () => {
+
   return (
     <>
       <div className="container-flex">
