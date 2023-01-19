@@ -48,19 +48,18 @@ class Announce(db.Model):
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    mail = db.Column(db.String(100), unique=False, nullable=False)
     subject = db.Column(db.String(100), unique=False, nullable=False)
     message = db.Column(db.String(500), unique=False, nullable=False)
-    userEnvio = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
-    userRecibe = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
-   
+    sender = db.Column(db.String(100), nullable=False)
+    to = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=False)
+    rel_user = db.relationship(User)
 
     def __repr__(self):
-        return f'<Message {self.mail}>'
+        return f'<Message {self.id}>'
 
     def serialize(self):
         return {
-            "mail": self.mail,
+            
             "subject": self.subject,
             "message": self.message,
             # do not serialize the password, its a security breach

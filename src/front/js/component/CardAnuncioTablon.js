@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext }   from "react";
 import { Link } from "react-router-dom";
+import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
 
 
 const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, id}) => {
+
+  const { store, actions } = useContext(Context);
+
+  const token = store.token;
+
   return (
 
     <div className="col-2 card m-2" style={{ backgroundColor: "#ffface" }}>
@@ -18,9 +24,12 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
     <li>{codigoPostal}</li>
     <li>{precio}</li>
   </ul>
-      <Link to={`/single/${id}`} >
+ {token ? <Link to={`/single/${id}`} >
           Enviar Mensaje
-      </Link>
+      </Link> : <Link to={`/login`} >
+          Enviar Mensaje
+      </Link> }
+      
       
     </div>
   </div>

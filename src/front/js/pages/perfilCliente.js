@@ -5,14 +5,15 @@ import { Context } from"../store/appContext";
 
 
 import MensajesClientes from "../component/MensajesClientes";
+import { useParams } from "react-router-dom";
 
 export const PerfilCliente = () => {
 
-    
+    const parametros = useParams()
   const {store,actions}= useContext(Context)
 
   useEffect(() => {
-    actions.loadMessage()
+    actions.loadMessage(parametros.id)
   },[])
 
     return(
@@ -28,7 +29,7 @@ export const PerfilCliente = () => {
             <div className="row row-cols-1 row-cols-md-4 g-4 "> 
             {
               store.mensajeCliente.map((element, index) => {
-                return <MensajesClientes key={index} mail={element.mail} subject={element.subject} message={element.message} />
+                return <MensajesClientes key={index}  sender={element.sender} subject={element.subject} message={element.message} id={element.user_id} />
               })
             }
             </div>
@@ -37,7 +38,7 @@ export const PerfilCliente = () => {
       <Tab eventKey="profile" title="Presupuestos aceptados" className=" mensajesRecibidos border border-top-0" style={{ height: "600px" }}>
       <div className="container">
             <div className="row row-cols-1 row-cols-md-4 g-4 ">
-        <MensajesClientes />
+        {/* <MensajesClientes /> */}
         </div>
         </div>
       </Tab>
