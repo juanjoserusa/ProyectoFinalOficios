@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const SignUp = () => {
+export const SignUp = () => {
   const [datos, setDatos] = useState({
     email: "",
     password: "",
@@ -91,4 +91,3 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;

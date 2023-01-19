@@ -71,9 +71,14 @@ def enviar_mensaje():
     return jsonify({"mensaje": "Check!"}),200
 
 
-@api.route("/reset_request", methods=["GET","POST"])
-def reset_request():
+@api.route("/request_password", methods=["GET","POST"])
+def request_password():
     email = request.json.get("email", None)
     user = User.query.filter_by(email=email).first()
     return jsonify({"mensaje": "link enviado!"}),200
 
+@api.route("/reset_password", methods=["GET","POST"])
+def reset_password():
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    return jsonify({"mensaje": "password cambiado"}),200

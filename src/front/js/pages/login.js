@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
 
@@ -43,7 +43,7 @@ export const Login = () => {
         </div>
       )}
       <div>
-        <a href= "/reset_request"> Olvidaste tu contraseña ?</a>
+        <Link to ={ "/request_password"}> Olvidaste tu contraseña ?</Link>
       </div>
     </div>
   );

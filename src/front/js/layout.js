@@ -17,7 +17,8 @@ import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
 import {SignUp} from "./pages/signup";
-import { Reset_Request } from "./pages/reset_request";
+import { RequestPass } from "./component/request_password";
+import { Reset_Pass } from "./component/reset_password ";
 
 
 //create your first component
@@ -38,16 +39,15 @@ function Layout() {
                         <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
                         {/* <Route element={<Profesiones />} path="/profesiones" /> */}
                         <Route element={<Anuncios />} path="/profesiones/anuncios" />
-                        <Route element={<PerfilProfesional/>} path="/profesiones/anuncios/perfil_profesional" />
+                        <Route element={<PerfilProfesional />} path="/perfilProfesional" />
                         <Route element={<SignUp/>} path="/signup"/>
                         <Route element={<PerfilCliente />} path="/perfilcliente" />
                         <Route element={<Login />} path="/login" />
-                        <Route element={<Reset_Request /> } path="/reset_request" />
-
+                        <Route element={<RequestPass /> } path="/request_password" />
+                        <Route element={<Reset_Pass /> } path="/reset_password" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
-           
             </BrowserRouter>
         </div>
     );
