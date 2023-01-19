@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
+import MensajesClientes from "../component/MensajesClientes";
+import { Context } from"../store/appContext"
 
 const StatusProfesional = () => {
+
+  
+  const {store,actions}= useContext(Context)
+
+  useEffect(() => {
+    actions.loadMessage()
+  },[])
+
+
   return (
     <div className="container" style={{ height: "600px" }}>
       <Tabs
@@ -17,7 +28,14 @@ const StatusProfesional = () => {
           className="border border-top-0"
           style={{ height: "600px" }}
         >
-          <div className="p-5">Mensajes al usuario ........</div>
+          <div className="p-5">
+            {
+              store.mensajeCliente.map((element, index) => {
+                return <MensajesClientes key={index} mail={element.mail} subject={element.subject} message={element.message} id={element.user_id} />
+              })
+            }
+          
+          </div>
         </Tab>
         <Tab
           eventKey="presupuestos aceptados"

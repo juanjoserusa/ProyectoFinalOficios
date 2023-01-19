@@ -68,11 +68,19 @@ def anuncios():
 @api.route('/enviarMensaje', methods=['POST'])
 def enviar_mensaje():
     body = request.get_json()
-    mensaje = Message( mail=body['mail'], subject=body['asunto'], message=body['mensaje'])
+    mensaje = Message( sender=body["from"], to=body["to"], subject=body['subject'], message=body['message'])
+    print(body)
     db.session.add(mensaje)
     db.session.commit()
     return jsonify({"mensaje": "Check!"}),200
 
+
+
+@api.route('/recibirMensaje/<int:id>', methods=['GET'])
+def recibirMensaje(id):
+    all_mensaje = Message.query.filter_by(to=id)
+    all_mensaje = list(map(lambda x: x.serialize(), all_mensaje))
+    return jsonify(all_mensaje)
 
 
 @api.route("/request_password", methods=["GET","POST"])
@@ -86,6 +94,7 @@ def reset_password():
     password = request.json.get("password", None)
     user = User.query.filter_by(email=email).first()
     return jsonify({"mensaje": "password cambiado"}),200
+
 
 
 @api.route('/search', methods=['POST'])

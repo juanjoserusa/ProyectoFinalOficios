@@ -73,7 +73,7 @@ function Layout() {
             path="/profesiones/anuncios/perfil_profesional"
           />
 
-          <Route element={<PerfilCliente />} path="/perfilcliente" />
+          <Route element={<PerfilCliente />} path="/perfilcliente/:id" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
            <Route element={<RequestPass /> } path="/request_password" />

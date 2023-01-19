@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext,} from "react";
+import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { useParams } from "react-router-dom";
 
 export const Mensaje = (props) => {
 
+  const { store, actions } = useContext(Context);
+
+  const token = store.token;
+  const email = store.email
+
+  const parametros = useParams()
+
   const [datos, setDatos] = useState({
-    mail: "",
-    asunto: "",
-    mensaje: "",
+    from: email,
+    to: parametros.user_id,
+    subject: "",
+    message: "",
   });
 
   const handleInputChange = (event) => {
@@ -39,17 +49,7 @@ export const Mensaje = (props) => {
     <form onSubmit={enviarDatos}>
       <h1>Mensajes</h1>
 
-      <div class="form-group mt-3">
-        <label for="exampleFormControlInput1">Mail</label>
-        <input
-          type="mail"
-          class="form-control"
-          id="exampleFormControlInput1"
-          placeholder="Asunto"
-          onChange={handleInputChange}
-          name="mail"
-        />
-      </div>
+      
       <div class="form-group mt-3">
         <label for="exampleFormControlInput1">Asunto</label>
         <input
@@ -58,7 +58,7 @@ export const Mensaje = (props) => {
           id="exampleFormControlInput1"
           placeholder="Asunto"
           onChange={handleInputChange}
-          name="asunto"
+          name="subject"
         />
       </div>
 
@@ -69,12 +69,12 @@ export const Mensaje = (props) => {
           id="exampleFormControlTextarea1"
           rows="3"
           onChange={handleInputChange}
-          name="mensaje"
+          name="message"
         ></textarea>
       </div>
       <div className="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-primary">
-          Enviar
+          Enviar {email}
         </button>
       </div>
     </form>

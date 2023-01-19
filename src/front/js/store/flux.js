@@ -2,16 +2,39 @@ const getState = ({ getStore, setStore }) => {
 	return {
 	  store: {
 		token: null,
+		email: null,
 		message: null,
 		user_type: null,
-		search: []
+		search: [],
+		mensajeCliente: [],
 
 	  },
 	  actions: {
+
+		loadMessage : (id) => {
+
+			var requestOptions = {
+				method: 'GET',
+				redirect: 'follow',
+				
+				
+			  };
+			
+			  
+			  fetch("https://3001-juanjoserus-proyectofin-xbkvjh2j7bo.ws-eu83.gitpod.io/api/recibirMensaje/"+id, requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					setStore({mensajeCliente:result})
+					console.log(result)
+				  })
+				.catch(error => console.log('error', error));
+		},
+
+		
 		loadAnnounces: ()=> {
 			var requestOptions = {
 				method: 'GET',
-				redirect: 'follow'
+				redirect: 'follow',
 			  };
 			  
 				fetch(process.env.BACKEND_URL + "/api/anuncios", requestOptions)
@@ -51,7 +74,8 @@ const getState = ({ getStore, setStore }) => {
 			  opts
 			);
 			const data = await resp.json();
-			setStore({ message: data.message });
+			console.log(data)
+			setStore({ message: data.message, email: data.email });
 			// don't forget to return something, that is how the async resolves
 			return data;
 		  } catch (error) {

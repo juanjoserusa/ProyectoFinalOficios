@@ -39,6 +39,7 @@ export const Anuncios = () => {
     
 
      
+
       <AnunciosProfesiones />
     </div>
   );
