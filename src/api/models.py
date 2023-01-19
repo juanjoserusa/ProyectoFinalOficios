@@ -1,14 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
 
 
+
 db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)  
     user_type = db.Column(db.Boolean, default=False)
-
+   
     def __repr__(self):
         return f'<User {self.email}>'
 
@@ -19,8 +20,6 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-
-
 class Announce(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     mail = db.Column(db.String(50), unique=False, nullable=False)
@@ -30,6 +29,7 @@ class Announce(db.Model):
     description = db.Column(db.String(250), unique=False, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=True)
     user = db.relationship('User', backref= 'announce')
+   
 
     def __repr__(self):
         return f'<Announce {self.mail}>'

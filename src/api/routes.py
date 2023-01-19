@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Announce, Message
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
-from werkzeug.security import check_password_hash, generate_password_hash
+
 
 
 api = Blueprint('api', __name__)
@@ -75,11 +75,27 @@ def enviar_mensaje():
     return jsonify({"mensaje": "Check!"}),200
 
 
+
 @api.route('/recibirMensaje/<int:id>', methods=['GET'])
 def recibirMensaje(id):
     all_mensaje = Message.query.filter_by(to=id)
     all_mensaje = list(map(lambda x: x.serialize(), all_mensaje))
     return jsonify(all_mensaje)
+
+
+@api.route("/request_password", methods=["GET","POST"])
+def request_password():
+    email = request.json.get("email", None)
+    user = User.query.filter_by(email=email).first()
+    return jsonify({"mensaje": "link enviado!"}),200
+
+@api.route("/reset_password", methods=["GET","POST"])
+def reset_password():
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    return jsonify({"mensaje": "password cambiado"}),200
+
+
 
 @api.route('/search', methods=['POST'])
 def handle_search():
@@ -89,3 +105,5 @@ def handle_search():
     print(zipCode)
     search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
     return jsonify({"result":search_results}), 200
+
+

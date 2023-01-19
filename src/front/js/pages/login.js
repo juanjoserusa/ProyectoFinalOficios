@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 import '../../styles/login.css'
 
@@ -44,6 +44,9 @@ export const Login = () => {
           <button className="btn btn-warning" onClick={handleClick}>Enviar</button>{" "}
         </div>
       )}
+      <div>
+        <Link to ={ "/request_password"}> Olvidaste tu contraseña ?</Link>
+      </div>
     </div>
   );
 };
