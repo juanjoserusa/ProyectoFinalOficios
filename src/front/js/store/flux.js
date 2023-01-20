@@ -7,7 +7,7 @@ const getState = ({ getStore, setStore }) => {
 		user_type: null,
 		search: [],
 		mensajeCliente: [],
-
+		id:null,
 	  },
 	  actions: {
 
@@ -75,7 +75,7 @@ const getState = ({ getStore, setStore }) => {
 			);
 			const data = await resp.json();
 			console.log(data)
-			setStore({ message: data.message, email: data.email });
+			setStore({ message: data.message, email: data.email, id: data.id });
 			// don't forget to return something, that is how the async resolves
 			return data;
 		  } catch (error) {
@@ -124,6 +124,7 @@ const getState = ({ getStore, setStore }) => {
 			console.log("this came from the backend", data);
 			sessionStorage.setItem("token", data.access_token);
 			sessionStorage.setItem("user_type", data.type)
+			sessionStorage.setItem("id", data.id)
 			setStore({ token: data.access_token, user_type: data.type});
 			return true;
 		  } catch (error) {

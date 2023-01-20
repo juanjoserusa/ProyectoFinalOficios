@@ -8,6 +8,7 @@ export const Navbar = () => {
 
   const token = store.token;
   const user_type = store.user_type;
+  const id = store.id
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -58,13 +59,13 @@ export const Navbar = () => {
               {token ? (
                 <li className="nav-item me-5 ">
                   {user_type === true ? (
-                    <Link to="profesiones/anuncios/perfil_profesional">
+                    <Link to={`profesiones/anuncios/perfil_profesional/${id}`}>
                       <a className="nav-link enlacesNavbar">
                         Mi perfil profesional{" "}
                       </a>
                     </Link>
                   ) : (
-                    <Link to="/perfilcliente">
+                    <Link to={`/perfilcliente/${id}`}>
                       <a className="nav-link enlacesNavbar">
                         Mi perfil cliente{" "}
                       </a>

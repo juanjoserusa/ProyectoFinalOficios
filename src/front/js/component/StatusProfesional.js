@@ -3,15 +3,19 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import MensajesClientes from "../component/MensajesClientes";
 import { Context } from"../store/appContext"
+import { useParams } from "react-router-dom";
 
 const StatusProfesional = () => {
 
   
   const {store,actions}= useContext(Context)
+  const parametros = useParams()
 
   useEffect(() => {
-    actions.loadMessage()
+    actions.loadMessage(parametros.id)
   },[])
+
+
 
 
   return (
@@ -29,11 +33,12 @@ const StatusProfesional = () => {
           style={{ height: "600px" }}
         >
           <div className="p-5">
-            {
+          {
               store.mensajeCliente.map((element, index) => {
-                return <MensajesClientes key={index} mail={element.mail} subject={element.subject} message={element.message} id={element.user_id} />
+                return <MensajesClientes key={index}  sender={element.sender} subject={element.subject} message={element.message} id={element.user_id} />
               })
             }
+            
           
           </div>
         </Tab>
