@@ -4,9 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 
-import '../../styles/login.css'
-
-
+import "../../styles/login.css";
 
 export const SignUp = () => {
   const [mensaje, setMensaje] = useState("");
@@ -54,10 +52,9 @@ export const SignUp = () => {
   return (
     <div className=" text-center pageLogin">
       <div className="signupFrm">
-        <form onSubmit={enviarDatos} class="form">
-      <h1 className="title">Crear Usuario</h1>
-      <div className="inputContainer">
-        {/* <form className="formulario" onSubmit={enviarDatos}> */}
+        <form onSubmit={enviarDatos} className="form">
+          <h1 className="title">Crear Usuario</h1>
+          <div className="inputContainer">
             <input
               id="email"
               type="email"
@@ -67,7 +64,9 @@ export const SignUp = () => {
               name="email"
               required
             ></input>
-            <label for="" class="label">Email</label>
+            <label for="" class="label">
+              Email
+            </label>
           </div>
           <div className="inputContainer">
             <input
@@ -80,60 +79,48 @@ export const SignUp = () => {
               name="password"
               required
             ></input>
-            <label for="" class="label">Password</label>
+            <label for="" class="label">
+              Password
+            </label>
           </div>
 
-          <div className="d-flex justify-content-around">
-            ¿Eres un profesional?
-
-          <div className="inputContainer checkbox">
-            <div>
-            ¿Eres un profesional? 
-            </div>
-            <div>
-
+          <div className="inputContainer checkbox">¿Eres un profesional?</div>
+          <div>
             <input
+              className="cuadrocheck"
               type="checkbox"
               onClick={() => {
                 setDatos({ ...datos, user_type: !datos.user_type });
               }}
               name="user_type"
-
             ></input>
-
-              className="cuadrocheck"
-
-            ></input>
-            </div>
-
           </div>
 
-
-          <Button variant="primary" type="submit">
-
-          <button type="submit" className="btn btn-primary submitBtn">
-
+          <Button
+            variant="primary"
+            type="submit"
+            className="btn btn-primary submitBtn"
+          >
             Enviar
           </Button>
-
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Bienvenido a HandleHome</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>{mensaje}</Modal.Body>
-            {mensaje == "Usuario ya registrado" ? (
-              <Link to="/login" className="btn btn-primary">
-                Login
-              </Link>
-            ) : (
-              <Link to="/login" className="btn btn-primary">
-                Login
-              </Link>
-            )}
-          </Modal>
         </form>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header style={{backgroundColor:"#D0F3C6"}} closeButton>
+            <Modal.Title >Bienvenido a HandleHome</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="text-center fs-4 text">{mensaje}</Modal.Body>
+          {mensaje == "Usuario ya registrado" ? (
+            <Link to="/login" className="btn submitBtn">
+              Iniciar Sesion
+            </Link>
+          ) : (
+            <Link to="/login" className="btn submitBtn">
+              Iniciar Sesion
+            </Link>
+          )}
+        </Modal>
       </div>
-      </div>
-    
+    </div>
   );
 };
