@@ -73,6 +73,7 @@
 		]
 	},
 	"dependencies": {
+		"@emailjs/browser": "^3.10.0",
 		"axios": "^1.2.3",
 		"bootstrap": "^5.2.3",
 		"bootstrap-icons": "^1.10.3",
