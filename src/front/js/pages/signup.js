@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
+
+import '../../styles/login.css'
+
+
 
 export const SignUp = () => {
   const [mensaje, setMensaje] = useState("");
@@ -47,45 +52,67 @@ export const SignUp = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center">Crear Usuario</h1>
-      <div className="container d-flex justify-content-center align-items-center">
-        <form className="formulario" onSubmit={enviarDatos}>
-          <div className="">
+    <div className=" text-center pageLogin">
+      <div className="signupFrm">
+        <form onSubmit={enviarDatos} class="form">
+      <h1 className="title">Crear Usuario</h1>
+      <div className="inputContainer">
+        {/* <form className="formulario" onSubmit={enviarDatos}> */}
             <input
               id="email"
               type="email"
               placeholder="Ingrese su email"
-              className="form-control"
+              className="input"
               onChange={handleInputChange}
               name="email"
               required
             ></input>
+            <label for="" class="label">Email</label>
           </div>
-          <div className="">
+          <div className="inputContainer">
             <input
               id="password"
               minLength="2"
               type="password"
               placeholder="Ingrese su password"
-              className="form-control"
+              className="input"
               onChange={handleInputChange}
               name="password"
               required
             ></input>
+            <label for="" class="label">Password</label>
           </div>
+
           <div className="d-flex justify-content-around">
             ¿Eres un profesional?
+
+          <div className="inputContainer checkbox">
+            <div>
+            ¿Eres un profesional? 
+            </div>
+            <div>
+
             <input
               type="checkbox"
               onClick={() => {
                 setDatos({ ...datos, user_type: !datos.user_type });
               }}
               name="user_type"
+
             ></input>
+
+              className="cuadrocheck"
+
+            ></input>
+            </div>
+
           </div>
 
+
           <Button variant="primary" type="submit">
+
+          <button type="submit" className="btn btn-primary submitBtn">
+
             Enviar
           </Button>
 
@@ -106,6 +133,7 @@ export const SignUp = () => {
           </Modal>
         </form>
       </div>
-    </div>
+      </div>
+    
   );
 };

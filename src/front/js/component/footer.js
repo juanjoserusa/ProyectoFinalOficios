@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "../../styles/footer.css";
 
 export const Footer = () => (
-  <footer className="footer mt-auto  text-center">
-    <section className=" mt-5 mb-5  description">
+  <footer className="footer mt-0  text-center ">
+    <section className="  mb-5  description">
       <div className="container-flex">
         <div className="row d-flex justify-content-evenly">
           <div className="col-3 col-md-3 cards me-2">

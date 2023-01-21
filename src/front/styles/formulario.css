@@ -26,6 +26,7 @@ ul {
 .anuncio{
     color:black;
     font-size: medium;
+    
 }
 
 .cardAnuncioEjemplo{
@@ -34,6 +35,8 @@ ul {
     justify-content: center;
     align-items: center;
     text-align: center;
+    
+    
     
 }
 

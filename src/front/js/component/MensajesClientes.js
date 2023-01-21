@@ -12,6 +12,7 @@ const MensajesClientes = ({sender, subject, message, id}) => {
 
   const token = store.token;
   const email = store.email;
+  const id2 = store.id
 
 
 
@@ -25,17 +26,15 @@ const MensajesClientes = ({sender, subject, message, id}) => {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Enviado por:{sender} </ListGroup.Item>
+        <ListGroup.Item>Enviado por: {sender} </ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      <Link to={`/single/${id}`} >
-          Enviar Mensaje
-           {console.log(token)}
-           
+      <Link to={"/single/"+sender}>
+          Aceptar Trabajo
       </Link>
       </Card.Body>
     </Card>
-    <button onClick={() => {console.log(email)}}>Botoncito</button>
+    
     </div>
 
     )
