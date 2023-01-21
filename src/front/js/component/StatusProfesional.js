@@ -12,6 +12,7 @@ const StatusProfesional = () => {
   const parametros = useParams()
 
   useEffect(() => {
+    console.log(parametros.id)
     actions.loadMessage(parametros.id)
   },[])
 

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/navbar.css";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate()
 
   const token = store.token;
   const user_type = store.user_type;
@@ -108,6 +109,7 @@ export const Navbar = () => {
               <button
                 onClick={() => {
                   actions.logout();
+                  navigate("/")
                 }}
                 className="btn btn-danger nav-bt"
                 type="button"

@@ -17,11 +17,11 @@ const getState = ({ getStore, setStore }) => {
 				method: 'GET',
 				redirect: 'follow',
 				
-				
+					
 			  };
 			
 			  
-			  fetch("https://3001-juanjoserus-proyectofin-xbkvjh2j7bo.ws-eu83.gitpod.io/api/recibirMensaje/"+id, requestOptions)
+			  fetch(process.env.BACKEND_URL + "/api/recibirMensaje/"+id, requestOptions)
 				.then(response => response.json())
 				.then(result => {
 					setStore({mensajeCliente:result})
