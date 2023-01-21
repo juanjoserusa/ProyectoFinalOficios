@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 export const SignUp = () => {
+  const [mensaje, setMensaje] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
   const [datos, setDatos] = useState({
     email: "",
     password: "",
-    user_type: false
+    user_type: false,
   });
 
   const handleInputChange = (event) => {
@@ -31,13 +37,13 @@ export const SignUp = () => {
     };
 
     fetch(process.env.BACKEND_URL + "/api/signup", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((response) => response.json())
+      .then((result) => {
+        setMensaje(result.mensaje);
+      })
       .catch((error) => console.log("error", error));
 
- 
-    location.href = "/login";
-    alert("te registraste con exito");
+    setShow(true);
   };
 
   return (
@@ -59,7 +65,7 @@ export const SignUp = () => {
           <div className="">
             <input
               id="password"
-              minlength="2"
+              minLength="2"
               type="password"
               placeholder="Ingrese su password"
               className="form-control"
@@ -69,25 +75,37 @@ export const SignUp = () => {
             ></input>
           </div>
           <div className="d-flex justify-content-around">
-            ¿Eres un profesional? 
+            ¿Eres un profesional?
             <input
               type="checkbox"
-              onClick={()=>{
-                setDatos({...datos, user_type: !datos.user_type})
+              onClick={() => {
+                setDatos({ ...datos, user_type: !datos.user_type });
               }}
               name="user_type"
-
             ></input>
-            
           </div>
-      
 
-          <button type="submit" className="btn btn-primary">
+          <Button variant="primary" type="submit">
             Enviar
-          </button>
+          </Button>
+
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Bienvenido a HandleHome</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{mensaje}</Modal.Body>
+            {mensaje == "Usuario ya registrado" ? (
+              <Link to="/login" className="btn btn-primary">
+                Login
+              </Link>
+            ) : (
+              <Link to="/login" className="btn btn-primary">
+                Login
+              </Link>
+            )}
+          </Modal>
         </form>
       </div>
     </div>
   );
 };
-

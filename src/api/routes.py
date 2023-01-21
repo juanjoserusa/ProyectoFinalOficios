@@ -13,14 +13,17 @@ api = Blueprint('api', __name__)
 def signUp():
     body = request.get_json()
     email = request.json.get("email", None)
-    password = request.json.get("password", None)
-    user_type = request.json.get("type", None)
-    signup = User(email=body["email"], password=body["password"], user_type=body.get("user_type", False))
-    db.session.add(signup)
-    db.session.commit()
-    access_token = create_access_token(identity=email)
-    
-    return jsonify({"mensaje": "User registered succesfully", "token": access_token}),200
+    emailRegistered = User.query.filter_by(email=email).first()
+    if(emailRegistered):
+        return jsonify({"mensaje": "Usuario ya registrado"})
+    else:
+        password = request.json.get("password", None)
+        user_type = request.json.get("type", None)
+        signup = User(email=body["email"], password=body["password"], user_type=body.get("user_type", False))
+        db.session.add(signup)
+        db.session.commit()
+        access_token = create_access_token(identity=email)
+        return jsonify({"mensaje": "Usuario registrado con exito", "token": access_token}),200
 
 
 @api.route("/sessionlogin", methods=["GET"])
