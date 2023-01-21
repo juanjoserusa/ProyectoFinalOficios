@@ -84,14 +84,14 @@ def recibirMensaje(id):
 
 
 
-@api.route("/request_password", methods=["GET" , "POST"])
+@api.route("/request_password", methods=[ "POST"])
 def request_password():
     email = request.json.get("email", None)
     user = User.query.filter_by(email=email).first()  
     if user:
-        return jsonify({"mensaje": user.password}),200
-    return  jsonify({"mensaje": "usuario no existe"}),200 
-
+        return jsonify({"mensaje":"usuario existe"}),200
+        return  jsonify({"mensaje":"usuario no existe"}),200 
+        console.log(jsonify)    
 
 
 @api.route('/search', methods=['POST'])

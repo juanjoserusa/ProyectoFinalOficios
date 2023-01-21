@@ -1,54 +1,29 @@
 import React, { useState, useRef, useContext } from "react";
 import emailjs from "@emailjs/browser";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+// import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
 export const RequestPass  = () => {
-  const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("email");
-  const correo=store.email
+  // const { store, actions } = useContext(Context);
+  // const [email, setEmail] = useState("email");
+  // const correo=store.email;
+
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-   
-     var user_pass ="mensaje"
-
-
-     var myHeaders = new Headers();
-     myHeaders.append("Content-Type", "application/json");
-
-    var requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
-    fetch(
-      "https://3001-juanjoserus-proyectofin-z2ja69dm9cp.ws-eu83.gitpod.io/api/request_password",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => {user_pass = result.mensaje}),
-       console.log(result)
-      .catch((error) => console.log("error", error));
-    emailjs
-      .sendForm(
-        "service_ru0grmi",
-        "template_i02czvn",
-        form.current,
-        "_axOPzpSoTd8XH4fF"
-      )
-      .then(
-        (result) => {
+    emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
+      .then((result) => {
           console.log(result.text);
-        },
-        (error) => {
+      }, (error) => {
           console.log(error.text);
-        }
-      );
+      });
   };
+    fetch("https://api.emailjs.com/api/v1.0/email/send-fom",{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'
+      },
+  })
 
   return (
     <div className="container-fluid center">
@@ -75,12 +50,10 @@ export const RequestPass  = () => {
             onSubmit={sendEmail}
           >
             Enviar
-            <input type="hidden" id="user_pass" name="user_pass"  value= "user_pass"></input> 
+            {/* <input type="hidden" id="user_pass" name="user_pass"  value= "user_pass"></input>  */}
           </button>
         </form>
       </div>
     </div>
   );
 };
-
-
