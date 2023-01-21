@@ -1,6 +1,6 @@
 import React, { useState, useContext,} from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Mensaje = (props) => {
 
@@ -9,6 +9,8 @@ export const Mensaje = (props) => {
   const token = store.token;
   const email = store.email
 
+  const navigate = useNavigate()
+
   const parametros = useParams()
 
   const [datos, setDatos] = useState({
@@ -16,6 +18,7 @@ export const Mensaje = (props) => {
     to: parametros.user_id,
     subject: "",
     message: "",
+    sender: email,
   });
 
   const handleInputChange = (event) => {
@@ -44,6 +47,7 @@ export const Mensaje = (props) => {
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
 
+      navigate("/")
   }
   return (
     <form onSubmit={enviarDatos}>
@@ -74,7 +78,7 @@ export const Mensaje = (props) => {
       </div>
       <div className="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-primary">
-          Enviar {email}
+          Enviar
         </button>
       </div>
     </form>

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useContext } from "react";
 import { Context } from "../store/appContext" 
 import ModalProfesiones from "../component/ModalProfesiones";
 import "../../styles/formulario.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import context from "react-bootstrap/esm/AccordionContext";
 
 
@@ -17,6 +17,7 @@ export const PublicarAnuncio = () => {
     codigoPostal: "",
   });
 
+  const navigate = useNavigate()
   const {store} = useContext(Context)
 
   const handleInputChange = (event) => {
@@ -28,6 +29,7 @@ export const PublicarAnuncio = () => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
+    navigate("/")
     
 
     var raw = JSON.stringify(datos);

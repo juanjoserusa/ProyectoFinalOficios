@@ -70,7 +70,7 @@ function Layout() {
           <Route element={<Anuncios />} path="/profesiones/anuncios" />
           <Route
             element={<PerfilProfesional />}
-            path="/profesiones/anuncios/perfil_profesional"
+            path="/profesiones/anuncios/perfil_profesional/:id"
           />
 
           <Route element={<PerfilCliente />} path="/perfilcliente/:id" />

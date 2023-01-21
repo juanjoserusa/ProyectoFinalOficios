@@ -14,6 +14,7 @@ const RegistroUsuario = () => {
     <nav className="navbar navbar-expand-lg d-flex justify-content-end bg-warning" >
       <div className="me-3">{store.message}</div>
       <div className="me-3">{store.email}</div>
+      <div className="me-3">{store.id}</div>
     </nav>
   );
 };

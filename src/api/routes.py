@@ -30,7 +30,8 @@ def get_hello():
     user = User.query.filter_by(email=email).first()
     dictionary= {
         "message": "Has iniciado sesion con éxito",
-        "email" : user.email
+        "email" : user.email,
+        "id" : user.id
     }
     return jsonify(dictionary)
 
