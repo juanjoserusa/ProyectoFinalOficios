@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
+
 import '../../styles/login.css'
 
 
+
 export const SignUp = () => {
+  const [mensaje, setMensaje] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
   const [datos, setDatos] = useState({
     email: "",
     password: "",
-    user_type: false
+    user_type: false,
   });
 
   const handleInputChange = (event) => {
@@ -32,13 +42,13 @@ export const SignUp = () => {
     };
 
     fetch(process.env.BACKEND_URL + "/api/signup", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((response) => response.json())
+      .then((result) => {
+        setMensaje(result.mensaje);
+      })
       .catch((error) => console.log("error", error));
 
- 
-    location.href = "/login";
-    alert("te registraste con exito");
+    setShow(true);
   };
 
   return (
@@ -62,7 +72,7 @@ export const SignUp = () => {
           <div className="inputContainer">
             <input
               id="password"
-              minlength="2"
+              minLength="2"
               type="password"
               placeholder="Ingrese su password"
               className="input"
@@ -72,31 +82,58 @@ export const SignUp = () => {
             ></input>
             <label for="" class="label">Password</label>
           </div>
+
+          <div className="d-flex justify-content-around">
+            ¿Eres un profesional?
+
           <div className="inputContainer checkbox">
             <div>
             ¿Eres un profesional? 
             </div>
             <div>
+
             <input
               type="checkbox"
-              onClick={()=>{
-                setDatos({...datos, user_type: !datos.user_type})
+              onClick={() => {
+                setDatos({ ...datos, user_type: !datos.user_type });
               }}
               name="user_type"
+
+            ></input>
+
               className="cuadrocheck"
 
             ></input>
             </div>
+
           </div>
-      
+
+
+          <Button variant="primary" type="submit">
 
           <button type="submit" className="btn btn-primary submitBtn">
+
             Enviar
-          </button>
+          </Button>
+
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Bienvenido a HandleHome</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{mensaje}</Modal.Body>
+            {mensaje == "Usuario ya registrado" ? (
+              <Link to="/login" className="btn btn-primary">
+                Login
+              </Link>
+            ) : (
+              <Link to="/login" className="btn btn-primary">
+                Login
+              </Link>
+            )}
+          </Modal>
         </form>
       </div>
       </div>
     
   );
 };
-
