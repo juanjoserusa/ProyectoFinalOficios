@@ -108,3 +108,15 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
+@api.route("/private", methods=[ "GET"])
+@jwt_required()
+def data_private():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email, password=password).first()
+    dictionary= {
+        "id" : user.id,
+        "email" : user.email,
+        "password" : user.password     
+    }
+    return jsonify(dictionary)
+       
