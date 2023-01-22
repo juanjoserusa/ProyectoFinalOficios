@@ -5,8 +5,8 @@ import '../../styles/login.css'
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [password, setPassword ] = useState("");
   const token = store.token
 
   const navigate = useNavigate();

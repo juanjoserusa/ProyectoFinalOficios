@@ -1,6 +1,7 @@
 import React, { useState, useContext,} from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 import { useNavigate, useParams } from "react-router-dom";
+import '../../styles/mensaje.css'
 
 export const Mensaje = (props) => {
 
@@ -50,15 +51,17 @@ export const Mensaje = (props) => {
       navigate("/")
   }
   return (
-    <form onSubmit={enviarDatos}>
-      <h1>Mensajes</h1>
+    <div className=" text-center pageLogin2">
+    <div className="signupFrm2">
+    <form onSubmit={enviarDatos} className="form2">
+      <h1 className="title2">Enviar mensaje a un profesional</h1>
 
       
-      <div class="form-group mt-3">
-        <label for="exampleFormControlInput1">Asunto</label>
+      <div className="inputContainer2 ">
+        <label for="" class="label2">Asunto</label>
         <input
           type="text"
-          class="form-control"
+          className="input2"
           id="exampleFormControlInput1"
           placeholder="Asunto"
           onChange={handleInputChange}
@@ -66,21 +69,25 @@ export const Mensaje = (props) => {
         />
       </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Mensaje</label>
+      <div className="inputContainer2">
+        <label for="" class="label2">Mensaje</label>
         <textarea
-          class="form-control"
+          className="form-control areamensaje"
           id="exampleFormControlTextarea1"
-          rows="3"
+          rows="5"
+          cols="1"
+          placeholder="Mensaje"
           onChange={handleInputChange}
           name="message"
         ></textarea>
       </div>
       <div className="d-flex justify-content-center mt-3">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary submitBtn2">
           Enviar
         </button>
       </div>
     </form>
+    </div>
+    </div>
   );
 };
