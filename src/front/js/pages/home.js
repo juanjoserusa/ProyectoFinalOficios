@@ -13,14 +13,14 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container-flex">
+		<div className="container-flex pagehome">
       <RegistroUsuario/>
 			<JumboCliente />
-			
-
-			<section className=" mt-5 mb-5 1 description">
+			<div className="espaciofooter"></div>
+      <hr className="linea"/>
+			<section className=" py-5 description">
       <div className="container-flex">
-        <div className="row d-flex justify-content-evenly">
+        <div className="row d-flex justify-content-around">
           <div className="col-3 col-md-3 cardsDescription me-2">
             <div className="icon mb-3 ">
               <svg
@@ -35,8 +35,8 @@ export const Home = () => {
               </svg>
             </div>
 
-            <h3>Oficios</h3>
-
+            <h3 className="titledescription">Oficios</h3>
+            
             <p className=" mb-6 mb-md-0">
               Busca al profesional adecuado para lo que necesitas, filtra por zonas y profesiones
             </p>
@@ -57,7 +57,7 @@ export const Home = () => {
               </svg>
             </div>
 
-            <h3>Calendario</h3>
+            <h3 className="titledescription">Calendario</h3>
 
             <p className=" mb-6 mb-md-0">
               Ve el calendario actualizado de cada profesional para ajustar la fecha de tu reparacion o contratar por urgencia
@@ -83,7 +83,7 @@ export const Home = () => {
               </svg>
             </div>
 
-            <h3>Comentarios</h3>
+            <h3 className="titledescription">Comentarios</h3>
 
             <p className="mb-0">
               Puedes ver comentarios de otros clientes antes de contratar al profesional que estas buscando
@@ -92,6 +92,7 @@ export const Home = () => {
         </div>
       </div>
     </section>
+    <div className="espaciofooter"></div>
 			
 		</div>
 	);

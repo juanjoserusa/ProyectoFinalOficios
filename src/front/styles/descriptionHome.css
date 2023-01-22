@@ -9,17 +9,35 @@ p{
     color: #FCF5AB
 }
 
-h3{
+.titledescription{
     color:#FCF5AB
 }
 
 .description{
     background-color: #07AA7C;
     
+    
 }
 
 
 .cardsDescription{
-    border: 1px solid #FCF5AB;
+    border: 2px solid #FCF5AB;
     padding: 2vw;
+}
+
+.linea{
+    padding: 0;
+    margin-top: 10px;
+    margin: 0;
+    height: 50%;
+    background-color: #07AA7C;
+}
+
+.pagehome{
+    background: #07AA7C;
+}
+
+.espaciofooter{
+    height: 18px;
+    background-color: #fcf9db;
 }

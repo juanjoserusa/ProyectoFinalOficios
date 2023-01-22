@@ -24,7 +24,10 @@
 
 
 .copyright{
+    display: flex;
+    justify-content: center;
     font-size: small;
+    color: #FCF5AB;
 }
 
 .redes {
@@ -34,4 +37,12 @@
 
 .redes:hover{
     color : #FCF5AB;
+}
+
+.descriptionFooter{
+    background-color: #07AA7C;
+}
+
+.titlefooter{
+    color: #044E39
 }

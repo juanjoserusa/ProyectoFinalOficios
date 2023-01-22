@@ -1,9 +1,10 @@
 import React, { Fragment, useState, useContext } from "react";
 import { Context } from "../store/appContext" 
-import ModalProfesiones from "../component/ModalProfesiones";
 import "../../styles/formulario.css";
+import "../../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import context from "react-bootstrap/esm/AccordionContext";
+
 
 
 
@@ -52,54 +53,63 @@ export const PublicarAnuncio = () => {
   };
   return (
     <Fragment>
-      <h1>Formulario de anuncio</h1>
-      <div className="container d-flex justify-content-center align-items-center">
-        <form className="formulario" onSubmit={enviarDatos}>
-          <div className="">
+      
+      <div className="text-center pageLogin">
+      <div className="signupFrmanuncio">
+        <form className="formanuncio" onSubmit={enviarDatos}>
+        <h1 className="title">Formulario de anuncio</h1>
+        <div className="inputContainer">
+            <select  
+              id="profession"
+              type="text"
+              placeholder="Profesion"
+              className="form-control mb-2 input"
+              onChange={handleInputChange}
+              name="profesion">
+            <option selected>Selecciona tu profesión</option>
+            <option >Albañil</option>
+            <option>Fontanero</option>
+            <option >Albañil</option>
+            <option>Fontanero</option>
+            </select>
+            
+          </div>
+          <div className="inputContainer">
             <input
               id="name"
               type="text"
               placeholder="Nombre"
-              className="form-control"
+              className="form-control input"
               onChange={handleInputChange}
               name="nombre"
             ></input>
           </div>
-          <div className="">
-            <input
-              id="profession"
-              type="text"
-              placeholder="Profesion"
-              className="form-control"
-              onChange={handleInputChange}
-              name="profesion"
-            ></input>
-          </div>
-          <div className="">
+          
+          <div className="inputContainer">
             <input
               id="zipcode"
               type="text"
               placeholder="Codigo postal"
-              className="form-control"
+              className="form-control input"
               onChange={handleInputChange}
               name="codigoPostal"
             ></input>
           </div>
-          <div className="">
+          <div className="inputContainer">
             <input
               id="price"
               type="text"
               placeholder="Precio por hora"
-              className="form-control"
+              className="form-control input"
               onChange={handleInputChange}
               name="precio"
             ></input>
           </div>
-          <div className="">
+          <div className="inputContainer">
             <textarea
               id="announce"
               rows="5"
-              cols="30"
+              cols="1"
               type="text"
               placeholder="Anuncio"
               className="form-control"
@@ -107,15 +117,18 @@ export const PublicarAnuncio = () => {
               name="anuncio"
             ></textarea>
           </div>
+          <div className="inputContainer">
           {/* <Link to="/profesiones/anuncios"> */}
-            <button type="submit" className="btn btn-primary botonEnviar">
+            <button type="submit" className="btn btn-primary submitBtn formbtn mb-3 mt-5 ">
               Enviar
             </button>
+            </div>
           {/* </Link> */}
         </form>
+        </div>
       </div>
 
-      <div className="container cardAnuncioEjemplo">
+      {/* <div className="container cardAnuncioEjemplo">
         <h2>Previsualiza tu anuncio</h2>
 
         <div className="col-2 card m-2" style={{ backgroundColor: "#ffface" }}>
@@ -132,7 +145,7 @@ export const PublicarAnuncio = () => {
             <ModalProfesiones />
           </div>
         </div>
-      </div>
+      </div> */}
     </Fragment>
   );
 };

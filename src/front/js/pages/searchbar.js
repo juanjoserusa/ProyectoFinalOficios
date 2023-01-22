@@ -48,7 +48,7 @@ export const Searchbar = () => {
                     type="text"
                     className="form-control"  style={{ width: "500px" }}
                     id="autoSizingInputGroup"
-                    placeholder="Selecciona tu ciudad..."
+                    placeholder="Buscar por codigo postal ..."
                   ></input>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export const Searchbar = () => {
                 </label>
               </div>
               <div className="col-auto">
-                <div className="form-check">
+                {/* <div className="form-check">
                   <input
                     className="form-check-input"
                     type="checkbox"
@@ -75,7 +75,7 @@ export const Searchbar = () => {
                   <label className="form-check-label" for="autoSizingCheck">
                     Urgente
                   </label>
-                </div>
+                </div> */}
               </div>
               <div className="col-auto">
               <button className="btn btn-warning" onClick={(event) => {
