@@ -84,18 +84,15 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
-@api.route('/datosperfil', methods= ("POST"))
+@api.route('/datosperfil', methods= ["POST"])
 def datosperfil():
     body = request.get_json()
-    nombre = request.json.get("nombre", None)
-    apellido = request.json.get("apellido", None)
+    # nombre = request.json.get("nombre", None)
+    # apellido = request.json.get("apellido", None)
     datos = User(nombre=body["nombre"], apellido=body["apellido"],)
-    db.session.add(datosperfil)
-    db.session.commit(datosperfil)
-    dictionary= {
-        "nombre": "user.nombre",
-        "apellido" :"user.apellido"
-    }
-    return jsonify(dictionary),204
+    db.session.add(user)
+    db.session.commit()
+
+    jsonify({"mensaje": "Datos guardados"}),200
     console.log(jsonify)
 

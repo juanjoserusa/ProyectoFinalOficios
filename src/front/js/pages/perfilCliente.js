@@ -4,7 +4,9 @@ import Tabs from "react-bootstrap/Tabs";
 import { Sidebar } from "../component/sidebar";
 import { Footer } from "../component/footer";
 import MensajesClientes from "../component/MensajesClientes";
-import { Datos_Perfil_Cliente } from "../component/datos_perfil Cliente";
+import { Datos_Perfil } from "../component/datos_perfil.js";
+import "../../styles/datos_perfil.css";
+
 
 export const PerfilCliente = () => {
   return (
