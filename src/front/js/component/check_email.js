@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CheckEmail = (e) => {
+export const CheckEmail = (e) => {
   const [response, setResponse] = useState(null);
 
   const checkEmail = (email) => {
@@ -23,4 +23,4 @@ const CheckEmail = (e) => {
       .catch((error) => console.error("Error:", error));
   };
 }
-export default CheckEmail;
+
