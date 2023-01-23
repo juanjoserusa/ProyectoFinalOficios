@@ -1,31 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { BiMap } from "react-icons/bi";
+import DropdownHome from "../component/DropdownHome";
+import { useNavigate } from "react-router-dom";
 
 export const Searchbar = () => {
-
-
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const {actions} = useContext(Context)
+  const { actions } = useContext(Context);
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-   
-    fetch('/search', {
-      method: 'POST',
+
+    fetch("/search", {
+      method: "POST",
       body: JSON.stringify({
-        query: query
+        query: query,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     })
-      .then(response => response.json())
-      .then(results => {
+      .then((response) => response.json())
+      .then((results) => {
         setResults(results);
       });
   };
@@ -33,26 +35,38 @@ export const Searchbar = () => {
     <div>
       <div>
         <nav
-          className="navbar navbar-expand-lg p-4"
+          className="navbar navbar-expand-lg p-4 "
           style={{ backgroundColor: "#d0f3c6" }}
         >
-          <div className="container-fluid" style={{ width: "1100px" }}>
-            <form class="row gy-2 gx-3 align-items-center">
-              <div class="col-auto">
-                <div className="input-group">
-                  <button className="btn btn-outline-success">
+          <div className="container-fluid " style={{ width: "1100px" }}>
+            <form class=" align-items-center d-flex justify-content-around">
+              <div class="col-auto  ">
+                <div className="input-group ">
+                  {/* <button className="btn btn-outline-success">
                     <BiMap />
-                  </button>
+                  </button> */}
                   <input
                     onChange={handleChange}
                     type="text"
-                    className="form-control"  style={{ width: "500px" }}
+                    className="form-control"
+                    style={{ width: "300px" }}
                     id="autoSizingInputGroup"
                     placeholder="Buscar por codigo postal ..."
                   ></input>
+                  <button
+                    className="btn btnBusqueda me-4"
+                    onClick={(event) => {
+                      actions.search(query);
+                    }}
+                    type="button"
+                  >
+                    Buscar
+                  </button>
+                  <div><DropdownHome /></div>
                 </div>
+                
               </div>
-         {/*      <div className="col-auto">
+              {/*      <div className="col-auto">
                 <input
                   type="text"
                   class="form-control"
@@ -78,11 +92,11 @@ export const Searchbar = () => {
                 </div> */}
               </div>
               <div className="col-auto">
-              <button className="btn btn-warning" onClick={(event) => {
-
-                  actions.search(query)}}
-                  type="button">
-                  Buscar
+                <button
+                  className="btn btn-danger ms-5 btnReiniciarBusqueda"
+                  onClick={() => navigate("/profesiones/anuncios")}
+                >
+                  Reiniciar busqueda
                 </button>
               </div>
             </form>

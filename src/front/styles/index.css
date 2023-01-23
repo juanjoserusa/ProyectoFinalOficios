@@ -9,3 +9,36 @@
 #app{
     background-color: #fcf9db;
 }
+
+.btnBusqueda{
+    display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #07AA7C;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+.btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+    
+  }
+
+  .btnReiniciarBusqueda{
+    display: block;
+    margin-left: auto;
+    background-color: rgb(199, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .btnReiniciarBusqueda:hover{
+    background-color: rgb(207, 110, 110);
+  }

@@ -8,6 +8,9 @@
 
 .cardMensaje{
     background-color:#FCFBF6;
+    
+    
+    
 }
 .mensajesRecibidos{
     display: flex;
@@ -19,9 +22,12 @@
 .tabCliente {
     background-color: #D0F3C6;
     
+
+    
 } 
 
 .title {
     color: black;
   
 }
+

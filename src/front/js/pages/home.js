@@ -37,7 +37,7 @@ export const Home = () => {
 
             <h3 className="titledescription">Oficios</h3>
             
-            <p className=" mb-6 mb-md-0">
+            <p className=" mb-6 mb-md-0 parrafoDescription">
               Busca al profesional adecuado para lo que necesitas, filtra por zonas y profesiones
             </p>
           </div>
@@ -59,7 +59,7 @@ export const Home = () => {
 
             <h3 className="titledescription">Calendario</h3>
 
-            <p className=" mb-6 mb-md-0">
+            <p className=" mb-6 mb-md-0 parrafoDescription">
               Ve el calendario actualizado de cada profesional para ajustar la fecha de tu reparacion o contratar por urgencia
             </p>
           </div>
@@ -85,7 +85,7 @@ export const Home = () => {
 
             <h3 className="titledescription">Comentarios</h3>
 
-            <p className="mb-0">
+            <p className="mb-0 parrafoDescription">
               Puedes ver comentarios de otros clientes antes de contratar al profesional que estas buscando
             </p>
           </div>

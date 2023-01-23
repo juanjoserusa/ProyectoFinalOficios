@@ -67,10 +67,10 @@ export const PublicarAnuncio = () => {
               onChange={handleInputChange}
               name="profesion">
             <option selected>Selecciona tu profesión</option>
-            <option >Albañil</option>
-            <option>Fontanero</option>
-            <option >Albañil</option>
-            <option>Fontanero</option>
+            <option > Fontanero</option>
+            <option> Albañil</option>
+            <option > Carpintero</option>
+            <option> Electricista</option>
             </select>
             
           </div>

@@ -19,7 +19,7 @@ export const Mensaje = (props) => {
     to: parametros.user_id,
     subject: "",
     message: "",
-    sender: email,
+    sender:email,
   });
 
   const handleInputChange = (event) => {
