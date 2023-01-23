@@ -3,7 +3,6 @@ import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appC
 import { useNavigate, useParams } from "react-router-dom";
 import '../../styles/mensaje.css'
 
-
 export const Mensaje = (props) => {
 
   const { store, actions } = useContext(Context);

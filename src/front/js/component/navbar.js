@@ -90,7 +90,7 @@ export const Navbar = () => {
             ) : (
               <Link to="/publicarAnuncio">
                 {user_type === true ? (
-                  <button className="btn btn-warning nav-bt" type="button">
+                  <button className="btn btn-warning nav-bt me-3" type="button">
                     Crear Anuncio
                   </button>
                 ) : (

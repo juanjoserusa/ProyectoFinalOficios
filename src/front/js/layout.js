@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import Single from "./pages/single";
+
 import { Profesiones } from "./pages/profesiones.js";
 import injectContext from "./store/appContext";
 
@@ -42,6 +43,7 @@ function Layout() {
           <Route element={<Demo />} path="/demo" />
 
           <Route element={<Single />} path="/single" />
+          
           <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
 
           <Route

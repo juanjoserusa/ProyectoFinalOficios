@@ -31,3 +31,16 @@
   
 }
 
+.formularioDemail{
+    resize: none;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px; 
+    outline: none;
+    background: none;
+    z-index: 1;
+    background-color: white;
+    max-width: 100%;  
+}
