@@ -112,7 +112,7 @@ export const PublicarAnuncio = () => {
               cols="1"
               type="text"
               placeholder="Anuncio"
-              className="form-control"
+              className="form-control areaAnuncio"
               onChange={handleInputChange}
               name="anuncio"
             ></textarea>

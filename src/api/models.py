@@ -62,5 +62,6 @@ class Message(db.Model):
             
             "subject": self.subject,
             "message": self.message,
+            "sender": self.sender
             # do not serialize the password, its a security breach
         }

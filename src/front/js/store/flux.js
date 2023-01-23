@@ -8,6 +8,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
+		emailCliente:null
 	  },
 	  actions: {
 

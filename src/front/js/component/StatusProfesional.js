@@ -36,7 +36,7 @@ const StatusProfesional = () => {
           <div className="p-5">
           {
               store.mensajeCliente.map((element, index) => {
-                return <MensajesClientes key={index}  sender={element.sender} subject={element.subject} message={element.message} id={element.user_id} from={element.from} />
+                return <MensajesClientes key={index}  sender={element.sender} subject={element.subject} message={element.message} id={element.user_id} />
               })
             }
             
