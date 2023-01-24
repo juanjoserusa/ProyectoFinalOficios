@@ -3,8 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../../styles/mensajeCliente.css"
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+
 
 import { Link } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
@@ -27,19 +26,17 @@ const MensajesClientes = ({sender, subject, message, from}) => {
 
 
     return(
-      <div className="col mt-5 ">
+      <div className="col mt-5  ms-3">
         <Card  className="cardMensaje">
       <Card.Body className="cardMensaje">
-        <Card.Title className="tituloMensaje">Asunto: {subject} </Card.Title>
+        <Card.Title className="tituloMensaje">{subject} </Card.Title>
         <Card.Text className="textoMensaje">
           {message}
         </Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Enviado por: {sender} </ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-       <Button href={`mailto:${sender}`}>Responder</Button>
+      <Card.Body className="cardMensajeMail">
+      
+       <Button href={`mailto:${sender}`} className="submitBtn3">Responder</Button>
       </Card.Body> 
     </Card>
     
