@@ -3,11 +3,11 @@ import "../../styles/footer.css";
 
 export const Footer = () => (
   <footer className="footer mt-0  text-center ">
-    <section className="  mb-5  description">
+    <section className="  mb-5  descriptionFooter">
       <div className="container-flex">
         <div className="row d-flex justify-content-evenly">
           <div className="col-3 col-md-3 cards me-2">
-            <h3>Suport</h3>
+            <h3 className="titlefooter">Suport</h3>
 
             <div className="row">
               <a  className="enlacesAyuda"  href="#">Ayuda</a>
@@ -17,7 +17,7 @@ export const Footer = () => (
             </div>
           </div>
           <div className="col-3 col-md-3 cards me-2">
-            <h3>Legal</h3>
+            <h3 className="titlefooter">Legal</h3>
 
             <div className="row">
               <a  className="enlacesAyuda" href="#">Cookies Policy</a>
@@ -27,7 +27,7 @@ export const Footer = () => (
             </div>
           </div>
         </div>
-        <div className="col d-flex justify-content-between mt-5 me-4 ms-4">
+        <div className="col d-flex justify-content-between mt-3 me-5 ms-5">
           <div>
             <p className="copyright">Web creada por el Grupo 1 del Bootcamp de 4 Geeks</p>
           </div>

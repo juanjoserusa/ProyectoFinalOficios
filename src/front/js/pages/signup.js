@@ -84,7 +84,7 @@ export const SignUp = () => {
             </label>
           </div>
 
-          <div className="inputContainer checkbox">¿Eres un profesional?</div>
+          <div className="checkbox">¿Quieres crear un perfil profesional?</div>
           <div>
             <input
               className="cuadrocheck"
@@ -106,16 +106,16 @@ export const SignUp = () => {
         </form>
 
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header style={{backgroundColor:"#D0F3C6"}} closeButton>
-            <Modal.Title >Bienvenido a HandleHome</Modal.Title>
+          <Modal.Header className="titlemodal" style={{backgroundColor:"#D0F3C6"}} closeButton>
+            <Modal.Title className="titlewelcome">Bienvenido a HandleHome</Modal.Title>
           </Modal.Header>
-          <Modal.Body className="text-center fs-4 text">{mensaje}</Modal.Body>
+          <Modal.Body className="text-center fs-4 text modalbody" >{mensaje}</Modal.Body>
           {mensaje == "Usuario ya registrado" ? (
-            <Link to="/login" className="btn submitBtn">
+            <Link to="/login" className="btn submitBtnmodal">
               Iniciar Sesion
             </Link>
           ) : (
-            <Link to="/login" className="btn submitBtn">
+            <Link to="/login" className="btn submitBtnmodal">
               Iniciar Sesion
             </Link>
           )}

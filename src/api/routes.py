@@ -72,7 +72,7 @@ def anuncios():
 @api.route('/enviarMensaje', methods=['POST'])
 def enviar_mensaje():
     body = request.get_json()
-    mensaje = Message( sender=body["from"], to=body["to"], subject=body['subject'], message=body['message'])
+    mensaje = Message( sender=body['from'], to=body['to'], subject=body['subject'], message=body['message'])
     print(body)
     db.session.add(mensaje)
     db.session.commit()
@@ -83,8 +83,8 @@ def enviar_mensaje():
 @api.route('/recibirMensaje/<int:id>', methods=['GET'])
 def recibirMensaje(id):
     all_mensaje = Message.query.filter_by(to=id)
-    all_mensaje = list(map(lambda x: x.serialize(), all_mensaje))
-    return jsonify(all_mensaje)
+    all_mensajes = list(map(lambda x: x.serialize(), all_mensaje))
+    return jsonify(all_mensajes)
 
 
 

@@ -9,7 +9,8 @@
 }
 .nav-link:hover {
     color:#FCFBF6;
-    text-decoration: none
+    text-decoration: none;
+    transform: translateY(-2px);
 }
 
 a:link, a:visited, a:active {
@@ -35,16 +36,18 @@ a:link, a:visited, a:active {
 }
 .nav-bt:hover{
     background-color: hwb(107 67% 7%);
-    color:black
+    color:black;
+    transform: translateY(-2px);
 }
 
 .nav-title{
     color:#FCFBF6;
     font-size: 30px;
-    margin-left: 5px;
+    margin-left: 15px;
 }
 .nav-title:hover {
     color:#FCFBF6;
+    transform: translateY(-2px);
 }
 
 .navbar-toggler-icon{

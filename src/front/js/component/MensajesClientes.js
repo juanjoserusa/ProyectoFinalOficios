@@ -1,38 +1,43 @@
-import React, { useContext }  from "react";
+import React, { useContext, useState }  from "react";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../../styles/mensajeCliente.css"
-import ModalProfesiones from "./ModalProfesiones";
+import Button from 'react-bootstrap/Button';
+
+
 import { Link } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
-const MensajesClientes = ({sender, subject, message, id}) => {
+const MensajesClientes = ({sender, subject, message, from}) => {
 
   const { store, actions } = useContext(Context);
 
   const token = store.token;
   const email = store.email;
-  const id2 = store.id
+  const id = store.id
+
+  
+    const [show, setShow] = useState(false);
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
 
 
 
     return(
-      <div class="col mt-5">
-        <Card style={{ width: '18rem' }}>
+      <div className="col mt-5  ms-3">
+        <Card  className="cardMensaje">
       <Card.Body className="cardMensaje">
-        <Card.Title className="tituloMensaje">Asunto: {subject} </Card.Title>
+        <Card.Title className="tituloMensaje">{subject} </Card.Title>
         <Card.Text className="textoMensaje">
           {message}
         </Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Enviado por: {sender} </ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-      <Link to={"/single/"+sender}>
-          Aceptar Trabajo
-      </Link>
-      </Card.Body>
+      <Card.Body className="cardMensajeMail">
+      
+       <Button href={`mailto:${sender}`} className="submitBtn3">Responder</Button>
+      </Card.Body> 
     </Card>
     
     </div>

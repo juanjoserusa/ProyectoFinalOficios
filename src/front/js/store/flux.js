@@ -8,6 +8,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
+		emailCliente:null
 	  },
 	  actions: {
 
@@ -117,7 +118,7 @@ const getState = ({ getStore, setStore }) => {
 			);
   
 			if (resp.status !== 200) {
-			  alert("there has been some error");
+			  console.error("there has been some error");
 			  return false;
 			}
 			const data = await resp.json();

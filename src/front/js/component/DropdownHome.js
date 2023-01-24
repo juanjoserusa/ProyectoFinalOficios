@@ -7,9 +7,9 @@ const DropdownHome = () => {
       <Dropdown.Toggle
         variant="success"
         id="dropdown-basic"
-        style={{ width: "800px", backgroundColor: "#04a97c" }}
+        style={{ width: "600px", backgroundColor: "#04a97c", fontSize: "18px" }}
       >
-        Elije un oficio
+        Elije un oficio 
       </Dropdown.Toggle>
       <Dropdown.Menu
         className="text-center"

@@ -1,37 +1,35 @@
-.pageLogin{
-    background-color: #f3f1d7;
-}
 
-.signupFrm {
+.signupFrm2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:600px;
+    height:800px;
   }
 
-  .form {
+  .form2 {
     background-color: #FCF5AB;
-    width: 400px;
+    width: 800px;
+    align-items: center;
     /* height: 100%; */
     border-radius: 8px;
     padding: 20px 40px;
     box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   }
   
-  .title {
+  .title2 {
     font-size: 45px;
     margin-bottom: 35px;
     color:#044E39;
   }
 
-  .inputContainer {
+  .inputContainer2 {
     position: relative;
     height: 45px;
     width: 90%;
     margin-bottom: 17px;
   }
 
-  .input {
+  .input2 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -50,10 +48,11 @@
   
   ::placeholder {
     color: #044E39;
-    
+    font-size: larger;
+  
   }
 
-  .label {
+  .label2 {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -65,7 +64,7 @@
     z-index: 0;
   }
 
-  .submitBtn {
+  .submitBtn2 {
     display: block;
     margin-left: auto;
     padding: 15px 30px;
@@ -75,67 +74,33 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 100px;
   }
   
-  .submitBtn:hover {
+  .submitBtn:hover2 {
     background-color: hwb(107 67% 7%);
     transform: translateY(-2px);
   }
 
-  .contraseña{
-    
-    color:#044E39
-  }
-
-  .recuperarContraseña{
-    margin-top: 20px;
-  }
-  .checkbox{
-    margin-top: 20px;
-    position: relative;
-    height: 30px;
-    width: 100%;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 0;
-  }
-
-  .cuadrocheck{
-    cursor: pointer;
-  }
-
-  .titlemodal{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .titlewelcome{
-    color: #044E39;
-    display: flex;
-    justify-content: center;
-  }
-
-  .submitBtnmodal{
-    display: flex;
-    justify-content: center;
-    padding: 15px 30px;
-    border: none;
-    background-color: #D0F3C6;
-    color: #044E39;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 18px;
-    margin: auto;
-    margin-bottom: 18px;
-    margin-top: 18px;
-    
-    
-    
-  }
-
-  .modalbody{
+  .areamensaje {
+    resize: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
     background-color: white;
-    margin-top: 18px;
+    max-width: 100%; 
+    width: 100%;    
+  }
+
+  .areamensaje::placeholder{
+    color: #044E39;
+    font-size: larger;
+    
   }
