@@ -26,14 +26,16 @@ export const RequestPass  = () => {
   })
 
   return (
-    <div className="container-fluid center">
-      <div className="row">
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
-            <label for="user_email">Recupera tu contraseña</label>
+    <div className="text-center pageLogin">
+      <div className="signupFrm">
+        <form ref={form} onSubmit={sendEmail} className="form">
+        <h1 className="title">Recuperar contraseña</h1>
+          <div className="form-group inputContainer ">
+          
+            <label for="user_email" className="label">Recupera tu contraseña</label>
             <input
               type="email"
-              class="form-control"
+              class="form-control input"
               placeholder="Enter email"
               id="user_email"
               name="user_email"
@@ -46,7 +48,7 @@ export const RequestPass  = () => {
           <button
             type="submit"
             valu="send"
-            class="btn btn-primary"
+            class="btn btn-primary submitBtn"
             onSubmit={sendEmail}
           >
             Enviar

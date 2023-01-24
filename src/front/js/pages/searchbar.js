@@ -38,20 +38,18 @@ export const Searchbar = () => {
           className="navbar navbar-expand-lg p-4 "
           style={{ backgroundColor: "#d0f3c6" }}
         >
-          <div className="container-fluid " style={{ width: "1100px" }}>
-            <form class=" align-items-center d-flex justify-content-around">
+          <div className="container-fluid d-flex justify-content-around" >
+            <form class=" align-items-center ">
               <div class="col-auto  ">
                 <div className="input-group ">
-                  {/* <button className="btn btn-outline-success">
-                    <BiMap />
-                  </button> */}
+
                   <input
                     onChange={handleChange}
                     type="text"
                     className="form-control"
-                    style={{ width: "300px" }}
+                    
                     id="autoSizingInputGroup"
-                    placeholder="Buscar por codigo postal ..."
+                    placeholder="Codigo postal ..."
                   ></input>
                   <button
                     className="btn btnBusqueda me-4"
@@ -63,41 +61,17 @@ export const Searchbar = () => {
                     Buscar
                   </button>
                   <div><DropdownHome /></div>
-                </div>
-                
-              </div>
-              {/*      <div className="col-auto">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="autoSizingInput"
-                  placeholder="Elige tu presupuesto"
-                ></input>
-              </div> */}
-              <div className="col-auto">
-                <label className="visually-hidden" for="autoSizingSelect">
-                  Preference
-                </label>
-              </div>
-              <div className="col-auto">
-                {/* <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="autoSizingCheck"
-                  ></input>
-                  <label className="form-check-label" for="autoSizingCheck">
-                    Urgente
-                  </label>
-                </div> */}
-              </div>
-              <div className="col-auto">
-                <button
+                  <div>
+                  <button
                   className="btn btn-danger ms-5 btnReiniciarBusqueda"
                   onClick={() => navigate("/profesiones/anuncios")}
                 >
                   Reiniciar busqueda
                 </button>
+                </div>
+                </div>
+
+
               </div>
             </form>
           </div>
