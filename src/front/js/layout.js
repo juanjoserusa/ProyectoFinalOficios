@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
 import { PerfilCliente } from "./pages/perfilCliente";
 
+
 import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
@@ -41,6 +42,7 @@ function Layout() {
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<Demo />} path="/demo" />
+          
 
           <Route element={<Single />} path="/single" />
           
