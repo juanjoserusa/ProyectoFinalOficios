@@ -112,6 +112,8 @@ def handle_search():
 @jwt_required()
 def data_private():
     email = get_jwt_identity()
+    email = request.json.get("email", None)
+    
     user = User.query.filter_by(email=email, password=password).first()
     dictionary= {
         "id" : user.id,
