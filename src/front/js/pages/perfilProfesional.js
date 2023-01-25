@@ -9,6 +9,7 @@ import MensajesClientes from "../component/MensajesClientes";
 import { useParams } from "react-router-dom";
 import 'react-calendar/dist/Calendar.css'
 import FormularioTrabajosAceptados from "../component/FormularioTrabajosAceptados";
+import TablaTrabajos from "../component/TablaTrabajos";
 
 const PerfilProfesional = () => {
 
@@ -43,8 +44,10 @@ const PerfilProfesional = () => {
       <Tab eventKey="profile" title="Presupuestos aceptados" className=" mensajesRecibidos border border-top-0" style={{ height: "600px" }}>
       <div className="container">
             <div className="row row-cols-1 row-cols-md-4 g-4 ">
-              <FormularioTrabajosAceptados />
+            <FormularioTrabajosAceptados />
         </div>
+        <div className=" m-5"><TablaTrabajos/></div>
+    
         </div>
       </Tab>
       </Tabs>
