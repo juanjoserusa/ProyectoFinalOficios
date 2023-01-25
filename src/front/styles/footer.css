@@ -11,7 +11,7 @@
 }
 
 .enlacesAyuda{
-    color: #FCF5AB;
+    color: #044E39;
     text-decoration: none;
 }
 
@@ -27,20 +27,20 @@
     display: flex;
     justify-content: center;
     font-size: small;
-    color: #FCF5AB;
+    color: #044E39;
 }
 
 .redes {
-    color: #FCF5AB;
+    color: #044E39;
     text-decoration: none;
 }
 
 .redes:hover{
-    color : #FCF5AB;
+    color : #044E39;
 }
 
 .descriptionFooter{
-    background-color: #07AA7C;
+    background-color: #f7f2dd;
 }
 
 .titlefooter{

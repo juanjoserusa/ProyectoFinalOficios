@@ -2,42 +2,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#FCF5AB;
+    color:#044E39
 }
 
 .parrafoDescription{
-    color: #FCF5AB
+    color: #044E39
 }
 
 .titledescription{
-    color:#FCF5AB
+    color:#044E39
 }
 
 .description{
-    background-color: #07AA7C;
+    background-color: #FCFBF6;
     
     
 }
 
 
 .cardsDescription{
-    border: 2px solid #FCF5AB;
-    padding: 2vw;
+    border: 2px solid #044E39;
+    padding: 15px;
+    
+    background-color:#f7f2dd;
 }
 
-.linea{
+ .linea{
     padding: 0;
     margin-top: 10px;
     margin: 0;
     height: 50%;
-    background-color: #07AA7C;
-}
+    background-color: #FCFBF6;
+} 
 
 .pagehome{
-    background: #07AA7C;
+    background: #FCFBF6;
 }
 
 .espaciofooter{
     height: 18px;
-    background-color: #fcf9db;
+    background-color: #FCFBF6;
 }

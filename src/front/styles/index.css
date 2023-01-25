@@ -1,13 +1,15 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+
 
 * {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
 #app{
-    background-color: #fcf9db;
+    background-color: #FCFBF6;
 }
 
 .btnBusqueda{
@@ -41,4 +43,13 @@
 
   .btnReiniciarBusqueda:hover{
     background-color: rgb(207, 110, 110);
+  }
+
+  .calendario{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      
+      
+      
   }

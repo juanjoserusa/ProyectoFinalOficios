@@ -4,6 +4,7 @@ import Tabs from "react-bootstrap/Tabs";
 import MensajesClientes from "../component/MensajesClientes";
 import { Context } from"../store/appContext"
 import { useParams } from "react-router-dom";
+import FormularioTrabajosAceptados from "./FormularioTrabajosAceptados";
 
 const StatusProfesional = () => {
 
@@ -50,8 +51,7 @@ const StatusProfesional = () => {
           style={{ height: "600px" }}
         >
           <div className="p-5">
-            Presupuestos Aceptado 1 Presupuestos Aceptado 2 Presupuestos
-            Aceptado 3 Presupuestos Aceptado 4 Presupuestos Aceptado 5
+            <FormularioTrabajosAceptados />
           </div>
         </Tab>
 
