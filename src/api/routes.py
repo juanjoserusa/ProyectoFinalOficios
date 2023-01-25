@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Announce, Message, Todo_list
+from api.models import db, User, Announce, Message
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
 
@@ -108,14 +108,3 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
-@api.route('/todolist', methods=['POST'])
-@jwt_required()
-def todo_list():
-    email = get_jwt_identity()
-    user = User.query.filter_by(email=email).first()
-    body = request.get_json()
-    todo = Todo_list( mail_cliente=body['mail_cliente'], descripcion=body['descripcion'], precio=body['precio'], horas=body['horas'], dia=body['dia'], mes=body['mes'], año=body['año'], id_profesional=user.id)
-    print(body)
-    db.session.add(todo)
-    db.session.commit()
-    return jsonify({"mensaje": "Check!"}),200
