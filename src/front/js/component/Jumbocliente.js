@@ -5,11 +5,9 @@ import DropdownHome from "/workspace/ProyectoFinalOficios/src/front/js/component
 
 const JumboCliente = () => {
   return (
-    <div className="card jumbocompleto text-bg-dark border border-0 d-flex justify-content-between">
-      <div>
+    <div className="card text-bg-dark border border-0">
       <img src={background} className="card-img" alt="cliente" />
 
-      </div>
       <div className="card-img-overlay">
         <div className="row">
           <div className="title ">

@@ -1,14 +1,9 @@
-.jumbocompleto{
-    background-color:#FCFBF6 ;
-}
-
 .card-img{
     margin: auto;
     width: 60%; 
     padding: 50px;
     font-family: 'Avenir', sans-serif; 
     color: #33475b;
-    background-color: #FCFBF6;
 }
 
 .btnLoginCliente{
