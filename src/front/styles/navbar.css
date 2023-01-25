@@ -1,10 +1,10 @@
 .navbar {
-    background-color:#FCFBF6 ;
+    background-color: #07AA7C;
     font-size: x-large;
 }
 
 .nav-link {
-    color:#07AA7C;
+    color:#FCFBF6;
     text-decoration: none;
 }
 .nav-link:hover {
@@ -18,7 +18,7 @@ a:link, a:visited, a:active {
 }
 
 .enlacesNavbar{
-    color: #07AA7C;
+    color: #D0F3C6;
     text-decoration: none;
     font-size: 20px;
 }
@@ -41,12 +41,12 @@ a:link, a:visited, a:active {
 }
 
 .nav-title{
-    color:#044E39;
+    color:#FCFBF6;
     font-size: 30px;
     margin-left: 15px;
 }
 .nav-title:hover {
-    color:#09b685;
+    color:#FCFBF6;
     transform: translateY(-2px);
 }
 
