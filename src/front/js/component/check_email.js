@@ -5,7 +5,7 @@ export const CheckEmail = (e) => {
 
   const checkEmail = (email) => {
     fetch(
-      "/api/private",
+      "https://https://3001-juanjoserus-proyectofin-3w1mvhs38sg.ws-eu83.gitpod.io/api/private",
       {
         method: "POST",
         body: JSON.stringify({ email }),

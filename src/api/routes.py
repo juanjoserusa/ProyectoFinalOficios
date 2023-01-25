@@ -90,13 +90,19 @@ def recibirMensaje(id):
 
 @api.route("/request_password", methods=[ "POST"])
 def request_password():
-    email = request.json.get("email", None)
-    user = User.query.filter_by(email=email).first()  
-    if user:
-        return jsonify({"mensaje":"usuario existe"}),200
-        return  jsonify({"mensaje":"usuario no existe"}),200 
-        console.log(jsonify)    
-
+    # email = request.json.get("email", None)
+    # user = User.query.filter_by(email=email).first()  
+    # password = request.json.get("password", None)
+    email = request.json.get("email")   
+    print(email)
+    password = User.query.filter_by(email=email).first()
+    if password:
+        # password = list(map(lambda x: x.serialize(), password))
+        print(password.password)
+        return jsonify({"password":password.password}),200 
+    else:
+        return jsonify({"mensaje":"usuario no existe"}),200 
+       
 
 @api.route('/search', methods=['POST'])
 def handle_search():
@@ -107,18 +113,3 @@ def handle_search():
     search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
     return jsonify({"result":search_results}), 200
 
-
-@api.route("/private", methods=[ "GET"])
-@jwt_required()
-def data_private():
-    email = get_jwt_identity()
-    email = request.json.get("email", None)
-    
-    user = User.query.filter_by(email=email, password=password).first()
-    dictionary= {
-        "id" : user.id,
-        "email" : user.email,
-        "password" : user.password     
-    }
-    return jsonify(dictionary)
-       

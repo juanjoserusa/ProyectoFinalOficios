@@ -8,6 +8,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
+		password:null
 	  },
 	  actions: {
 
@@ -19,8 +20,6 @@ const getState = ({ getStore, setStore }) => {
 				
 					
 			  };
-			
-			  
 			  fetch(process.env.BACKEND_URL + "/api/recibirMensaje/"+id, requestOptions)
 				.then(response => response.json())
 				.then(result => {
@@ -100,6 +99,26 @@ const getState = ({ getStore, setStore }) => {
 
 			  });
 		  },
+
+		getUserData: async (userData) => {
+			var myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+			
+			var raw = JSON.stringify(userData);
+			
+			var requestOptions = {
+			  method: 'POST',
+			  headers: myHeaders,
+			  body: raw,
+			  redirect: 'follow'
+			};
+			
+			fetch("https://3001-juanjoserus-proyectofin-02j8fzvigjo.ws-eu83.gitpod.io/api/request_password", requestOptions)
+			  .then(response => response.text())
+			  .then(result => setStore({password:result.password}))
+			  .catch(error => console.log('error', error));
+		},
+
 
 		login: async (email, password) => {
 		  const opts = {
