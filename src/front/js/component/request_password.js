@@ -5,11 +5,11 @@ import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appC
 export const RequestPass  = () => {
     const [password, setPassword] = useState(" ");
     const { store, actions } = useContext(Context);
-    const user_pass=store.password;
+    const user_referrer =store.password;
     
 
      useEffect(() => {
-      actions.getUserData(user_pass)
+      actions.getUserData(password)
 
     },[])
      
@@ -44,30 +44,31 @@ export const RequestPass  = () => {
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">
             <label for="user_email">Recupera tu contraseña</label>
+             
             <input
               type="email"
               class="form-control"
               placeholder="Enter email"
               id="user_email"
-              name="user_email"
-             
+              name="user_email"  
             ></input>
+                <input type="hidden" id="user_referrer" name="password" value=getUserData(password{} > </input> */function name(params) {
+	}
+}
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>
-            
+              
           </div>
           <button
             type="submit"
             valu="send"
             class="btn btn-primary"
             onSubmit={sendEmail} 
-            onChange={(e) => setPassword(e.target.value)}
+             onChange={(e) => setPassword(e.target.value)}
           >
             Enviar
           </button>
-          <input type="hidden" id="user_referrer" name={password}  value={user_pass} > </input>
-
         </form>
       </div>
     </div>
