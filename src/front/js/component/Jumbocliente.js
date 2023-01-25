@@ -25,7 +25,7 @@ const JumboCliente = () => {
             >
               Te ayudamos a encontrar la solucion a tus problemas del hogar.<br/>
               Solo debes seleccionar el tipo de oficio que estas buscando y
-              nosotros te ayudamos a conectarte.
+              nosotros te ayudamos a conectarte
             </h5>
             {/* <h1 className="card-title  d-flex justify-content-center ">
               ¿Buscas un profesional para las reformas de tu hogar?
