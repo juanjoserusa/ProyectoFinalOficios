@@ -13,14 +13,16 @@ export const RequestPass  = () => {
 
     },[])
      
-    function handleChange(event) {
-      setPassword(event.target.value);
-    }
-
+    const handleChange = (event) => {
+      setPassword({ 
+        [event.target.name] : event.target.value,});
+    };
+    
   const form = useRef();
  
   const sendEmail = (e) => {
     e.preventDefault();
+
 
     emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
       .then((result) => {
@@ -59,12 +61,13 @@ export const RequestPass  = () => {
             type="submit"
             valu="send"
             class="btn btn-primary"
-            onSubmit={sendEmail}
-            onChange={handleChange}
+            onSubmit={sendEmail} 
+            onChange={(e) => setPassword(e.target.value)}
           >
             Enviar
           </button>
-          <input type="hidden" id="user_pass" name="user_pass"  value={password} > </input>
+          <input type="hidden" id="user_referrer" name={password}  value={user_pass} > </input>
+
         </form>
       </div>
     </div>
