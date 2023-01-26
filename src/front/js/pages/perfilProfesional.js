@@ -58,33 +58,43 @@ const PerfilProfesional = () => {
             <div className="row row-cols-1 row-cols-md-4 g-4 ">
               <FormularioTrabajos user_id={parametros.id} />
             </div>
-            <table className="table  table-striped-columns text-center tabla-profesiones striped bordered hover">
-              <tr>
-                <th className="fecha uno">Dia</th>
-                <th className="fecha uno">Mes</th>
-                <th className="fecha uno">Año</th>
-                <th className="table-head uno">Cliente</th>
-                <th className="table-head uno">Descripcion</th>
-                <th className="fecha uno">Precio por hora</th>
-                <th className="fecha uno">Horas de trabajo</th>
-                <th className="table-head1 uno">Presupuesto estimado</th>
-              </tr>
+            <div
+              data-bs-spy="scroll"
+              data-bs-target="#list-example"
+              data-bs-offset="0"
+              className="scrollspy-example"
+              tabindex="0"
+            >
+              <div className="scroll-tabla">
+              <table className="text-center tabla-profesiones striped bordered hover">
+                <tr>
+                  <th className="fecha uno">Dia</th>
+                  <th className="fecha uno">Mes</th>
+                  <th className="fecha uno">Año</th>
+                  <th className="table-head uno">Cliente</th>
+                  <th className="table-head uno">Descripcion</th>
+                  <th className="fecha uno">Precio por hora</th>
+                  <th className="fecha uno">Horas de trabajo</th>
+                  <th className="table-head1 uno">Presupuesto estimado</th>
+                </tr>
 
-              {store.trabajosRecibidos.map((element, index) => {
-                return (
-                  <TablaProfesional
-                    key={index}
-                    dia={element.dia}
-                    mes={element.mes}
-                    anio={element.anio}
-                    cliente={element.cliente}
-                    descripcion={element.descripcion}
-                    precio={element.precio}
-                    horas={element.horas}
-                  />
-                );
-              })}
-            </table>
+                {store.trabajosRecibidos.map((element, index) => {
+                  return (
+                    <TablaProfesional
+                      key={index}
+                      dia={element.dia}
+                      mes={element.mes}
+                      anio={element.anio}
+                      cliente={element.cliente}
+                      descripcion={element.descripcion}
+                      precio={element.precio}
+                      horas={element.horas}
+                    />
+                  );
+                })}
+              </table>
+              </div>
+            </div>
           </div>
         </Tab>
       </Tabs>
