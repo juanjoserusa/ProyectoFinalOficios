@@ -150,6 +150,34 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		},
+		rest_password: async (email,new_password) => {
+			const opts = {
+			  method: "POST",
+			  headers: { "Content-Type": "application/json" },
+			  body: JSON.stringify({
+				email: email,
+				new_password: password,
+			  }),
+			};
+			try {
+			  const resp = await fetch(
+				process.env.BACKEND_URL + "/api/token",
+				opts
+			  );
+	
+			  if (resp.status !== 200) {
+				alert("there has been some error");
+				return false;
+			  }
+			  const data = await resp.json();
+			  sessionStorage.setItem("token", data.access_token);
+			  sessionStorage.setItem("id", data.id)
+			  setStore({ token: data.access_token,});
+			  return true;
+			} catch (error) {
+			  console.error("error dstos incorrectos");
+			}
+		  },
 	  },
 	};
   };

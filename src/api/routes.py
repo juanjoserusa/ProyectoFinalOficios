@@ -113,3 +113,15 @@ def handle_search():
     search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
     return jsonify({"result":search_results}), 200
 
+
+
+@api.route("/reset_password", methods=["POST"])
+def create_resetToken():
+    email = request.json.get("email", None)
+    new_password = new_password.request.json.get("new_password", None)   
+    user = User.query.filter_by(email=email, new_password=password).first()
+    if user:    
+        access_token = create_access_token(identity=email)
+    return jsonify({'mensaje': 'Datos incorrectos'}), 400
+    return jsonify({"mensaje":"password cambiado con exito"}),201
+
