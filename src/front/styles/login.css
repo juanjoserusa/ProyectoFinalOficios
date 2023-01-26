@@ -9,7 +9,7 @@
     height:600px;
   }
 
-  .form {
+  .formulariologin {
     background-color: #FCF5AB;
     width: 400px;
     /* height: 100%; */
@@ -31,7 +31,7 @@
     margin-bottom: 17px;
   }
 
-  .input {
+  .inputlogin {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -53,7 +53,7 @@
     
   }
 
-  .label {
+  .labellogin {
     position: absolute;
     top: 15px;
     left: 15px;

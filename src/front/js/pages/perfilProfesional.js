@@ -7,7 +7,10 @@ import MensajesClientes from "../component/MensajesClientes";
 import { useParams } from "react-router-dom";
 import { FormularioTrabajos } from "../component/FormularioTrabajos";
 import TablaProfesional from "../component/TablaProfesional";
+
 import "/workspace/ProyectoFinalOficios/src/front/styles/tablaProfesional.css";
+
+import "../../styles/formTrabajos.css"
 
 const PerfilProfesional = () => {
   const parametros = useParams();
@@ -54,10 +57,9 @@ const PerfilProfesional = () => {
           className=" mensajesRecibidos border border-top-0"
           style={{ height: "600px" }}
         >
+
           <div className="container">
-            <div className="row row-cols-1 row-cols-md-4 g-4 ">
-              <FormularioTrabajos user_id={parametros.id} />
-            </div>
+           
             <div
               data-bs-spy="scroll"
               data-bs-target="#list-example"
@@ -94,6 +96,11 @@ const PerfilProfesional = () => {
                 })}
               </table>
               </div>
+
+            
+            <div className="formularioTrabajos sticky-top">
+              <FormularioTrabajos user_id={parametros.id} />
+
             </div>
           </div>
         </Tab>
