@@ -1,11 +1,32 @@
-.table-profesional{
-    border: 1px solid white;
-    text-align: center;
+.tabla-profesiones {
+  border: 1px solid green;
+  text-align: center;
+  width: 96%;
+  margin-top: 2%;
+  margin:0 auto;
+  background-color: #d0f3c6;
+}
+.uno{
+  background-color: #08AA7C;
+
+
 }
 
-.table-profesional>tr{
-    border: 1px solid white;
+.fecha {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: 1px solid green;
+  width: 60px;
+  padding: 2px;
+  /*  font-weight: normal; */
 }
-.table-profesional>td{
-    border: 1px solid white;
+.tabla-body {
+  border: 1px solid green;
+}
+
+.table-head {
+  border: 1px solid green;
+}
+.table-head1{
+  width: 30px;
+
 }

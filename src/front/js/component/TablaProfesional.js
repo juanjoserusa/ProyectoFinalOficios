@@ -1,16 +1,25 @@
 import React from "react";
 import "/workspace/ProyectoFinalOficios/src/front/styles/tablaProfesional.css";
 
-const TablaProfesional = ({ cliente, descripcion, precio, horas, dia, mes, anio }) => {
+const TablaProfesional = ({
+  cliente,
+  descripcion,
+  precio,
+  horas,
+  dia,
+  mes,
+  anio,
+}) => {
   return (
-    <tr>
-      <td>{cliente}</td>
-      <td>{descripcion}</td>
-      <td>{precio} €</td>
-      <td>{horas}</td>
-      <td>{dia}</td>
-      <td>{mes}</td>
-      <td>{anio}</td>
+    <tr >
+      <td className="fecha">{dia}</td>
+      <td className="fecha">{mes}</td>
+      <td className="fecha">{anio}</td>
+      <td className="tabla-body">{cliente}</td>
+      <td className="tabla-body">{descripcion}</td>
+      <td className="tabla-body">{precio} €</td>
+      <td className="tabla-body">{horas}</td>
+      <td className="tabla-body">{(precio*horas)}</td>
     </tr>
   );
 };

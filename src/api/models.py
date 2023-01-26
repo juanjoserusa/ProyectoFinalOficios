@@ -75,6 +75,7 @@ class Trabajos(db.Model):
     dia = db.Column(db.Integer, unique=False, nullable=False)
     mes = db.Column(db.Integer, unique=False, nullable=False)
     anio = db.Column(db.Integer, unique=False, nullable=False)
+    #date = db.Column(db.DateTime, nullable= True)
     id_profesional = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=False)
     rel_user = db.relationship(User)
 

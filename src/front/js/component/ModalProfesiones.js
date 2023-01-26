@@ -35,7 +35,7 @@ body: raw,
 redirect: 'follow'
 };
 
-fetch("https://3001-juanjoserus-proyectofin-j65vfvn7rqo.ws-eu82.gitpod.io/api/enviarMensaje", requestOptions)
+fetch(process.env.BACKEND_URL + "/api/enviarMensaje", requestOptions)
 .then(response => response.text())
 .then(result => console.log(result))
 .catch(error => console.log('error', error));

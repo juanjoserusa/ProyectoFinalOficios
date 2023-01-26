@@ -2,8 +2,8 @@ import React, { Fragment, useState, useContext } from "react";
 import { Context } from "../store/appContext" 
 import "../../styles/formulario.css";
 import "../../styles/login.css";
-import { Link, useNavigate } from "react-router-dom";
-import context from "react-bootstrap/esm/AccordionContext";
+import { useNavigate } from "react-router-dom";
+
 
 
 
