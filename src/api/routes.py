@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Announce, Message
+from api.models import db, User, Announce, Message, Trabajos
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
 
@@ -107,4 +107,20 @@ def handle_search():
     search_results = list(map(lambda zipCode:zipCode.serialize(),zipCode))
     return jsonify({"result":search_results}), 200
 
+
+@api.route('/enviartrabajos', methods=['POST'])
+def enviar_trabajos():
+    body = request.get_json()
+    trabajo = Trabajos(id_profesional=body['id_profesional'], cliente=body['cliente'], descripcion=body['descripcion'])
+    print(body)
+    db.session.add(trabajo)
+    db.session.commit()
+    return jsonify({"enviar los trabajos": "Check!"}),200
+
+
+@api.route('/recibirTrabajos/<int:id>', methods=['GET'])
+def recibirTrabajos(id):
+    recibir_trabajo = Trabajos.query.filter_by(id_profesional=id)
+    recibir_trabajos = list(map(lambda x: x.serialize(), recibir_trabajo))
+    return jsonify(recibir_trabajos)
 
