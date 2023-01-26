@@ -5,7 +5,7 @@ import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appC
 export const RequestPass  = () => {
     const [password, setPassword] = useState(" ");
     const { store, actions } = useContext(Context);
-    const user_referrer =store.password;
+    const contrasena =store.password;
     
 
      useEffect(() => {
@@ -52,9 +52,7 @@ export const RequestPass  = () => {
               id="user_email"
               name="user_email"  
             ></input>
-                <input type="hidden" id="user_referrer" name="password" value=getUserData(password{} > </input> */function name(params) {
-	}
-}
+            
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>
@@ -65,7 +63,6 @@ export const RequestPass  = () => {
             valu="send"
             class="btn btn-primary"
             onSubmit={sendEmail} 
-             onChange={(e) => setPassword(e.target.value)}
           >
             Enviar
           </button>

@@ -113,7 +113,7 @@ const getState = ({ getStore, setStore }) => {
 			  redirect: 'follow'
 			};
 			
-			fetch("https://3001-juanjoserus-proyectofin-02j8fzvigjo.ws-eu83.gitpod.io/api/request_password", requestOptions)
+			fetch(process.env.BACKEND_URL + process.env.BACKEND_URL + "/api/request_password", requestOptions)
 			  .then(response => response.text())
 			  .then(result => setStore({password:result.password}))
 			  .catch(error => console.log('error', error));
