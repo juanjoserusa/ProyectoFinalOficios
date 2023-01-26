@@ -1,0 +1,11 @@
+.table-profesional{
+    border: 1px solid white;
+    text-align: center;
+}
+
+.table-profesional>tr{
+    border: 1px solid white;
+}
+.table-profesional>td{
+    border: 1px solid white;
+}

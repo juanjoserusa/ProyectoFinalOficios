@@ -8,7 +8,8 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		emailCliente:null
+		emailCliente:null,
+		trabajosRecibidos: [],
 	  },
 	  actions: {
 
@@ -26,6 +27,25 @@ const getState = ({ getStore, setStore }) => {
 				.then(response => response.json())
 				.then(result => {
 					setStore({mensajeCliente:result})
+					console.log(result)
+				  })
+				.catch(error => console.log('error', error));
+		},
+
+		loadTabla : (id) => {
+
+			var requestOptions = {
+				method: 'GET',
+				redirect: 'follow',
+				
+					
+			  };
+			
+			  
+			  fetch(process.env.BACKEND_URL + "/api/recibirTrabajos/"+id, requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					setStore({trabajosRecibidos:result})
 					console.log(result)
 				  })
 				.catch(error => console.log('error', error));
