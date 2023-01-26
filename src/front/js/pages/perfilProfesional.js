@@ -61,6 +61,11 @@ const PerfilProfesional = () => {
               <tr>
                 <th>Cliente</th>
                 <th>Descripcion</th>
+                <th>Precio por hora</th>
+                <th>Horas de trabajo</th>
+                <th>Dia</th>
+                <th>Mes</th>
+                <th>Año</th>
               </tr>
 
               {store.trabajosRecibidos.map((element, index) => {
@@ -69,7 +74,12 @@ const PerfilProfesional = () => {
                     key={index}
                     cliente={element.cliente}
                     descripcion={element.descripcion}
-                    id={element.user_id}
+                    precio={element.precio}
+                    horas={element.horas}
+                    dia={element.dia}
+                    mes={element.mes}
+                    anio={element.anio}
+                    
                   />
                 );
               })}
