@@ -117,3 +117,10 @@ def enviar_trabajos():
     db.session.commit()
     return jsonify({"enviar los trabajos": "Check!"}),200
 
+
+@api.route('/recibirTrabajos/<int:id>', methods=['GET'])
+def recibirTrabajos(id):
+    recibir_trabajo = Trabajos.query.filter_by(id_profesional=id)
+    recibir_trabajos = list(map(lambda x: x.serialize(), recibir_trabajo))
+    return jsonify(recibir_trabajos)
+
