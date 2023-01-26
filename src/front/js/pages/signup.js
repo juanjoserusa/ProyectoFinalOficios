@@ -52,19 +52,19 @@ export const SignUp = () => {
   return (
     <div className=" text-center pageLogin">
       <div className="signupFrm">
-        <form onSubmit={enviarDatos} className="form">
+        <form onSubmit={enviarDatos} className="formulariologin">
           <h1 className="title">Crear Usuario</h1>
           <div className="inputContainer">
             <input
               id="email"
               type="email"
               placeholder="Ingrese su email"
-              className="input"
+              className="inputlogin"
               onChange={handleInputChange}
               name="email"
               required
             ></input>
-            <label for="" class="label">
+            <label for="" class="labellogin">
               Email
             </label>
           </div>
@@ -74,7 +74,7 @@ export const SignUp = () => {
               minLength="2"
               type="password"
               placeholder="Ingrese su password"
-              className="input"
+              className="inputlogin"
               onChange={handleInputChange}
               name="password"
               required
