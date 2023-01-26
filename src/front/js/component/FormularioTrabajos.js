@@ -10,6 +10,11 @@ export const FormularioTrabajos = () => {
   const [trabajos, setTrabajos] = useState({
     cliente: "",
     descripcion: "",
+    precio:"",
+    horas:"",
+    dia: "",
+    mes : "",
+    anio :"",
     id_profesional: parametros.id,
   });
 
@@ -21,6 +26,7 @@ export const FormularioTrabajos = () => {
   };
 
   const enviarDatos = (event) => {
+    event.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -37,15 +43,17 @@ export const FormularioTrabajos = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+
+      location. reload()
   };
   return (
     <div className="">
       <div className="">
         <form onSubmit={enviarDatos} className="">
-          <h1 className="">Enviar mensaje a un profesional</h1>
+          <h1 className="">Formulario</h1>
 
           <div className="">
-            <label for="" class="label2">
+            <label for="" class="">
               cliente
             </label>
             <input
@@ -60,7 +68,7 @@ export const FormularioTrabajos = () => {
           </div>
 
           <div className="">
-            <label for="" class="label2">
+            <label for="" class="">
               descripcion
             </label>
             <textarea
@@ -73,6 +81,81 @@ export const FormularioTrabajos = () => {
               onChange={handleInputChange}
               name="descripcion"
             ></textarea>
+
+          </div>
+          <div className="">
+            <label for="" class="">
+              Precio
+            </label>
+            <input
+              required
+              type="number"
+              className=""
+              id="exampleFormControlInput1"
+              placeholder="Precio"
+              onChange={handleInputChange}
+              name="precio"
+            />
+          </div>
+
+          <div className="">
+            <label for="" class="">
+              Horas
+            </label>
+            <input
+              required
+              type="number"
+              className=""
+              id="exampleFormControlInput1"
+              placeholder="Horas"
+              onChange={handleInputChange}
+              name="horas"
+            />
+          </div>
+
+          <div className="">
+            <label for="" class="">
+              Dia
+            </label>
+            <input
+              required
+              type="number"
+              className=""
+              id="exampleFormControlInput1"
+              placeholder="Dia"
+              onChange={handleInputChange}
+              name="dia"
+            />
+          </div>
+
+          <div className="">
+            <label for="" class="">
+              Mes
+            </label>
+            <input
+              required
+              type="number"
+              className=""
+              id="exampleFormControlInput1"
+              placeholder="Mes"
+              onChange={handleInputChange}
+              name="mes"
+            />
+          </div>
+
+          <div className="">
+            <label for="" class="">
+              Año
+            </label>
+            <input
+              required
+              type="number"
+              className=""
+              id="exampleFormControlInput1"
+              placeholder="Año"
+              onChange={handleInputChange}
+              name="anio"
+            />
           </div>
           <div className="d-flex justify-content-center mt-3">
             <button type="submit" className="btn btn-primary ">

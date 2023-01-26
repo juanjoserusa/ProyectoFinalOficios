@@ -111,7 +111,7 @@ def handle_search():
 @api.route('/enviartrabajos', methods=['POST'])
 def enviar_trabajos():
     body = request.get_json()
-    trabajo = Trabajos(id_profesional=body['id_profesional'], cliente=body['cliente'], descripcion=body['descripcion'])
+    trabajo = Trabajos(id_profesional=body['id_profesional'], cliente=body['cliente'], descripcion=body['descripcion'], precio=body['precio'], horas=body['horas'], dia=body['dia'], mes=body['mes'], anio=body['anio'])
     print(body)
     db.session.add(trabajo)
     db.session.commit()
