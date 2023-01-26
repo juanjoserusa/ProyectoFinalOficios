@@ -59,14 +59,7 @@ const PerfilProfesional = () => {
         >
 
           <div className="container">
-           
-            <div
-              data-bs-spy="scroll"
-              data-bs-target="#list-example"
-              data-bs-offset="0"
-              className="scrollspy-example"
-              tabindex="0"
-            >
+      
               <div className="scroll-tabla">
               <table className="text-center tabla-profesiones striped bordered hover">
                 <tr>
@@ -103,6 +96,7 @@ const PerfilProfesional = () => {
 
             </div>
           </div>
+         
         </Tab>
       </Tabs>
     </div>

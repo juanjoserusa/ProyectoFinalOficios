@@ -33,7 +33,7 @@
 
 
 .scroll-tabla{
-  overflow:scroll;
-  height:200px;
+  overflow-y:scroll;
+  height:15rem;
   width:100%;
 }
