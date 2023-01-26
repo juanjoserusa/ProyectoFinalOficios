@@ -65,13 +65,7 @@ export const Navbar = () => {
                         Mi perfil profesional{" "}
                       </a>
                     </Link>
-                  ) : (
-                    <Link to={`/perfilcliente/${id}`}>
-                      <a className="nav-link enlacesNavbar">
-                        Mi perfil cliente{" "}
-                      </a>
-                    </Link>
-                  )}
+                  ) : ("")}
                 </li>
               ) : (
                 ""

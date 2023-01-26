@@ -6,7 +6,7 @@ import "../../styles/descriptionHome.css"
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
-import TablaProfesional from "../component/TablaProfesional";
+
 
 
 
@@ -16,9 +16,7 @@ export const Home = () => {
 	return (
 		<div className="container-flex pagehome">
       <RegistroUsuario/>
-      <div className="container-fluid bg-white" style={{width:"800px"}}>
-      <TablaProfesional/>
-      </div>
+   
 			<JumboCliente />
 			<div className="espaciofooter"></div>
       <hr className="linea"/>
