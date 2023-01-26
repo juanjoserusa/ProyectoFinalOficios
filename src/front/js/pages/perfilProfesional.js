@@ -6,6 +6,7 @@ import { Context } from"../store/appContext";
 
 import MensajesClientes from "../component/MensajesClientes";
 import { useParams } from "react-router-dom";
+import { FormularioTrabajos } from "../component/FormularioTrabajos";
 
 const PerfilProfesional = () => {
 
@@ -40,7 +41,8 @@ const PerfilProfesional = () => {
       <Tab eventKey="profile" title="Presupuestos aceptados" className=" mensajesRecibidos border border-top-0" style={{ height: "600px" }}>
       <div className="container">
             <div className="row row-cols-1 row-cols-md-4 g-4 ">
-        {/* <MensajesClientes /> */}
+              <FormularioTrabajos user_id={parametros.id} />
+        
         </div>
         </div>
       </Tab>
