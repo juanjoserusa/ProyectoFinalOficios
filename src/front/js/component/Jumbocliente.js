@@ -1,52 +1,41 @@
 import React, { useContext, useEffect } from "react";
-import background from "/workspace/ProyectoFinalOficios/src/front/assets/cliente.jpg";
+import background from "/workspace/ProyectoFinalOficios/src/front/assets/familia.png";
 import "../../styles/jumbo.css";
 import DropdownHome from "/workspace/ProyectoFinalOficios/src/front/js/component/DropdownHome.js";
 
 const JumboCliente = () => {
   return (
-    <div className="card text-bg-dark border border-0">
-      <img src={background} className="card-img" alt="cliente" />
-
-      <div className="card-img-overlay">
-        <div className="row">
-          <div className="title ">
-          <h3
-              className="card-title  d-flex justify-content-center text-center mb-3 font-weight-bold"
-              style={{ width: "800px" }}
-            >
-              ¿Avería en casa? ¿Remodelar el salón? ¿Problemas con la luz? ¿Montar ese armario que parece una misión imposible?
-            </h3>
-            <h5
-              className="card-title  d-flex justify-content-center text-center"
-              style={{ width: "800px" }}
-            >
-              Te ayudamos a encontrar la solucion a tus problemas del hogar.<br/>
-              Solo debes seleccionar el tipo de oficio que estas buscando y
-              nosotros te ayudamos a conectarte.
-            </h5>
-            {/* <h1 className="card-title  d-flex justify-content-center ">
+    <div className="container-fluid jumbotron mt-5">
+      <div className="row d-flex justify-content-between">
+        
+          <div className="col text-center coljumbo1 ms-5">
+            <div className="title titlejumbo">
+              <h3 className="card-title  mb-3 font-weight-bold">
+                ¿Avería en casa? ¿Remodelar el salón? ¿Problemas con la luz?
+                ¿Montar ese armario que parece una misión imposible?
+              </h3>
+              <h5 className="card-title">
+                Te ayudamos a encontrar la solucion a tus problemas del hogar.
+                <br />
+                Solo debes seleccionar el tipo de oficio que estas buscando y
+                nosotros te ayudamos a conectarte.
+              </h5>
+              {/* <h1 className="card-title  d-flex justify-content-center ">
               ¿Buscas un profesional para las reformas de tu hogar?
             </h1> */}
-            <div className="mt-3 d-flex justify-content-center">
-              <DropdownHome />
+              <div className="mt-3 ">
+                <DropdownHome />
+              </div>
+              
+              </div>
             </div>
-            <h5
-              className="card-title  d-flex justify-content-center text-center mt-5"
-              style={{ width: "800px" }}
-            >
-              En HandleHome, los profesionales pueden encontrar clientes o particulares que requieran sus servicios de forma rápida y sencilla, sólo se deberán registrar en la App e indicar qué servicios ofrecen. 
-            </h5>
-            <h4
-              className="card-title  d-flex justify-content-center text-center mt-2 font-weight-bold"
-              style={{ width: "800px" }}
-            >
-               Podrán prestar sus servicios a miles de usuarios que los requieran
-            </h4>
+            <div className="divImage col coljumbo2 ">
+          <img src={background} className=" imagenjumbo" alt="cliente" />
+        </div>
           </div>
         </div>
-      </div>
-    </div>
+     
+    
   );
 };
 

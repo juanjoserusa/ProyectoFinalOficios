@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand nav-title" href="/">
+      <div className="container-fluid ">
+        <a className="navbar-brand nav-title ms-5" href="/">
           HandleHome
         </a>
 
@@ -73,7 +73,7 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="d-flex justify-content-end ">
+        <div className="d-flex justify-content-end  me-5">
           <div className="ml-auto">
             {!token ? (
               <Link to="/signup">

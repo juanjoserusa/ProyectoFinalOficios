@@ -1,10 +1,11 @@
 .navbar {
-    background-color: #07AA7C;
+    background-color: #fcf9db;
     font-size: x-large;
 }
 
+#33475b
 .nav-link {
-    color:#FCFBF6;
+    color:#33475b;
     text-decoration: none;
 }
 .nav-link:hover {
@@ -18,9 +19,9 @@ a:link, a:visited, a:active {
 }
 
 .enlacesNavbar{
-    color: #D0F3C6;
+    color: #33475b;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .enlacesNavbar:hover{
@@ -41,8 +42,8 @@ a:link, a:visited, a:active {
 }
 
 .nav-title{
-    color:#FCFBF6;
-    font-size: 30px;
+    color:#33475b;
+    font-size: 45px;
     margin-left: 15px;
 }
 .nav-title:hover {

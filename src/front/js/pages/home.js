@@ -6,7 +6,7 @@ import "../../styles/descriptionHome.css"
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
-
+import JumboProfesional from "../component/JumboProfesional"
 
 
 
@@ -18,6 +18,7 @@ export const Home = () => {
       <RegistroUsuario/>
    
 			<JumboCliente />
+      {/* <JumboProfesional /> */}
 			<div className="espaciofooter"></div>
       <hr className="linea"/>
 			<section className=" py-5 description">

@@ -2,26 +2,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#FCF5AB;
+    color:#33475b;
 }
 
 .parrafoDescription{
-    color: #FCF5AB
+    color: #33475b
 }
 
 .titledescription{
-    color:#FCF5AB
+    color:#33475b
 }
 
 .description{
-    background-color: #07AA7C;
+    background-color: #fcf9db;
     
     
 }
 
 
 .cardsDescription{
-    border: 2px solid #FCF5AB;
+    border: 2px solid #33475b;
     padding: 2vw;
 }
 
@@ -30,11 +30,11 @@
     margin-top: 10px;
     margin: 0;
     height: 50%;
-    background-color: #07AA7C;
+    background-color: #fcf9db;
 }
 
 .pagehome{
-    background: #07AA7C;
+    background: #fcf9db;
 }
 
 .espaciofooter{
