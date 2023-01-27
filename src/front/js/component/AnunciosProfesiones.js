@@ -15,8 +15,9 @@ const AnunciosProfesiones = () => {
 
 
   return (
-    <div className="container-fluid ">
-      <div className="row d-flex justify-content-center  mt-5 mb-5">
+    
+    <div className="container-fluid anunciosprofesiones ">
+      <div className="row d-flex justify-content-center  mt-5 contenidoanuncio">
         {
           store.search.map((element, index) => {
             return <CardAnuncioTablon key={index} description={element.description} mail={element.mail} codigoPostal={element.zipcode} precio={element.price} profesion={element.profession} id={element.user_id} />
@@ -24,6 +25,7 @@ const AnunciosProfesiones = () => {
         }  
       </div>
     </div>
+    
   );
 };
 

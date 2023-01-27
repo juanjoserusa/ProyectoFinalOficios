@@ -18,7 +18,7 @@ export const Home = () => {
       <JumboCliente />
       {/* <JumboProfesional /> */}
       <div className="espaciofooter"></div>
-      <hr className="linea" />
+      
       <section className=" py-5 description">
         <div className="container-flex">
           <div className="row d-flex justify-content-around">

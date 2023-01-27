@@ -4,10 +4,12 @@
 
 * {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 #app{
-    background-color: #fcf9db;
+    background-color: #fcf9db;  
+    
 }
 
 .btnBusqueda{
@@ -42,3 +44,22 @@
   .btnReiniciarBusqueda:hover{
     background-color: rgb(207, 110, 110);
   }
+
+.barrabusqueda {
+  background-color: #fcf9db;
+  
+}
+
+
+.busqueda {
+  box-shadow: 0 3px 10px #044E39;
+}
+
+.anunciosprofesiones{
+  
+}
+
+.contenidoanuncio{
+  overflow-y: scroll;
+  
+}
