@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { Context } from "../store/appContext";
@@ -55,7 +55,6 @@ const PerfilProfesional = () => {
           eventKey="profile"
           title="Presupuestos aceptados"
           className=" mensajesRecibidos border border-top-0"
-          style={{ height: "600px" }}
         >
 
           <div className="container">

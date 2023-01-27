@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { BiMap } from "react-icons/bi";
 import DropdownHome from "../component/DropdownHome";
 import { useNavigate } from "react-router-dom";
 

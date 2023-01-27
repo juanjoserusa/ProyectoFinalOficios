@@ -1,30 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import "/workspace/ProyectoFinalOficios/src/front/styles/dropdown.css"
 
 const DropdownHome = () => {
   return (
     <Dropdown>
-      <Dropdown.Toggle
-        variant="success"
-        id="dropdown-basic"
-        style={{ width: "600px", backgroundColor: "#04a97c", fontSize: "18px" }}
-      >
-        Elije un oficio 
+      <Dropdown.Toggle className="dropdown-boton" >
+        Elije un oficio
       </Dropdown.Toggle>
-      <Dropdown.Menu
-        className="text-center"
-        style={{ width: "800px", backgroundColor: "#fcf5aa" }}
-      >
-        <Dropdown.Item href="/profesiones/anuncios/fontanero">
+      <Dropdown.Menu className="text-center dropdown-menu1">
+        <Dropdown.Item href="/profesiones/anuncios/fontanero hover1">
           Fontanero
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/electricista">
+        <Dropdown.Item href="/profesiones/anuncios/electricista hover1">
           Electricista
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/albanil">
+        <Dropdown.Item href="/profesiones/anuncios/albanil hover1">
           Albañil
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/carpintero">
+        <Dropdown.Item href="/profesiones/anuncios/carpintero hover1">
           Carpintero
         </Dropdown.Item>
       </Dropdown.Menu>

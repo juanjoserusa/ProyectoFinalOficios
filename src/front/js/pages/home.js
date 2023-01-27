@@ -6,19 +6,19 @@ import "../../styles/descriptionHome.css"
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
-import JumboProfesional from "../component/JumboProfesional"
+
 
 
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+
 
 	return (
 		<div className="container-flex pagehome">
       <RegistroUsuario/>
    
 			<JumboCliente />
-      {/* <JumboProfesional /> */}
+
 			<div className="espaciofooter"></div>
       <hr className="linea"/>
 			<section className=" py-5 description">
