@@ -1,0 +1,15 @@
+.btnBusqueda{
+    font-weight: 300;
+    width:5rem;
+
+}
+.input-busqueda{
+    border-radius: 5rem;
+}
+
+
+.btnReiniciarBusqueda{
+    width:15rem;
+    border-radius: 2rem;
+    height: 3rem;
+}

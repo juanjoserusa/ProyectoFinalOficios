@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 
-import "../../styles/home.css";
 import "../../styles/descriptionHome.css";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
-
-import JumboProfesional from "../component/JumboProfesional";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -15,9 +12,8 @@ export const Home = () => {
   return (
     <div className="container-flex pagehome">
       <RegistroUsuario />
-
       <JumboCliente />
-      {/* <JumboProfesional /> */}
+
       <div className="espaciofooter"></div>
       <hr className="linea" />
       <section className=" py-5 description">
@@ -38,7 +34,6 @@ export const Home = () => {
               </div>
               <div className="ms-5">
                 <h3 className="titledescription text-center">Profesionales</h3>
-
 
                 <p className=" mb-6 parrafoDescription">
                   Los profesionales pueden encontrar clientes o particulares que

@@ -14,12 +14,9 @@
 }
 
 .dropdown-menu1 {
-
-  width: 15rem;
+  background-color:  #B8E4F9;
+  width: 25rem;
   border-radius: 2rem;
 }
 
-.dropdown-menu1:hover {
-  color: #004e9c;
-}
 

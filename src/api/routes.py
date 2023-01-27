@@ -32,7 +32,7 @@ def get_hello():
     email= get_jwt_identity()
     user = User.query.filter_by(email=email).first()
     dictionary= {
-        "message": "Has iniciado sesion con éxito",
+        "message": "has iniciado sesion con éxito",
         "email" : user.email,
         "id" : user.id
     }

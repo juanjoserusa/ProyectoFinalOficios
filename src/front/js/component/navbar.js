@@ -46,19 +46,19 @@ export const Navbar = () => {
         <div className="d-flex justify-content-center ">
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ">
-              <li className="nav-item me-5">
+              <li className="nav-item me-2">
                 <Link to="/">
                   <a className="nav-link active enlacesNavbar">Inicio</a>
                 </Link>
               </li>
-              <li className="nav-item me-5">
+              <li className="nav-item me-2">
                 <Link to="/profesiones/anuncios">
                   <a className="nav-link enlacesNavbar">Profesiones</a>
                 </Link>
               </li>
 
               {token ? (
-                <li className="nav-item me-5 ">
+                <li className="nav-item me-2">
                   {user_type === true ? (
                     <Link to={`profesiones/anuncios/perfil_profesional/${id}`}>
                       <a className="nav-link enlacesNavbar">
@@ -73,18 +73,18 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="d-flex justify-content-end  me-5">
+        <div className="d-flex justify-content-end me-3">
           <div className="ml-auto">
             {!token ? (
               <Link to="/signup">
-                <button className="btn btn-danger nav-bt me-5" type="button">
+                <button className="btn nav-bt me-3" type="button">
                   Crear Usuario
                 </button>
               </Link>
             ) : (
               <Link to="/publicarAnuncio">
                 {user_type === true ? (
-                  <button className="btn btn-warning nav-bt me-5" type="button">
+                  <button className="btn nav-bt me-3" type="button">
                     Crear Anuncio
                   </button>
                 ) : (
@@ -95,7 +95,7 @@ export const Navbar = () => {
 
             {!token ? (
               <Link to="/login">
-                <button className="btn btn-danger nav-bt me-5" type="button">
+                <button className="btn nav-bt me-5 " type="button">
                   Inicia Sesión
                 </button>
               </Link>
@@ -105,7 +105,7 @@ export const Navbar = () => {
                   actions.logout();
                   navigate("/")
                 }}
-                className="btn btn-danger nav-bt me-5"
+                className="btn nav-bt me-5"
                 type="button"
               >
                 Cerrar Sesión
