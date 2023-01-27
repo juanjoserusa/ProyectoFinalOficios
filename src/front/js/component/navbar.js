@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/navbar.css";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import logo from "/workspace/ProyectoFinalOficios/src/front/assets/Handlehome.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -14,10 +15,9 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid ">
-        <a className="navbar-brand nav-title ms-5" href="/">
-          HandleHome
-        </a>
-
+      <Link to="/">
+      <img src={logo} className="nav-title" alt="cliente" href="/"/>
+      </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -77,14 +77,14 @@ export const Navbar = () => {
           <div className="ml-auto">
             {!token ? (
               <Link to="/signup">
-                <button className="btn btn-danger nav-bt me-3" type="button">
+                <button className="btn btn-danger nav-bt me-5" type="button">
                   Crear Usuario
                 </button>
               </Link>
             ) : (
               <Link to="/publicarAnuncio">
                 {user_type === true ? (
-                  <button className="btn btn-warning nav-bt me-3" type="button">
+                  <button className="btn btn-warning nav-bt me-5" type="button">
                     Crear Anuncio
                   </button>
                 ) : (
@@ -95,7 +95,7 @@ export const Navbar = () => {
 
             {!token ? (
               <Link to="/login">
-                <button className="btn btn-danger nav-bt me-3" type="button">
+                <button className="btn btn-danger nav-bt me-5" type="button">
                   Inicia Sesión
                 </button>
               </Link>
@@ -105,7 +105,7 @@ export const Navbar = () => {
                   actions.logout();
                   navigate("/")
                 }}
-                className="btn btn-danger nav-bt"
+                className="btn btn-danger nav-bt me-5"
                 type="button"
               >
                 Cerrar Sesión
