@@ -77,7 +77,6 @@ export const Login = () => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header
           className="titlemodal"
-          style={{ backgroundColor: "#D0F3C6" }}
           closeButton
         >
           <Modal.Title className="titlewelcome">

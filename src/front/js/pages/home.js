@@ -6,6 +6,7 @@ import "../../styles/descriptionHome.css";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
+
 import JumboProfesional from "../component/JumboProfesional";
 
 export const Home = () => {
@@ -37,6 +38,7 @@ export const Home = () => {
               </div>
               <div className="ms-5">
                 <h3 className="titledescription text-center">Profesionales</h3>
+
 
                 <p className=" mb-6 parrafoDescription">
                   Los profesionales pueden encontrar clientes o particulares que

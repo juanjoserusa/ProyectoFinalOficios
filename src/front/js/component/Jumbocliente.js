@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import background from "/workspace/ProyectoFinalOficios/src/front/assets/familia.png";
 import "../../styles/jumbo.css";
 import DropdownHome from "/workspace/ProyectoFinalOficios/src/front/js/component/DropdownHome.js";
@@ -20,9 +20,7 @@ const JumboCliente = () => {
                 Solo debes seleccionar el tipo de oficio que estas buscando y
                 nosotros te ayudamos a conectarte.
               </h5>
-              {/* <h1 className="card-title  d-flex justify-content-center ">
-              ¿Buscas un profesional para las reformas de tu hogar?
-            </h1> */}
+
               <div className="mt-3 ">
                 <DropdownHome />
               </div>
