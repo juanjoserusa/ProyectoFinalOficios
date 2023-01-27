@@ -2,15 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#33475b;
+    color:#044E39;
+    width: 90%;
 }
 
 .parrafoDescription{
-    color: #33475b
+    color: #044E39
 }
 
 .titledescription{
-    color:#33475b
+    color:#044E39
 }
 
 .description{
@@ -20,10 +21,7 @@
 }
 
 
-.cardsDescription{
-    border: 2px solid #33475b;
-    padding: 2vw;
-}
+
 
 .linea{
     padding: 0;

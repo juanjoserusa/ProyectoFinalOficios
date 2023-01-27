@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/footer.css";
 
 export const Footer = () => (
-  <footer className="footer mt-0  text-center ">
+  <footer className="footer mt-0  text-center sticky-bottom">
     <section className="  mb-5  descriptionFooter">
       <div className="container-flex">
         <div className="row d-flex justify-content-evenly">
