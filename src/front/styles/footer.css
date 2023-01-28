@@ -1,6 +1,8 @@
 .footer{
-    margin-top: 0;
-    margin-bottom: 0;
+    bottom: 0;
+    
+    
+    
 }
 
 .cards{
@@ -11,12 +13,12 @@
 }
 
 .enlacesAyuda{
-    color: #FCF5AB;
+    color: #044E39;
     text-decoration: none;
 }
 
 .enlacesAyuda:hover{
-    background-color: #D0F3C6;
+    background-color: #fcf9db;
     color:black;
     border: 0;
     border-radius: 10px;
@@ -27,20 +29,20 @@
     display: flex;
     justify-content: center;
     font-size: small;
-    color: #FCF5AB;
+    color: #044E39;
 }
 
 .redes {
-    color: #FCF5AB;
+    color: #044E39;
     text-decoration: none;
 }
 
 .redes:hover{
-    color : #FCF5AB;
+    color : #044E39;
 }
 
 .descriptionFooter{
-    background-color: #07AA7C;
+    background-color: #D0F3C6;
 }
 
 .titlefooter{

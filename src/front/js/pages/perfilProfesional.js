@@ -22,11 +22,12 @@ const PerfilProfesional = () => {
   }, []);
 
   return (
-    <div className="container mt-5 mb-5">
+    <div className="container perfilprofesionalpage">
+      <div className="mt-5 mb-5">
       <Tabs
         defaultActiveKey="profile"
         id="fill-tab-example"
-        className="mb-3 tabCliente"
+        className="mb-3 tabCliente  "
         fill
       >
         <Tab
@@ -91,7 +92,7 @@ const PerfilProfesional = () => {
               </div>
 
             
-            <div className="formularioTrabajos sticky-top">
+            <div className="formularioTrabajos fixed">
               <FormularioTrabajos user_id={parametros.id} />
 
             </div>
@@ -99,6 +100,7 @@ const PerfilProfesional = () => {
          
         </Tab>
       </Tabs>
+      </div>
     </div>
   );
 };
