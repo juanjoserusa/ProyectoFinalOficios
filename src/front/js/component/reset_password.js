@@ -21,18 +21,20 @@ export const RessetPass  = () => {
           alert('La key temporal es inválida o ha expirado');
       }
     };
-     const handleSubmit = (e) => {
-       if (!newPassword) {
-          setError("Ingrese una= nuevo password");
+    const validateForm = (event) => {
+      event.preventDefault();
+      if(key_pass !== store.key_pass) {
+          setError("La clave ingresada no es valida, por favor verifica la clave enviada a tu correo");
       } else {
-        setError("La key temporal es inválida o ha expirado'");
+          setError("");
+          actions.login();
+          history.push("/");
       }
-      }; 
+     }
             
     return (
-      <div className=" text-center pageReset">
+      <div className=" text-center pageReset">  
           <div className="reset_Frm">
-          <div className="error">{error}</div>
            < form onSubmit={handleResetPassword} className="form">
               <h1 className="title">Nueva contraseña</h1>
               <div className="inputContainer">
@@ -73,6 +75,7 @@ export const RessetPass  = () => {
               </button>
            </form>
           </div>
+          {error !== "" && <div className="alert alert-danger" role="alert">{error}</div>}
       </div>
     ) 
     } 

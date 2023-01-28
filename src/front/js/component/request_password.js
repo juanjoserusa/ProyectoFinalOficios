@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext,useEffect } from "react";
-import { useHistory } from 'react-router-dom'
+import { Router, useHistory } from 'react-router-dom';
 import emailjs from "@emailjs/browser";
 import moment from 'moment';
 import { Context} from "../store/appContext"
@@ -9,42 +9,29 @@ export const RequestPass  = () => {
     const { store, actions } = useContext(Context);
     const [key_pass, setKey_pass] = useState();
     const expirationDate = moment().add(30, 'minutes').fromNow()
-    const [redirect, setRedirect] = useState(false);
 
-    // setTimeout(() => {
-    //   setRedirect(true);
-    // }, 3000);
-
-
+   
     useEffect(() => {
       setKey_pass(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
     },[])
 
     const handleChange = (event) =>{
       setEmail (event.target.value) 
-    //   setRedirect(true);
      }
-    
-    // useEffect(() => {
-    //   if (redirect) {
-    //     history.push('/reset-password');
-    //   }
-    // }, [redirect, history]);
-
-  const form = useRef();
+  
+    const form = useRef();
  
   const sendEmail = (e) => {
     e.preventDefault();
-    setRedirect(true);
 
-  //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
-  //     .then((result) => {
-  //         console.log(result);
-  //     }, (error) => {
-  //         console.log(error.text);
-  //     });
-  // };
-  const data = {
+    //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
+    //     .then((result) => {
+    //         console.log(result);
+    //     }, (error) => {
+    //         console.log(error.text);
+    //     });
+    // };
+   const data = {
     service_id: 'service_ru0grmi',
     template_id: 'template_i02czvn',
     user_id: '0XdsQdYfjEG1lc2qh',
@@ -53,7 +40,7 @@ export const RequestPass  = () => {
         'key_pass': key_pass,
         'expiration date': expirationDate
     }
-};
+    };
 
     fetch("https://api.emailjs.com/api/v1.0/email/send",{
       method: 'POST',
@@ -66,15 +53,16 @@ export const RequestPass  = () => {
      })
      .catch(err => {
        console.log(err);
-     });
-     
-  }
+     });    
+    }
+    function handleClick() {
+      history.push('/reset_password');
+    }
 
   return (
     <div className="container-fluid center">
       <div className="row">
         <form ref={form} onSubmit={sendEmail}>
-        {redirect && <Redirect to="/reset-password" />}
           <div className="form-group">
             <label for="user_email">Recupera tu contraseña</label> 
             <input
@@ -89,13 +77,13 @@ export const RequestPass  = () => {
              <input type ="hidden" name= "expir_date" value ={expirationDate}/>
             <small className="form-text text-muted">
               Ingrese su email registrado
-            </small>
-              
+            </small>        
           </div>
           <button
             type="submit"
             valu="send"
             class="btn btn-primary" 
+            onClick={handleClick}
           >
             Enviar
           </button>
