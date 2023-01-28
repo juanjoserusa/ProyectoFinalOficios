@@ -96,7 +96,7 @@ export const Navbar = () => {
 
             {!token ? (
               <Link to="/login">
-                <button className="btn nav-bt me-5 " type="button">
+                <button className="btn nav-bt  " type="button">
                   Inicia Sesión
                 </button>
               </Link>
@@ -106,7 +106,7 @@ export const Navbar = () => {
                   actions.logout();
                   navigate("/")
                 }}
-                className="btn nav-bt me-5"
+                className="btn nav-bt "
                 type="button"
               >
                 Cerrar Sesión

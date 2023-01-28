@@ -67,7 +67,7 @@ export const Login = () => {
               </Link>
             </div>
 
-            <Button className="btn btn-warning submitBtn" onClick={handleClick}>
+            <Button className="btn  submitBtn" onClick={handleClick}>
               Enviar
             </Button>
           </form>

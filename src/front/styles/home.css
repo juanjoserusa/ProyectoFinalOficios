@@ -42,19 +42,19 @@
 
 
 
-
+/* MONITOR JUANJO */
 @media (min-width: 1281px) {
   
 }
 
 
-
+/* MONITOR LUCIA */
 @media (min-width: 1025px) and (max-width: 1280px) {
 
 }
 
 
-
+/* MONITOR TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
     .columnasdescription{
         display: flex; 
@@ -65,7 +65,7 @@
         padding: 0;
         align-items: center;
 }
-.cardsDescription{
+    .cardsDescription{
    
    display:flex;
    flex-wrap: nowrap;
@@ -73,16 +73,7 @@
 }
 
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-}
-
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 767px) {
 
     .columnasdescription{
         display: flex; 
@@ -97,7 +88,7 @@
     width: 100%;
 }
 .icon{
-    display: none;
+    display: none !important;
 }
 
 .titlejumbo{
@@ -116,3 +107,4 @@
     width: 75vw !important;
 }
 }
+
