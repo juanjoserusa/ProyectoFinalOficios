@@ -30,8 +30,8 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="50"
+              height="50"
               fill="black"
               class="bi bi-list"
               viewBox="0 0 16 16"

@@ -56,33 +56,15 @@
 
 /* MONITOR TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
+    
     .columnasdescription{
         display: flex; 
         flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-}
-    .cardsDescription{
-   
-   display:flex;
-   flex-wrap: nowrap;
-}
-}
+        
 
-
-@media (min-width: 320px) and (max-width: 767px) {
-
-    .columnasdescription{
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-
-        margin: 0;
-        padding: 0;
-        align-items: center;
+        right: 0 !important;
+        padding: 0 !important;
+        
 }
 .col-3{
     width: 100%;
@@ -104,7 +86,103 @@
     display: none;
 }
 .nav-title{
-    width: 75vw !important;
+    width: 50vw !important;
+    margin-top: 3% !important;
 }
+.dropdown-boton{
+    width: 70vw !important;
+    height: 7vw !important;
+    font-size: 3vw !important;
+}
+.textocolumnas{
+    margin-left: 0;
+    margin-right: 5%;
+}
+
+.textosdelfooter{
+    margin-left: 6%;
+    
+}
+
+.cardsfooter{
+    margin-top: 5%;
+}
+
+.navbar-toggler-icon{
+    width: 8vw !important;
+    height: 7vw !important;
+}
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .columnasdescription{
+        display: flex; 
+        flex-direction: column;
+        
+
+        right: 0 !important;
+        padding: 0 !important;
+        
+}
+.col-3{
+    width: 100%;
+}
+.icon{
+    display: none !important;
+}
+
+.titlejumbo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.coljumbo1{
+    margin: 0 !important;
+}
+.divImage{
+    display: none;
+}
+.nav-title{
+    width: 70vw !important;
+    margin-top: 3% !important;
+}
+.dropdown-boton{
+    width: 80vw !important;
+    height: 10vw !important;
+    font-size: 4vw !important;
+}
+.textocolumnas{
+    margin-left: 0;
+    margin-right: 5%;
+}
+
+.textosdelfooter{
+    margin-left: 6%;
+    
+}
+
+.cardsfooter{
+    margin-top: 5%;
+}
+
+.navbar-toggler-icon{
+    width: 14vw !important;
+    height: 13vw !important;
+}
+
+.enlacesNavbar{
+    font-size: 5vw !important;
+    text-align: center;
+}
+
+.nav-bt{
+    margin-bottom: 2%;
+    margin-left: 25%;
+}
+
+
 }
 
