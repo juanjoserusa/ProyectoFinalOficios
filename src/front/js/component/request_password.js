@@ -11,20 +11,25 @@ export const RequestPass  = () => {
     const expirationDate = moment().add(30, 'minutes').fromNow()
     const [redirect, setRedirect] = useState(false);
 
+    // setTimeout(() => {
+    //   setRedirect(true);
+    // }, 3000);
+
+
     useEffect(() => {
       setKey_pass(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
     },[])
 
     const handleChange = (event) =>{
       setEmail (event.target.value) 
-      setRedirect(true);
-    }
+    //   setRedirect(true);
+     }
     
-    useEffect(() => {
-      if (redirect) {
-        history.push('/reset-password');
-      }
-    }, [redirect, history]);
+    // useEffect(() => {
+    //   if (redirect) {
+    //     history.push('/reset-password');
+    //   }
+    // }, [redirect, history]);
 
   const form = useRef();
  

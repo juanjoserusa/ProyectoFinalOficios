@@ -116,10 +116,11 @@ def create_resetToken():
     key_pass = data.get("key_pass")
     new_password = data.get("newpassword")
     user = User.query.filter_by(key_pass=key_pass).first()
-    if user is None:
-        return jsonify({"error": "La clave temporal es inválida o ha caducado."}), 400
     user.password = new_password
     user.temporary_key = None
     db.session.commit()
-    return jsonify({"message": "La contraseña ha sido actualizada con éxito."})
+    if user :
+        return jsonify({"error": "La clave temporal es inválida o ha caducado."}), 400
+    else:   
+        return jsonify({"message": "La contraseña ha sido actualizada con éxito."}),201
     

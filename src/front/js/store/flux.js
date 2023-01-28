@@ -18,8 +18,7 @@ const getState = ({ getStore, setStore }) => {
 
 			var requestOptions = {
 				method: 'GET',
-				redirect: 'follow',
-				
+				redirect: 'follow',			
 					
 			  };
 			  fetch(process.env.BACKEND_URL + "/api/recibirMensaje/"+id, requestOptions)
@@ -132,7 +131,7 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		},
-			reset_password: async (email,new_password) => {
+		    reset_password: async (email,new_password) => {
 				const opts = {
 				method: 'POST',
 				headers:{"Content-Type": "application/json"} ,
@@ -154,9 +153,24 @@ const getState = ({ getStore, setStore }) => {
 					return data;
 				  } catch (error) {
 					console.log("Error datos incorrectos", error);
-			}
-		  },
-	  },
+			      }
+
+			},
+			    validateKeyPass : async (email, key_pass) => {
+				try {
+					const response = await axios.post('/api/validateKeyPass', { email, key_pass });
+					if (response.data.success) {
+						return true;
+					} else {
+						return false;
+					}
+				} catch (error) {
+					console.log(error);
+					return false;
+				}
+			},
+
+		},
 	};
   };
   
