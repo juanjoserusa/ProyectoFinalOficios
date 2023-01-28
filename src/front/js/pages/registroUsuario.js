@@ -14,7 +14,7 @@ const RegistroUsuario = () => {
   return (
 
     <div className="d-flex justify-content-end"  style={{backgroundColor: "#f7f3b8",fontSize:"1.2rem"}}>
-      <div>Bienvenido </div>
+      {token ? (<div>Bienvenido </div>): ("")}
       <div className="ms-2">{store.email}</div>
       <div className="ms-2">{store.message}</div>
       <div className="me-2">{store.id}</div>

@@ -8,6 +8,7 @@ export const Searchbar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const { actions } = useContext(Context);
+  const mensaje= "No se encuentra ese codigo postal"
 
   const handleChange = (event) => {
     setQuery(event.target.value);

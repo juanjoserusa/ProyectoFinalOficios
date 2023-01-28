@@ -6,22 +6,22 @@ const DropdownHome = () => {
   return (
     <Dropdown>
 
-      <Dropdown.Toggle className="dropdown-boton" >
+      <Dropdown.Toggle className="dropdown-boton btn-outline-success" >
         Elije un oficio
 
 
       </Dropdown.Toggle>
       <Dropdown.Menu className="text-center dropdown-menu1">
-        <Dropdown.Item href="/profesiones/anuncios/fontanero hover1">
+        <Dropdown.Item href="/profesiones/anuncios/fontanero">
           Fontanero
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/electricista hover1">
+        <Dropdown.Item href="/profesiones/anuncios/electricista">
           Electricista
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/albanil hover1">
+        <Dropdown.Item href="/profesiones/anuncios/albanil">
           Albañil
         </Dropdown.Item>
-        <Dropdown.Item href="/profesiones/anuncios/carpintero hover1">
+        <Dropdown.Item href="/profesiones/anuncios/carpintero">
           Carpintero
         </Dropdown.Item>
       </Dropdown.Menu>

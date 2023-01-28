@@ -13,7 +13,8 @@
     background: none;
     z-index: 1;
     background-color: white;
-    max-width: 100%;     
+    max-width: 96%; 
+
   }
 
   .formbtn{
@@ -37,3 +38,20 @@
     align-items: center;
     height:700px;
   }
+
+  .boton-enviar-form{
+    background-color: #D0F3C6;
+    color:#044E39;
+    border: none;
+    border-radius: 1.5rem;
+    font-size:1.3rem;
+    width: 15rem;
+    
+
+  }
+
+  .boton-enviar-form:hover{
+    background-color: hwb(107 67% 7%);
+    color:#044E39;
+    transform: translateY(15%);
+}
