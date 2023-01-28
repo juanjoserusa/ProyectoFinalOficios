@@ -26,6 +26,7 @@
   align-items: center;
 }
 .mensajesRecibidos {
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
   font-size: small;

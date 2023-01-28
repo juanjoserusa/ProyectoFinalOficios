@@ -44,7 +44,8 @@ export const Navbar = () => {
           </span>
         </button>
         <div className="d-flex justify-content-center ">
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse " id="navbarNav">
+            <div className="">
             <ul className="navbar-nav ">
               <li className="nav-item me-2">
                 <Link to="/">
@@ -71,9 +72,9 @@ export const Navbar = () => {
                 ""
               )}
             </ul>
-          </div>
-        </div>
-        <div className="d-flex justify-content-end me-3">
+            </div>
+        
+        <div className="d-flex justify-content-end  me-5">
           <div className="ml-auto">
             {!token ? (
               <Link to="/signup">
@@ -112,6 +113,8 @@ export const Navbar = () => {
               </button>
             )}
           </div>
+          </div>
+        </div>
         </div>
       </div>
     </nav>

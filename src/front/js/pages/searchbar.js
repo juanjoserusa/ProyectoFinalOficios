@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import DropdownHome from "../component/DropdownHome";
 import { useNavigate } from "react-router-dom";
 import "/workspace/ProyectoFinalOficios/src/front/styles/searchbar.css"
+import "../../styles/index.css"
 
 export const Searchbar = () => {
   const [query, setQuery] = useState("");
@@ -35,11 +36,10 @@ export const Searchbar = () => {
   };
   return (
     <div>
-      <div>
-        <nav
-          className="navbar navbar-expand-lg p-4 navbar-search"
-        >
-          <div className="container-fluid d-flex justify-content-around">
+      <div className="container-fluid busqueda pb-3  pt-3 mt-3">
+        
+        
+          <div className="container-fluid d-flex justify-content-around barrabusqueda " >
             <form class=" align-items-center ">
               <div class="col-auto">
                 <div className="input-group">
@@ -73,9 +73,11 @@ export const Searchbar = () => {
                 </div>
               </div>
             </form>
+            
           </div>
-        </nav>
+          
       </div>
+      
     </div>
   );
 };

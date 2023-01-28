@@ -1,0 +1,118 @@
+/*
+    home.css: This website contains selectors only used in home.css
+
+    All pages share the styles on index.css but you should create 
+    one more css for each page that will contain the selected used 
+    on that page only (the ones not reused in other pages).
+*/
+/* 
+@media (min-width: 1281px) {
+  
+}
+
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+}
+
+ */
+
+
+    
+
+
+
+
+@media (min-width: 1281px) {
+  
+}
+
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .columnasdescription{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+}
+.cardsDescription{
+   
+   display:flex;
+   flex-wrap: nowrap;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .columnasdescription{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+        align-items: center;
+}
+.col-3{
+    width: 100%;
+}
+.icon{
+    display: none;
+}
+
+.titlejumbo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.coljumbo1{
+    margin: 0 !important;
+}
+.divImage{
+    display: none;
+}
+.nav-title{
+    width: 75vw !important;
+}
+}
