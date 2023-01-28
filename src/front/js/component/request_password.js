@@ -10,7 +10,7 @@ export const RequestPass  = () => {
     const expirationDate = moment().add(30, 'minutes').fromNow()
 
     useEffect(() => {
-      actions.generateTemporaryKey(key_pass)
+      setKey_pass(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
     },[])
 
     const handleChange = (event) =>{
@@ -36,17 +36,24 @@ export const RequestPass  = () => {
     user_id: '0XdsQdYfjEG1lc2qh',
     template_params: {
         'user_email': email ,
-        'key_pass': '{tempKey.key_pass}',
-        'expiration date': '{tempKey.expirationDate}'
+        'key_pass': key_pass,
+        'expiration date': expirationDate
     }
 };
 
     fetch("https://api.emailjs.com/api/v1.0/email/send",{
       method: 'POST',
       body: JSON.stringify(data),
-      headers: {'Content-Type': 'application/json'
-      },
+      headers: {'Content-Type': 'application/json'},
      })
+     .then(res => res.json())
+     .then(res => {
+       console.log(res);
+     })
+     .catch(err => {
+       console.log(err);
+     });
+     
   }
 
   return (
@@ -64,7 +71,7 @@ export const RequestPass  = () => {
               onChange={handleChange}
             />
              <input type="hidden"  name="key_pass"  id= "key_pass" value={key_pass} />
-             <input type ="hidden" name= "expiration Date" value ={expirationDate}/>
+             <input type ="hidden" name= "expir_date" value ={expirationDate}/>
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>

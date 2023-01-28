@@ -1,4 +1,4 @@
-import moment from "moment";
+
 
 const getState = ({ getStore, setStore }) => {
 	return {
@@ -10,8 +10,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		key_pass:[],
-		moment:null
+		key_pass:null,
 	  },
 	  actions: {
 
@@ -103,17 +102,6 @@ const getState = ({ getStore, setStore }) => {
 			  });
 	    },
 
-	     generateTemporaryKey : () => {
-			const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-			let key_pass = '';
-			for (let i = 0; i < 12; i++) {
-				key_pass += characters.charAt(Math.floor(Math.random() * characters.length));
-			}
-			const expirationDate = moment().add(1, 'hours').format();
-			return { key_pass, expirationDate };
-		},
-		
-
 		login: async (email, password) => {
 		  const opts = {
 			method: "POST",
@@ -155,7 +143,7 @@ const getState = ({ getStore, setStore }) => {
 			};
 			try {
 			  const resp = await fetch(
-				process.env.BACKEND_URL + "/api/token",
+				process.env.BACKEND_URL + "/api/reset_password",
 				opts
 			  );
 	
@@ -164,12 +152,11 @@ const getState = ({ getStore, setStore }) => {
 				return false;
 			  }
 			  const data = await resp.json();
-			  sessionStorage.setItem("token", data.access_token);
 			  sessionStorage.setItem("id", data.id)
-			  setStore({ token: data.access_token,});
+			  setStore({key_pass: data.key_pass,})
 			  return true;
 			} catch (error) {
-			  console.error("error dstos incorrectos");
+			  console.error("error datos incorrectos");
 			}
 		  },
 	  },
