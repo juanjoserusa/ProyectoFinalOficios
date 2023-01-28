@@ -1,13 +1,15 @@
 import React, { useState, useRef, useContext,useEffect } from "react";
+import { useHistory } from 'react-router-dom'
 import emailjs from "@emailjs/browser";
 import moment from 'moment';
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context} from "../store/appContext"
 
 export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
     const { store, actions } = useContext(Context);
     const [key_pass, setKey_pass] = useState();
     const expirationDate = moment().add(30, 'minutes').fromNow()
+    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
       setKey_pass(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
@@ -15,13 +17,20 @@ export const RequestPass  = () => {
 
     const handleChange = (event) =>{
       setEmail (event.target.value) 
+      setRedirect(true);
     }
     
+    useEffect(() => {
+      if (redirect) {
+        history.push('/reset-password');
+      }
+    }, [redirect, history]);
+
   const form = useRef();
  
   const sendEmail = (e) => {
-    console.log(e)
     e.preventDefault();
+    setRedirect(true);
 
   //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
   //     .then((result) => {
@@ -60,6 +69,7 @@ export const RequestPass  = () => {
     <div className="container-fluid center">
       <div className="row">
         <form ref={form} onSubmit={sendEmail}>
+        {redirect && <Redirect to="/reset-password" />}
           <div className="form-group">
             <label for="user_email">Recupera tu contraseña</label> 
             <input

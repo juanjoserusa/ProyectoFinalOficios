@@ -110,13 +110,12 @@ def handle_search():
 
 
 @api.route("/reset_password", methods=["POST"])
-@jwt_required()
 def create_resetToken():
-    email = get_jwt_identity()
+    email = request.json.get("email")
     data = request.get_json()
-    temporary_key = data.get("temporary_key")
-    new_password = data.get("new_password")
-    user = User.query.filter_by(key_pass=temporary_key).first()
+    key_pass = data.get("key_pass")
+    new_password = data.get("newpassword")
+    user = User.query.filter_by(key_pass=key_pass).first()
     if user is None:
         return jsonify({"error": "La clave temporal es inválida o ha caducado."}), 400
     user.password = new_password

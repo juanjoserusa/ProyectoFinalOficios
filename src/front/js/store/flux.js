@@ -10,7 +10,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		key_pass:null,
+		key_pass:[],
 	  },
 	  actions: {
 
@@ -132,31 +132,28 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		},
-		rest_password: async (email,new_password) => {
-			const opts = {
-			  method: "POST",
-			  headers: { "Content-Type": "application/json" },
-			  body: JSON.stringify({
-				email: email,
-				new_password: password,
-			  }),
-			};
-			try {
-			  const resp = await fetch(
-				process.env.BACKEND_URL + "/api/reset_password",
-				opts
-			  );
-	
-			  if (resp.status !== 200) {
-				alert("there has been some error");
-				return false;
-			  }
-			  const data = await resp.json();
-			  sessionStorage.setItem("id", data.id)
-			  setStore({key_pass: data.key_pass,})
-			  return true;
-			} catch (error) {
-			  console.error("error datos incorrectos");
+			reset_password: async (email,new_password) => {
+				const opts = {
+				method: 'POST',
+				headers:{"Content-Type": "application/json"} ,
+				body: JSON.stringify({
+					email: email,
+					key_pass: key_pass,
+					new_password:new_password
+				  }),
+				};
+				try {
+					const resp = await fetch(
+					  process.env.BACKEND_URL + "/api/reset_password",
+					  opts
+					);
+
+					const data = await resp.json();
+					console.log(data)
+					setStore({ key_pass: data.key_pass, email: data.email, id: data.id });
+					return data;
+				  } catch (error) {
+					console.log("Error datos incorrectos", error);
 			}
 		  },
 	  },
