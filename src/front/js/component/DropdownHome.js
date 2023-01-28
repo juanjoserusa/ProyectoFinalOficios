@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import "/workspace/ProyectoFinalOficios/src/front/styles/dropdown.css"
 
 const DropdownHome = () => {
   return (
     <Dropdown>
-      <Dropdown.Toggle
-        variant="success"
-        id="dropdown-basic"
-        style={{ width: "600px", backgroundColor: "hwb(107 67% 7%)", fontSize: "18px", color:"#044E39", border:"none" }}
-      >
-        Elije un oficio 
+
+      <Dropdown.Toggle className="dropdown-boton btn-outline-success" >
+        Elije un oficio
+
+
       </Dropdown.Toggle>
-      <Dropdown.Menu
-        className="text-center"
-        style={{ width: "800px", backgroundColor: "#fcf5aa" }}
-      >
+      <Dropdown.Menu className="text-center dropdown-menu1">
         <Dropdown.Item href="/profesiones/anuncios/fontanero">
           Fontanero
         </Dropdown.Item>

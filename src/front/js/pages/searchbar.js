@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { BiMap } from "react-icons/bi";
 import DropdownHome from "../component/DropdownHome";
 import { useNavigate } from "react-router-dom";
+import "/workspace/ProyectoFinalOficios/src/front/styles/searchbar.css"
 import "../../styles/index.css"
 
 export const Searchbar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const { actions } = useContext(Context);
+  const mensaje= "No se encuentra ese codigo postal"
+
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
@@ -39,14 +41,12 @@ export const Searchbar = () => {
         
           <div className="container-fluid d-flex justify-content-around barrabusqueda " >
             <form class=" align-items-center ">
-              <div class="col-auto  ">
-                <div className="input-group ">
-
+              <div class="col-auto">
+                <div className="input-group">
                   <input
                     onChange={handleChange}
                     type="text"
-                    className="form-control"
-                    
+                    className="form-control input-busqueda"
                     id="autoSizingInputGroup"
                     placeholder="Codigo postal ..."
                   ></input>
@@ -59,18 +59,18 @@ export const Searchbar = () => {
                   >
                     Buscar
                   </button>
-                  <div><DropdownHome /></div>
                   <div>
-                  <button
-                  className="btn btn-danger ms-5 btnReiniciarBusqueda"
-                  onClick={() => navigate("/profesiones/anuncios")}
-                >
-                  Reiniciar busqueda
-                </button>
+                    <DropdownHome />
+                  </div>
+                  <div>
+                    <button
+                      className="btn ms-3 btnReiniciarBusqueda"
+                      onClick={() => navigate("/profesiones/anuncios")}
+                    >
+                      Reiniciar busqueda
+                    </button>
+                  </div>
                 </div>
-                </div>
-
-
               </div>
             </form>
             

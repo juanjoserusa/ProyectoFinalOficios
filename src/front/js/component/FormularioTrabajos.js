@@ -60,7 +60,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="text"
-          className="form-control me-5"
+          className="form-control me-3"
           id="exampleFormControlInput1 "
           placeholder="Cliente"
           onChange={handleInputChange}
@@ -70,7 +70,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="number"
-          className="form-control ms-5 me-5 inputprecio"
+          className="form-control ms-3 me-3 inputprecio"
           id="exampleFormControlInput1"
           placeholder="Precio"
           onChange={handleInputChange}
@@ -81,7 +81,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="number"
-          className="form-control me-5 inputprecio"
+          className="form-control me-3 inputprecio"
           id="exampleFormControlInput1"
           placeholder="Horas"
           onChange={handleInputChange}
@@ -93,7 +93,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="number"
-          className="form-control me-5 inputfecha"
+          className="form-control me-3 inputfecha"
           id="exampleFormControlInput1"
           placeholder="Dia"
           onChange={handleInputChange}
@@ -104,7 +104,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="number"
-          className="form-control me-5 inputfecha"
+          className="form-control me-3 inputfecha"
           id="exampleFormControlInput1"
           placeholder="Mes"
           onChange={handleInputChange}
@@ -139,7 +139,7 @@ export const FormularioTrabajos = () => {
         ></textarea>
         </div>
         <div className="d-flex justify-content-center mt-3">
-          <button type="submit" className="btn btn-primary ">
+          <button type="submit" className="btn boton-enviar-form mb-4">
             Enviar
           </button>
         </div>

@@ -32,9 +32,9 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
       
       
     </div>
-    {token ? <Link to={`/single/${id}`}  className="btn btn-primary btnMensaje">
+    {token ? <Link to={`/single/${id}`}  className="btn btnMensaje">
           Enviar Mensaje
-      </Link> : <Link to={`/signup`}  className="btn btn-primary btnMensajeSignup">
+      </Link> : <Link to={`/signup`}  className="btn btnMensajeSignup">
           Registrate para poder enviar un mensaje
       </Link>}
   </div>

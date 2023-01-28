@@ -10,9 +10,12 @@
   margin-top: 2%;
   margin:0 auto;
   background-color: #d0f3c6;
+  font-weight: normal;
+
 }
 .uno{
-  background-color: #08AA7C;
+  background-color:#a4d199;
+  font-weight: normal;
 
 
 }
@@ -20,19 +23,24 @@
 .fecha {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border: 1px solid green;
-  width: 60px;
+  width: 70px;
   padding: 2px;
-  /*  font-weight: normal; */
+   font-weight: normal;
 }
 .tabla-body {
   border: 1px solid green;
+  
+  font-weight: normal;
 }
 
 .table-head {
   border: 1px solid green;
+  
+  font-weight: normal;
 }
 .table-head1{
   width: 30px;
+  font-weight: normal;
 
 }
 
@@ -41,4 +49,5 @@
   overflow-y:scroll;
   height:15rem;
   width:100%;
+  font-weight: normal;
 }
