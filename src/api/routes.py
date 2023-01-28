@@ -90,16 +90,10 @@ def recibirMensaje(id):
 
 @api.route("/request_password", methods=[ "POST"])
 def request_password():
-    # email = request.json.get("email", None)
-    # user = User.query.filter_by(email=email).first()  
-    # password = request.json.get("password", None)
-    email = request.json.get("email")   
-    print(email)
-    password = User.query.filter_by(email=email).first()
-    if password:
-        # password = list(map(lambda x: x.serialize(), password))
-        print(password.password)
-        return jsonify({"password":password.password}),200 
+    user = User.query.filter_by(email=email).first()  
+    email = request.json.get("email")  
+    if(emailRegistered):
+        return jsonify({"mensaje": "key_pas enviada"})
     else:
         return jsonify({"mensaje":"usuario no existe"}),200 
        
@@ -116,12 +110,17 @@ def handle_search():
 
 
 @api.route("/reset_password", methods=["POST"])
+@jwt_required()
 def create_resetToken():
-    email = request.json.get("email", None)
-    new_password = new_password.request.json.get("new_password", None)   
-    user = User.query.filter_by(email=email, new_password=password).first()
-    if user:    
-        access_token = create_access_token(identity=email)
-    return jsonify({'mensaje': 'Datos incorrectos'}), 400
-    return jsonify({"mensaje":"password cambiado con exito"}),201
-
+    email = get_jwt_identity()
+    data = request.get_json()
+    temporary_key = data.get("temporary_key")
+    new_password = data.get("new_password")
+    user = User.query.filter_by(key_pass=temporary_key).first()
+    if user is None:
+        return jsonify({"error": "La clave temporal es inválida o ha caducado."}), 400
+    user.password = new_password
+    user.temporary_key = None
+    db.session.commit()
+    return jsonify({"message": "La contraseña ha sido actualizada con éxito."})
+    

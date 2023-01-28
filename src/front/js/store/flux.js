@@ -1,3 +1,5 @@
+import moment
+ from "moment";
 const getState = ({ getStore, setStore }) => {
 	return {
 	  store: {
@@ -8,7 +10,8 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		password:null
+		key_pass:[],
+		moment:null
 	  },
 	  actions: {
 
@@ -98,27 +101,18 @@ const getState = ({ getStore, setStore }) => {
 				setStore({search:results.result});
 
 			  });
-		  },
+	    },
 
-		getUserData: async (userData) => {
-			var myHeaders = new Headers();
-			myHeaders.append("Content-Type", "application/json");
-			
-			var raw = JSON.stringify(userData);
-			
-			var requestOptions = {
-			  method: 'POST',
-			  headers: myHeaders,
-			  body: raw,
-			  redirect: 'follow'
-			};
-			
-			fetch(process.env.BACKEND_URL + process.env.BACKEND_URL + "/api/request_password", requestOptions)
-			  .then(response => response.text())
-			  .then(result => setStore({password:result.password}))
-			  .catch(error => console.log('error', error));
+	     generateTemporaryKey : () => {
+			const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+			let key_pass = '';
+			for (let i = 0; i < 12; i++) {
+				key_pass += characters.charAt(Math.floor(Math.random() * characters.length));
+			}
+			const expirationDate = moment().add(1, 'hours').format();
+			return { key_pass, expirationDate };
 		},
-
+		
 
 		login: async (email, password) => {
 		  const opts = {

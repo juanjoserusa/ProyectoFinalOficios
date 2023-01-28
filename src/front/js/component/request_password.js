@@ -1,19 +1,17 @@
 import React, { useState, useRef, useContext,useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import moment from 'moment';
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 
 export const RequestPass  = () => {
-    const [password, setPassword] = useState("lunes");
-    const { store, actions } = useContext(Context);
-    const contrasena =store.password;
-    // var input =document.getElementById("password")
-
-     useEffect(() => {
-      actions.getUserData(password)
-
-    },[])
-     
     const [email ,setEmail] = useState("")
+    const { store, actions } = useContext(Context);
+    const [key_pass, setKey_pass] = useState();
+    const expirationDate = moment().add(30, 'minutes').fromNow()
+
+    useEffect(() => {
+      actions.generateTemporaryKey(key_pass)
+    },[])
 
     const handleChange = (event) =>{
       setEmail (event.target.value) 
@@ -24,11 +22,6 @@ export const RequestPass  = () => {
   const sendEmail = (e) => {
     console.log(e)
     e.preventDefault();
-    // input.value=contrasena
-
-    console.log(contrasena)
-
-    console.log(form.current)
 
   //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
   //     .then((result) => {
@@ -43,9 +36,11 @@ export const RequestPass  = () => {
     user_id: '0XdsQdYfjEG1lc2qh',
     template_params: {
         'user_email': email ,
-        'password': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd'
+        'key_pass': '{tempKey.key_pass}',
+        'expiration date': '{tempKey.expirationDate}'
     }
 };
+
     fetch("https://api.emailjs.com/api/v1.0/email/send",{
       method: 'POST',
       body: JSON.stringify(data),
@@ -68,7 +63,8 @@ export const RequestPass  = () => {
               name="user_email" 
               onChange={handleChange}
             />
-             <input type="hidden"  name="contasena" id={contrasena} value={contrasena} />
+             <input type="hidden"  name="key_pass"  id= "key_pass" value={key_pass} />
+             <input type ="hidden" name= "expiration Date" value ={expirationDate}/>
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>
@@ -86,5 +82,4 @@ export const RequestPass  = () => {
     </div>
   );
 };
-
 
