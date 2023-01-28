@@ -21,7 +21,7 @@ export const Home = () => {
       
       <section className=" py-5 description">
         <div className="container-flex">
-          <div className="row d-flex justify-content-around">
+          <div className="row d-flex justify-content-around columnasdescription">
             <div className="col-3 col-md-3 cardsDescription  d-flex justify-content-center">
               <div className="icon mb-3 ">
                 <svg

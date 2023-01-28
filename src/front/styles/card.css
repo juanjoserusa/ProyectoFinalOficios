@@ -9,7 +9,9 @@ ul {
     background-color: #ffface;
     box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
     width: 20%;
+    max-height: 60%;
     border-radius: 5%;
+    overflow: auto;
     
 }
 
@@ -18,7 +20,7 @@ ul {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: xx-large;
+    font-size: 1.5vw;
     font-weight: bolder;
 }
 
@@ -38,14 +40,15 @@ ul {
     margin-left: 12px;
 }
 .datosCard{
-    font-size: large;
+    font-size: 1vw;
     
 }
 
 .anuncio{
     margin-top: 15px;
-    font-size: large;
+    font-size: 1vw;
     color: #044E39;
+    
     
 }
 

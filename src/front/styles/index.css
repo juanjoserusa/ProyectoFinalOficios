@@ -9,7 +9,9 @@
 
 #app{
     background-color: #fcf9db;  
-    
+    max-width: 100%;
+    overflow-x: hidden;
+   
 }
 
 .btnBusqueda{
@@ -55,11 +57,10 @@
   box-shadow: 0 3px 10px #044E39;
 }
 
-.anunciosprofesiones{
-  
-}
+
 
 .contenidoanuncio{
   overflow-y: scroll;
-  
+  height: 22vw;  
 }
+
