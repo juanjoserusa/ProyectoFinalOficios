@@ -34,8 +34,8 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
     </div>
     {token ? <Link to={`/single/${id}`}  className="btn btnMensaje">
           Enviar Mensaje
-      </Link> : <Link to={`/signup`}  className="btn btnMensajeSignup">
-          Registrate para poder enviar un mensaje
+      </Link> : <Link to={`/signup`} onClick={() => swal("Oops!", "Tienes que tener una cuenta registrada para poder enviar mensajes ", "error")} className="btn btnMensaje">
+          Enviar Mensaje
       </Link>}
   </div>
 

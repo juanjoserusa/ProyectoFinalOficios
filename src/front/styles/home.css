@@ -37,225 +37,25 @@
 
  */
 
-
-    
-
-
-
 /* MONITOR JUANJO */
 @media (min-width: 1281px) {
-    .btnBusqueda{
-        display: block;
-        margin-left: auto;
-        border: none;
-        background-color: #07AA7C;
-        color: white;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: medium !important;
-        font-weight: bold;
-       
-    }
-    
-    .btnBusqueda:hover {
-        background-color: hwb(107 67% 7%);
-        
-      }
-    
-      .btnReiniciarBusqueda{
-        
-        margin-left: auto;
-        background-color: rgb(199, 94, 94);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: medium !important;
-      }
-    
-      .btnReiniciarBusqueda:hover{
-        background-color: rgb(207, 110, 110);
-      }
-    
-    .barrabusqueda {
-      background-color: #fcf9db;
-      font-size: medium !important;
-      
-    }
-    
-    
-    .busqueda {
-      box-shadow: 0 3px 10px #044E39;
-      font-size: medium !important;
-
-    }
-
-    .input-busqueda{
-        font-size: medium !important;
-    }
-    
-    
-   
-    
-}
-
-
-/* MONITOR LUCIA */
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-}
-
-
-/* MONITOR TABLET */
-@media (min-width: 768px) and (max-width: 1024px) {
-    
-    .columnasdescription{
-        display: flex; 
-        flex-direction: column;
-        
-
-        right: 0 !important;
-        padding: 0 !important;
-        
-}
-.col-3{
-    width: 100%;
-}
-.icon{
-    display: none !important;
-}
-
-.titlejumbo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.coljumbo1{
-    margin: 0 !important;
-}
-.divImage{
-    display: none;
-}
-.nav-title{
-    width: 50vw !important;
-    margin-top: 3% !important;
-}
-.dropdown-boton{
-    width: 70vw !important;
-    height: 7vw !important;
-    font-size: 3vw !important;
-}
-.textocolumnas{
-    margin-left: 0;
-    margin-right: 5%;
-}
-
-.textosdelfooter{
-    margin-left: 6%;
-    
-}
-
-.cardsfooter{
-    margin-top: 5%;
-}
-
-.navbar-toggler-icon{
-    width: 8vw !important;
-    height: 7vw !important;
-}
-}
-
-
-@media (min-width: 320px) and (max-width: 767px) {
-
-    .columnasdescription{
-        display: flex; 
-        flex-direction: column;
-        
-
-        right: 0 !important;
-        padding: 0 !important;
-        
-}
-.col-3{
-    width: 100%;
-}
-.icon{
-    display: none !important;
-}
-
-.titlejumbo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.coljumbo1{
-    margin: 0 !important;
-}
-.divImage{
-    display: none;
-}
-.nav-title{
-    width: 70vw !important;
-    margin-top: 3% !important;
-}
-.dropdown-boton{
-    width: 80vw !important;
-    height: 10vw !important;
-    font-size: 4vw !important;
-}
-.textocolumnas{
-    margin-left: 0;
-    margin-right: 5%;
-}
-
-.textosdelfooter{
-    margin-left: 6%;
-    
-}
-
-.cardsfooter{
-    margin-top: 5%;
-}
-
-.navbar-toggler-icon{
-    width: 14vw !important;
-    height: 13vw !important;
-}
-
-.enlacesNavbar{
-    font-size: 5vw !important;
-    text-align: center;
-}
-
-.nav-bt{
-    margin-bottom: 2%;
-    margin-left: 25%;
-}
-
-.btnBusqueda{
+  .btnBusqueda {
     display: block;
     margin-left: auto;
     border: none;
-    background-color: #07AA7C;
+    background-color: #07aa7c;
     color: white;
     border-radius: 6px;
     cursor: pointer;
     font-size: medium !important;
     font-weight: bold;
-    width: 50% !important;
-   
-}
-
-.btnBusqueda:hover {
-    background-color: hwb(107 67% 7%);
-    
   }
 
-  .btnReiniciarBusqueda{
-    
+  .btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+  }
+
+  .btnReiniciarBusqueda {
     margin-left: auto;
     background-color: rgb(199, 94, 94);
     color: white;
@@ -263,74 +63,250 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: medium !important;
-    width: 100% !important
   }
 
-  .btnReiniciarBusqueda:hover{
+  .btnReiniciarBusqueda:hover {
     background-color: rgb(207, 110, 110);
   }
 
-.barrabusqueda {
+  .barrabusqueda {
+    background-color: #fcf9db;
+    font-size: medium !important;
+  }
+
+  .busqueda {
+    box-shadow: 0 3px 10px #044e39;
+    font-size: medium !important;
+  }
+
+  .input-busqueda {
+    font-size: medium !important;
+  }
+}
+
+/* MONITOR LUCIA */
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* MONITOR TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .columnasdescription {
+    display: flex;
+    flex-direction: column;
+
+    right: 0 !important;
+    padding: 0 !important;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  .icon {
+    display: none !important;
+  }
+
+  .titlejumbo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .coljumbo1 {
+    margin: 0 !important;
+  }
+  .divImage {
+    display: none;
+  }
+  .nav-title {
+    width: 50vw !important;
+    margin-top: 3% !important;
+  }
+  .dropdown-boton {
+    width: 70vw !important;
+    height: 7vw !important;
+    font-size: 3vw !important;
+  }
+  .textocolumnas {
+    margin-left: 0;
+    margin-right: 5%;
+  }
+
+  .textosdelfooter {
+    margin-left: 6%;
+  }
+
+  .cardsfooter {
+    margin-top: 5%;
+  }
+
+  .navbar-toggler-icon {
+    width: 8vw !important;
+    height: 7vw !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .columnasdescription {
+    display: flex;
+    flex-direction: column;
+
+    right: 0 !important;
+    padding: 0 !important;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  .icon {
+    display: none !important;
+  }
+
+  .titlejumbo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .coljumbo1 {
+    margin: 0 !important;
+  }
+  .divImage {
+    display: none;
+  }
+  .nav-title {
+    width: 70vw !important;
+    margin-top: 3% !important;
+  }
+  .dropdown-boton {
+    width: 80vw !important;
+    height: 10vw !important;
+    font-size: 4vw !important;
+  }
+  .textocolumnas {
+    margin-left: 0;
+    margin-right: 5%;
+  }
+
+  .textosdelfooter {
+    margin-left: 6%;
+  }
+
+  .cardsfooter {
+    margin-top: 5%;
+  }
+
+  .navbar-toggler-icon {
+    width: 14vw !important;
+    height: 13vw !important;
+  }
+
+  .enlacesNavbar {
+    font-size: 5vw !important;
+    text-align: center;
+  }
+
+  .nav-bt {
+    margin-bottom: 2%;
+    margin-left: 25%;
+  }
+
+  .btnBusqueda {
+    display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #07aa7c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+    font-weight: bold;
+    width: 50% !important;
+  }
+
+  .btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+  }
+
+  .btnReiniciarBusqueda {
+    margin-left: auto;
+    background-color: rgb(199, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+    width: 100% !important;
+  }
+
+  .btnReiniciarBusqueda:hover {
+    background-color: rgb(207, 110, 110);
+  }
+
+  .barrabusqueda {
     display: flex !important;
     justify-content: center !important;
-  background-color: #fcf9db;
-  font-size: medium !important;
-  
-}
+    background-color: #fcf9db;
+    font-size: medium !important;
+  }
 
+  .busqueda {
+    box-shadow: 0 3px 10px #044e39;
+    font-size: medium !important;
+  }
 
-.busqueda {
-  box-shadow: 0 3px 10px #044E39;
-  font-size: medium !important;
-
-}
-
-.input-busqueda{
-    
+  .input-busqueda {
     font-size: small !important;
     max-width: 50% !important;
-}
+  }
 
-.contenidoanuncio{
+  .contenidoanuncio {
     display: block !important;
     flex-direction: column !important;
     overflow-x: scroll;
     height: 100% !important;
-    
-}
+  }
 
-.cardanuncio {
+  .cardanuncio {
     display: flex !important;
-    
+
     width: 80% !important;
     margin: 0 auto !important;
-    margin-bottom:15px !important;
-}
+    margin-bottom: 15px !important;
+  }
 
-.anunciosprofesiones{
-    
+  .anunciosprofesiones {
     height: 100% !important;
-}
+  }
 
-.tituloCard{
+  .tituloCard {
     font-size: 6vw !important;
-    
-}
+  }
 
-.anuncio{
+  .anuncio {
     margin-top: 15px;
     font-size: 4vw !important;
-    color: #044E39;
-}
+    color: #044e39;
+  }
 
-.datosCard{
+  .datosCard {
     font-size: small !important;
-    
-}
+  }
 
-.paginaformulario{
+  .paginaformulario {
     flex-direction: column;
+  }
 
-}
-}
+  .form2 {
+    width: 90% !important;
+  }
 
+  .title2 {
+    font-size: 30px !important;
+  }
+
+  .formulariologin {
+    width: 90% !important;
+  }
+  .formanuncio{
+    width: 90% !important;
+    
+  }
+}
