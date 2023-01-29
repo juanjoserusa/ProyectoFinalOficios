@@ -37,7 +37,7 @@ const PerfilProfesional = () => {
           style={{ height: "600px" }}
         >
           <div className="container">
-            <div className="row row-cols-1 row-cols-md-4 g-4 ">
+            <div className="row row-cols-1 row-cols-md-4 g-3 d-flex justify-content-center  columnasdemensajes">
               {store.mensajeCliente.map((element, index) => {
                 return (
                   <MensajesClientes

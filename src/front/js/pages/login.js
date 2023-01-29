@@ -5,6 +5,7 @@ import "../../styles/login.css";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import swal from "sweetalert";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -24,7 +25,8 @@ export const Login = () => {
 
   const handleClick = () => {
     setShow(true);
-    if (actions.login(email, password));
+    if (actions.login(email, password))
+    swal(`¡Bienvenido! ${email}`, "Has iniciado sesion con exito", "success");
   };
 
   return (
