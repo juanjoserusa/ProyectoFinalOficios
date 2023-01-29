@@ -10,7 +10,7 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		key_pass:[],
+		key_pass:null,
 	  },
 	  actions: {
 
@@ -130,14 +130,13 @@ const getState = ({ getStore, setStore }) => {
 		  } catch (error) {
 			console.error("there hast been an error login");
 		  }
-		},
+		 },
 		    reset_password: async (email,new_password) => {
 				const opts = {
 				method: 'POST',
 				headers:{"Content-Type": "application/json"} ,
 				body: JSON.stringify({
 					email: email,
-					key_pass: key_pass,
 					new_password:new_password
 				  }),
 				};
@@ -149,27 +148,39 @@ const getState = ({ getStore, setStore }) => {
 
 					const data = await resp.json();
 					console.log(data)
-					setStore({ key_pass: data.key_pass, email: data.email, id: data.id });
+					setStore({ email: data.email, id: data.id ,new_password:data.password});
 					return data;
 				  } catch (error) {
 					console.log("Error datos incorrectos", error);
 			      }
 
 			},
-			    validateKeyPass : async (email, key_pass) => {
-				try {
-					const response = await axios.post('/api/validateKeyPass', { email, key_pass });
-					if (response.data.success) {
-						return true;
-					} else {
-						return false;
-					}
-				} catch (error) {
-					console.log(error);
-					return false;
-				}
-			},
 
+			validateKeyPass: () => {
+				var requestOptions = {
+					method: 'GET',
+					headers: myHeaders,
+					body: raw,
+					redirect: 'follow'
+				};	
+
+				var myHeaders = new Headers();
+				myHeaders.append("Content-Type", "application/json");
+
+				var raw = JSON.stringify({
+					"email": " ",
+					"key_pass": " "
+				});
+					
+				fetch( process.env.BACKEND_URL + "/api/reset_password",
+				requestOptions)
+				.then(response => response.json())
+				.then(result => {
+				setStore({key_pass:data.key_pass, email:data.email})
+				console.log(result)
+				})
+				.catch(error => console.log('error', error));					
+	        },	
 		},
 	};
   };

@@ -21,7 +21,7 @@ export const RessetPass  = () => {
           alert('La key temporal es inválida o ha expirado');
       }
     };
-    const validateForm = (event) => {
+    const onChange = (event) => {
       event.preventDefault();
       if(key_pass !== store.key_pass) {
           setError("La clave ingresada no es valida, por favor verifica la clave enviada a tu correo");
@@ -52,7 +52,7 @@ export const RessetPass  = () => {
                 <input
                   type="key"
                   placeholder="Ingrese key enviada por correo"
-                  handleSubmit={(e) => setKey_pass(e.target.value)}
+                  onChange={(e) => setKey_pass(e.target.value)}
                   value={key_pass}
                   required
                   className="inputLogin Key"

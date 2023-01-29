@@ -8,7 +8,7 @@ export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
     const { store, actions } = useContext(Context);
     const [key_pass, setKey_pass] = useState();
-    const expirationDate = moment().add(30, 'minutes').fromNow()
+    const expirationDate = moment().add(60, 'minutes').fromNow()
 
    
     useEffect(() => {
@@ -55,8 +55,8 @@ export const RequestPass  = () => {
        console.log(err);
      });    
     }
-    function handleClick() {
-      history.push('/reset_password');
+    function handleClick(event) {
+      window.location.replace("request_password/reset_password");
     }
 
   return (
