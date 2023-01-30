@@ -172,7 +172,7 @@ const getState = ({ getStore, setStore }) => {
 					"key_pass": " "
 				});
 					
-				fetch( process.env.BACKEND_URL + "/api/reset_password",
+				fetch( process.env.BACKEND_URL + "/api/validateKeyPass",
 				requestOptions)
 				.then(response => response.json())
 				.then(result => {

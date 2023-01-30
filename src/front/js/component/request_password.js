@@ -7,13 +7,20 @@ import { Context} from "../store/appContext"
 export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
     const { store, actions } = useContext(Context);
-    const [key_pass, setKey_pass] = useState();
-    const expirationDate = moment().add(60, 'minutes').fromNow()
+    const [key_pass, setKey_pass] = useState(generateTemporaryKey);
 
-   
-    useEffect(() => {
-      setKey_pass(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15))
-    },[])
+    const generateTemporaryKey = () => {
+      const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*?<>';
+      let key = '';
+  
+      for (let i = 0; i < 12; i++) {
+          key += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+  
+      const expirationDate = moment().add(30, 'minutes').fromNow();
+  
+      return { key_pass, expirationDate };
+  }
 
     const handleChange = (event) =>{
       setEmail (event.target.value) 
@@ -38,7 +45,7 @@ export const RequestPass  = () => {
     template_params: {
         'user_email': email ,
         'key_pass': key_pass,
-        'expiration date': expirationDate
+        'expiration_date': expirationDate
     }
     };
 
@@ -53,11 +60,14 @@ export const RequestPass  = () => {
      })
      .catch(err => {
        console.log(err);
-     });    
+     });   
+
     }
-    function handleClick(event) {
-      window.location.replace("request_password/reset_password");
-    }
+
+    setTimeout(function(){
+      window.location.href ="request_password/reset_password";
+    }, 30000);
+
 
   return (
     <div className="container-fluid center">
@@ -74,7 +84,7 @@ export const RequestPass  = () => {
               onChange={handleChange}
             />
              <input type="hidden"  name="key_pass"  id= "key_pass" value={key_pass} />
-             <input type ="hidden" name= "expir_date" value ={expirationDate}/>
+             <input type ="hidden" name="expiration_date"  id="expiration_date" value ={expirationDate}/>
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>        
@@ -83,7 +93,7 @@ export const RequestPass  = () => {
             type="submit"
             valu="send"
             class="btn btn-primary" 
-            onClick={handleClick}
+            onSubmit={sendEmail}
           >
             Enviar
           </button>

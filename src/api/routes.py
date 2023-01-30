@@ -91,9 +91,10 @@ def recibirMensaje(id):
 @api.route("/request_password", methods=[ "POST"])
 def request_password():
     user = User.query.filter_by(email=email).first()  
-    email = request.json.get("email")  
-    if(emailRegistered):
-        return jsonify({"mensaje": "key_pas enviada"})
+    email = request.json.get("email") 
+    if user:
+       key_pass= create_key_pass(identity=email)
+       return jsonify({"mensaje": "key_pass enviada"}),201
     else:
         return jsonify({"mensaje":"usuario no existe"}),200 
        
@@ -117,10 +118,19 @@ def create_resetToken():
     new_password = data.get("newpassword")
     user = User.query.filter_by(key_pass=key_pass).first()
     user.password = new_password
-    user.temporary_key = None
+    user.key_pass = None
     db.session.commit()
     if user :
-        return jsonify({"error": "La clave temporal es inválida o ha caducado."}), 400
+        return jsonify({"error": "Datos incorrectos."}), 400
     else:   
         return jsonify({"message": "La contraseña ha sido actualizada con éxito."}),201
     
+@api.route("/validateKeyPass", methods=[ "GET"])
+def validateKeyPass():
+    user = User.query.filter_by(key_pass=key_pass).first() 
+    email = request.json.get("email") 
+    key_pass =request.json.get("key_pass")
+    if user: 
+        return jsonify({"mensaje": "key_pass valida"})
+    else:
+        return jsonify({"mensaje":"usuario no existe"}),200 

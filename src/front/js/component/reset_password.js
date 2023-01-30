@@ -21,6 +21,7 @@ export const RessetPass  = () => {
           alert('La key temporal es inválida o ha expirado');
       }
     };
+    
     const onChange = (event) => {
       event.preventDefault();
       if(key_pass !== store.key_pass) {
