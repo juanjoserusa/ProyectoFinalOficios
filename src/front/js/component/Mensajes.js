@@ -2,6 +2,7 @@ import React, { useState, useContext,} from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 import { useNavigate, useParams } from "react-router-dom";
 import '../../styles/mensaje.css'
+import swal from "sweetalert";
 
 
 export const Mensaje = (props) => {
@@ -32,6 +33,7 @@ export const Mensaje = (props) => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
+    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -48,7 +50,9 @@ export const Mensaje = (props) => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-
+      swal("¡Enhorabuena!", "¡ Tu mensaje ha sido enviado correctamente!", "success")
+     
+      
       navigate("/")
   }
   return (
@@ -67,6 +71,7 @@ export const Mensaje = (props) => {
           placeholder="Asunto"
           onChange={handleInputChange}
           name="subject"
+          required
         />
       </div>
 
@@ -80,6 +85,7 @@ export const Mensaje = (props) => {
           placeholder="Mensaje"
           onChange={handleInputChange}
           name="message"
+          required
         ></textarea>
       </div>
       <div className="d-flex justify-content-center mt-3">

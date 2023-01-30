@@ -36,8 +36,25 @@
 }
 
  */
+ .swal-button{
+  display: flex;
+    justify-content: center;
+    padding: 15px 30px;
+    border: none;
+    background-color: #D0F3C6;
+    color: #044E39;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    width: 50%;
+ }
 
-/* MONITOR JUANJO */
+
+
+ /* MONITOR JUANJO */
 @media (min-width: 1281px) {
   .btnBusqueda {
     display: block;

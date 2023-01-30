@@ -15,6 +15,7 @@ import "../../styles/formTrabajos.css"
 const PerfilProfesional = () => {
   const parametros = useParams();
   const { store, actions } = useContext(Context);
+  
 
   useEffect(() => {
     actions.loadMessage(parametros.id);
