@@ -11,15 +11,15 @@ const RegistroUsuario = () => {
     if (token && token != "" && token != undefined) actions.getMessage();
   }, [token]);
 
-  return (
+  return (""
 
-    <div className="d-flex justify-content-end"  style={{backgroundColor: "#f7f3b8",fontSize:"1.2rem"}}>
-      {token ? (<div>Bienvenido </div>): ("")}
-      <div className="ms-2">{store.email}</div>
-      <div className="ms-2">{store.message}</div>
-      <div className="me-2">{store.id}</div>
+    // <div className="d-flex justify-content-end"  style={{backgroundColor: "#f7f3b8",fontSize:"1.2rem"}}>
+    //   {token ? (<div>Bienvenido </div>): ("")}
+    //   <div className="ms-2">{store.email}</div>
+    //   <div className="ms-2">{store.message}</div>
+    //   <div className="me-2">{store.id}</div>
 
-    </div>
+    // </div>
   );
 };
 

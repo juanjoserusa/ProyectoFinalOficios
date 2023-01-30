@@ -36,83 +36,294 @@
 }
 
  */
+ .swal-button{
+  display: flex;
+    justify-content: center;
+    padding: 15px 30px;
+    border: none;
+    background-color: #D0F3C6;
+    color: #044E39;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    width: 50%;
+ }
 
 
-    
 
-
-
-
+ /* MONITOR JUANJO */
 @media (min-width: 1281px) {
-  
+  .btnBusqueda {
+    display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #07aa7c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+    font-weight: bold;
+  }
+
+  .btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+  }
+
+  .btnReiniciarBusqueda {
+    margin-left: auto;
+    background-color: rgb(199, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+  }
+
+  .btnReiniciarBusqueda:hover {
+    background-color: rgb(207, 110, 110);
+  }
+
+  .barrabusqueda {
+    background-color: #fcf9db;
+    font-size: medium !important;
+  }
+
+  .busqueda {
+    box-shadow: 0 3px 10px #044e39;
+    font-size: medium !important;
+  }
+
+  .input-busqueda {
+    font-size: medium !important;
+  }
 }
 
-
-
+/* MONITOR LUCIA */
 @media (min-width: 1025px) and (max-width: 1280px) {
-
 }
 
-
-
+/* MONITOR TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .columnasdescription{
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-}
-.cardsDescription{
-   
-   display:flex;
-   flex-wrap: nowrap;
-}
-}
+  .columnasdescription {
+    display: flex;
+    flex-direction: column;
 
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-}
-
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-    .columnasdescription{
-        display: flex; 
-        flex-direction: column;
-        justify-content: center;
-
-        margin: 0;
-        padding: 0;
-        align-items: center;
-}
-.col-3{
+    right: 0 !important;
+    padding: 0 !important;
+  }
+  .col-3 {
     width: 100%;
-}
-.icon{
-    display: none;
-}
+  }
+  .icon {
+    display: none !important;
+  }
 
-.titlejumbo{
+  .titlejumbo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.coljumbo1{
+  }
+  .coljumbo1 {
     margin: 0 !important;
-}
-.divImage{
+  }
+  .divImage {
     display: none;
+  }
+  .nav-title {
+    width: 50vw !important;
+    margin-top: 3% !important;
+  }
+  .dropdown-boton {
+    width: 70vw !important;
+    height: 7vw !important;
+    font-size: 3vw !important;
+  }
+  .textocolumnas {
+    margin-left: 0;
+    margin-right: 5%;
+  }
+
+  .textosdelfooter {
+    margin-left: 6%;
+  }
+
+  .cardsfooter {
+    margin-top: 5%;
+  }
+
+  .navbar-toggler-icon {
+    width: 8vw !important;
+    height: 7vw !important;
+  }
 }
-.nav-title{
-    width: 75vw !important;
-}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .columnasdescription {
+    display: flex;
+    flex-direction: column;
+
+    right: 0 !important;
+    padding: 0 !important;
+  }
+  .col-3 {
+    width: 100%;
+  }
+  .icon {
+    display: none !important;
+  }
+
+  .titlejumbo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .coljumbo1 {
+    margin: 0 !important;
+  }
+  .divImage {
+    display: none;
+  }
+  .nav-title {
+    width: 70vw !important;
+    margin-top: 3% !important;
+  }
+  .dropdown-boton {
+    width: 80vw !important;
+    height: 10vw !important;
+    font-size: 4vw !important;
+  }
+  .textocolumnas {
+    margin-left: 0;
+    margin-right: 5%;
+  }
+
+  .textosdelfooter {
+    margin-left: 6%;
+  }
+
+  .cardsfooter {
+    margin-top: 5%;
+  }
+
+  .navbar-toggler-icon {
+    width: 14vw !important;
+    height: 13vw !important;
+  }
+
+  .enlacesNavbar {
+    font-size: 5vw !important;
+    text-align: center;
+  }
+
+  .nav-bt {
+    margin-bottom: 2%;
+    margin-left: 25%;
+  }
+
+  .btnBusqueda {
+    display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #07aa7c;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+    font-weight: bold;
+    width: 50% !important;
+  }
+
+  .btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+  }
+
+  .btnReiniciarBusqueda {
+    margin-left: auto;
+    background-color: rgb(199, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: medium !important;
+    width: 100% !important;
+  }
+
+  .btnReiniciarBusqueda:hover {
+    background-color: rgb(207, 110, 110);
+  }
+
+  .barrabusqueda {
+    display: flex !important;
+    justify-content: center !important;
+    background-color: #fcf9db;
+    font-size: medium !important;
+  }
+
+  .busqueda {
+    box-shadow: 0 3px 10px #044e39;
+    font-size: medium !important;
+  }
+
+  .input-busqueda {
+    font-size: small !important;
+    max-width: 50% !important;
+  }
+
+  .contenidoanuncio {
+    display: block !important;
+    flex-direction: column !important;
+    overflow-x: scroll;
+    height: 100% !important;
+  }
+
+  .cardanuncio {
+    display: flex !important;
+
+    width: 80% !important;
+    margin: 0 auto !important;
+    margin-bottom: 15px !important;
+  }
+
+  .anunciosprofesiones {
+    height: 100% !important;
+  }
+
+  .tituloCard {
+    font-size: 6vw !important;
+  }
+
+  .anuncio {
+    margin-top: 15px;
+    font-size: 4vw !important;
+    color: #044e39;
+  }
+
+  .datosCard {
+    font-size: small !important;
+  }
+
+  .paginaformulario {
+    flex-direction: column;
+  }
+
+  .form2 {
+    width: 90% !important;
+  }
+
+  .title2 {
+    font-size: 30px !important;
+  }
+
+  .formulariologin {
+    width: 90% !important;
+  }
+  .formanuncio{
+    width: 90% !important;
+    
+  }
 }

@@ -60,7 +60,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="text"
-          className="form-control me-3"
+          className="form-control me-3 inputprecio"
           id="exampleFormControlInput1 "
           placeholder="Cliente"
           onChange={handleInputChange}
@@ -70,7 +70,7 @@ export const FormularioTrabajos = () => {
         <input
           required
           type="number"
-          className="form-control ms-3 me-3 inputprecio"
+          className="form-control  me-3 inputprecio"
           id="exampleFormControlInput1"
           placeholder="Precio"
           onChange={handleInputChange}

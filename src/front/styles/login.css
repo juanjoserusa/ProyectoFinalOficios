@@ -130,6 +130,7 @@
     margin: auto;
     margin-bottom: 18px;
     margin-top: 18px;
+    width: 50%;
     
     
     
@@ -138,4 +139,21 @@
   .modalbody{
     background-color: white;
     margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
+
+
+  .mensajeSignupFail{
+    color: red;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .mensajeSignupOk{
+    
+    text-align: center;
+    margin: 0 auto;}

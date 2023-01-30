@@ -5,6 +5,7 @@ import "../../styles/login.css";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import swal from "sweetalert";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
@@ -24,8 +25,14 @@ export const Login = () => {
 
   const handleClick = () => {
     setShow(true);
-    if (actions.login(email, password));
+    if (actions.login(email, password))
+    console.log(email)
   };
+
+  const ok = () => {
+    swal(`Bienvenido  ${email}`, `Has iniciado sesion correctamente a Handlehome `, "success");
+    navigate("/")
+  }
 
   return (
     <div className=" text-center pageLogin">
@@ -67,7 +74,7 @@ export const Login = () => {
               </Link>
             </div>
 
-            <Button className="btn btn-warning submitBtn" onClick={handleClick}>
+            <Button className="btn  submitBtn" onClick={handleClick}>
               Enviar
             </Button>
           </form>
@@ -85,11 +92,23 @@ export const Login = () => {
         </Modal.Header>
         <Modal.Body className="text-center fs-4 text modalbody">
           {!token ? (
-            <div className="text-center fs-5 text mb-4">
+            <div className="text-center fs-5 text mb-4" style={{color:"red"}}>
               El email o contraseña no coinciden con un usuario registrado
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="red"
+                  class="bi bi-x-octagon-fill ms-4"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+                </svg>
             </div>
           ) : (
-            navigate("/")
+            
+            ok()
+            
           )}
         </Modal.Body>
       </Modal>

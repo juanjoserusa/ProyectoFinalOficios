@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/formulario.css";
 import "../../styles/login.css";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 export const PublicarAnuncio = () => {
   const [datos, setDatos] = useState({
@@ -25,7 +26,7 @@ export const PublicarAnuncio = () => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    navigate("/");
+    
 
     var raw = JSON.stringify(datos);
 
@@ -43,6 +44,8 @@ export const PublicarAnuncio = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+      swal("¡Enhorabuena!", "¡ Tu anuncio se ha publicado con exito!", "success")
+      navigate("/");
   };
   return (
     <Fragment>

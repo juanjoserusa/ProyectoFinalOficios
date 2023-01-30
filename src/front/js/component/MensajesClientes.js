@@ -5,6 +5,8 @@ import "../../styles/mensajeCliente.css";
 import Button from "react-bootstrap/Button";
 
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import swal from "sweetalert";
+
 
 const MensajesClientes = ({ sender, subject, message, from }) => {
   const { store, actions } = useContext(Context);
@@ -44,7 +46,7 @@ const MensajesClientes = ({ sender, subject, message, from }) => {
           <Card.Text className="textoMensaje">{message}</Card.Text>
         </Card.Body>
         <Card.Body className="cardMensajeMail">
-          <Button href={`mailto:${sender}`} className="submitBtn3">
+          <Button href={`mailto:${sender}`} className="submitBtn3" onClick={() => {swal("Gracias!", `Se te ha enviado a una página externa a enviar un mensaje a ${sender}`, "success")}}>
             Responder
           </Button>
 

@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 const getState = ({ getStore, setStore }) => {
 	return {
 	  store: {
@@ -118,7 +120,7 @@ const getState = ({ getStore, setStore }) => {
 			  .then(results => {
 				console.log(results)
 				setStore({search:results.result});
-
+				if (results.result == 0) { swal("Oops!", "No hemos encontrado ningun anuncio en ese codigo postal", "error");}
 			  });
 		  },
 

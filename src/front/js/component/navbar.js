@@ -30,8 +30,8 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="50"
+              height="50"
               fill="black"
               class="bi bi-list"
               viewBox="0 0 16 16"
@@ -45,21 +45,21 @@ export const Navbar = () => {
         </button>
         <div className="d-flex justify-content-center ">
           <div className="collapse navbar-collapse " id="navbarNav">
-            <div className="">
+            <div className=" me-5">
             <ul className="navbar-nav ">
-              <li className="nav-item me-2">
+              <li className="nav-item me-4">
                 <Link to="/">
                   <a className="nav-link active enlacesNavbar">Inicio</a>
                 </Link>
               </li>
-              <li className="nav-item me-2">
+              <li className="nav-item me-4">
                 <Link to="/profesiones/anuncios">
                   <a className="nav-link enlacesNavbar">Profesiones</a>
                 </Link>
               </li>
 
               {token ? (
-                <li className="nav-item me-2">
+                <li className="nav-item me-4">
                   {user_type === true ? (
                     <Link to={`profesiones/anuncios/perfil_profesional/${id}`}>
                       <a className="nav-link enlacesNavbar">
@@ -96,7 +96,7 @@ export const Navbar = () => {
 
             {!token ? (
               <Link to="/login">
-                <button className="btn nav-bt me-5 " type="button">
+                <button className="btn nav-bt  " type="button">
                   Inicia Sesión
                 </button>
               </Link>
@@ -106,7 +106,7 @@ export const Navbar = () => {
                   actions.logout();
                   navigate("/")
                 }}
-                className="btn nav-bt me-5"
+                className="btn nav-bt "
                 type="button"
               >
                 Cerrar Sesión

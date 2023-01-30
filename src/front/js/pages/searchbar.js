@@ -13,6 +13,7 @@ export const Searchbar = () => {
 
   const handleChange = (event) => {
     setQuery(event.target.value);
+    
   };
 
   const navigate = useNavigate();
@@ -32,6 +33,10 @@ export const Searchbar = () => {
       .then((response) => response.json())
       .then((results) => {
         setResults(results);
+        
+
+        
+        
       });
   };
   return (
@@ -42,10 +47,10 @@ export const Searchbar = () => {
           <div className="container-fluid d-flex justify-content-around barrabusqueda " >
             <form class=" align-items-center ">
               <div class="col-auto">
-                <div className="input-group">
+                <div className="input-group ">
                   <input
                     onChange={handleChange}
-                    type="text"
+                    type="number"
                     className="form-control input-busqueda"
                     id="autoSizingInputGroup"
                     placeholder="Codigo postal ..."
