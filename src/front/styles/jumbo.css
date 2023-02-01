@@ -6,8 +6,18 @@
     color: #33475b;
 }
 
+.imagenjumbo2{
+    
+    width: 100%; 
+    
+    font-family: 'Avenir', sans-serif; 
+    color: #33475b;
+}
+
 .jumbotron{
     background-color: #fcf9db;
+    width: 100%;
+    height: 50%
 }
 
 .coljumbo1{

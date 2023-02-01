@@ -14,16 +14,16 @@ const JumboCliente = () => {
                 ¿Avería en casa? ¿Remodelar el salón? ¿Problemas con la luz?
                 ¿Montar ese armario que parece una misión imposible?
               </h3>
-              <h5 className="card-title">
+              {/* <h5 className="card-title">
                 Te ayudamos a encontrar la solucion a tus problemas del hogar.
                 <br />
                 Solo debes seleccionar el tipo de oficio que estas buscando y
                 nosotros te ayudamos a conectarte.
-              </h5>
+              </h5> */}
 
-              <div className="mt-3 ">
+              {/* <div className="mt-3 ">
                 <DropdownHome />
-              </div>
+              </div> */}
               
               </div>
             </div>

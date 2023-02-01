@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css"
 import "../../styles/descriptionHome.css";
+import profesional from "/workspace/ProyectoFinalOficios/src/front/assets/profesionales.png";
+import DropdownHome from "../component/DropdownHome";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
@@ -13,6 +15,27 @@ export const Home = () => {
     <div className="container-flex pagehome">
       <RegistroUsuario />
       <JumboCliente />
+
+      <div className="container-fluid jumbotron mt-5 d-flex ">
+      <div className="row justify-content-center">
+      <div className=" col ms-5">
+          <img src={profesional} className=" imagenjumbo2" alt="cliente" />
+        </div>
+        
+          <div className="col text-center coljumbo1 me-5 ">
+            <div className="">
+              <h3 className="">
+              Te ayudamos a encontrar la solucion a tus problemas del hogar.
+              </h3>
+              <div className="mt-3 ">
+                <DropdownHome />
+              </div>
+              
+              </div>
+            </div>
+            
+          </div>
+        </div>
 
       <div className="espaciofooter"></div>
       
