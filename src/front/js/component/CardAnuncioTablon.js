@@ -1,6 +1,7 @@
 import React, { useContext }   from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import background from "../../assets/fontanero.png";
 import "../../styles/card.css"
 
 
@@ -13,7 +14,9 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
 
   return (
 
-    <div className="col-1 card m-2 cardanuncio">
+    <div  className="col-1 card m-2 cardanuncio">
+      {`${profesion}` == "Fontanero" ? <img class="card-img" src={background} alt="Card image"/> : ("")}
+      <div class="card-img-overlay">
     <div className="card-body Anuncio" >
       <h4 className="card-title tituloCard ">{profesion}</h4>
       
@@ -37,6 +40,7 @@ const CardAnuncioTablon = ({description, mail, profesion, codigoPostal, precio, 
       </Link> : <Link to={`/signup`} onClick={() => swal("Oops!", "Tienes que tener una cuenta registrada para poder enviar mensajes ", "error")} className="btn btnMensaje">
           Enviar Mensaje
       </Link>}
+  </div>
   </div>
 
   );
