@@ -1,9 +1,9 @@
 .imagenjumbo{
     
-    width: 70%; 
+    width: 65%; 
     
     font-family: 'Avenir', sans-serif; 
-    color: #33475b;
+    color:#044E39;
 }
 
 .imagenjumbo2{
@@ -31,8 +31,9 @@
 }
 
 .titlejumbo{
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
+    color:#044E39
 
 }
 
@@ -44,8 +45,3 @@
 .card-title{
     color: #044E39;
 }
-
-
-
-
-

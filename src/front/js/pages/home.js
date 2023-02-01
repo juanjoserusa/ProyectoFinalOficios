@@ -4,6 +4,9 @@ import "../../styles/home.css"
 import "../../styles/descriptionHome.css";
 import profesional from "/workspace/ProyectoFinalOficios/src/front/assets/profesionales.png";
 import DropdownHome from "../component/DropdownHome";
+import buscar from "/workspace/ProyectoFinalOficios/src/front/assets/buscar.jpg";
+import registrar from "/workspace/ProyectoFinalOficios/src/front/assets/registrate.jpg";
+import mensajes from "/workspace/ProyectoFinalOficios/src/front/assets/mensajea.jpg";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
@@ -15,8 +18,29 @@ export const Home = () => {
     <div className="container-flex pagehome">
       <RegistroUsuario />
       <JumboCliente />
+      <div class="container marketing">   
+      <div class="row">
+        <h1 className="text-center mb-5 fw-bold">En pocos pasos</h1>
+          <div class="col-lg-4 text-center">
+            <img class="rounded-circle mb-2" src={buscar} alt="Generic placeholder image" width="200" height="200"/>
+            <h2>Busca</h2>
+            <p className="parrafoscta">Busca al profesional viendo una descripcion de los trabajos que realiza</p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <img class="rounded-circle mb-2" src={registrar} alt="Generic placeholder image" width="200" height="200"/>
+            <h2>Registrate</h2>
+            <p className="parrafoscta">Registrate para poder acceder a mas informacion</p>
+          </div>
+          <div class="col-lg-4 text-center">
+            <img class="rounded-circle mb-2" src={mensajes} alt="Generic placeholder image" width="200" height="200"/>
+            <h2>Contacta</h2>
+            <p className="parrafoscta">Habla directamente con tu profesional a traves de HandleHome</p>
+            
+          </div>
+        </div>
+      </div>
 
-      <div className="container-fluid jumbotron mt-5 d-flex ">
+      <div className="container-fluid jumbotron d-flex mt-3 ">
       <div className="row justify-content-center">
       <div className=" col ms-5">
           <img src={profesional} className=" imagenjumbo2" alt="cliente" />
@@ -24,10 +48,10 @@ export const Home = () => {
         
           <div className="col text-center coljumbo1 me-5 ">
             <div className="">
-              <h3 className="">
+              <h2 className="">
               Te ayudamos a encontrar la solucion a tus problemas del hogar.
-              </h3>
-              <div className="mt-3 ">
+              </h2>
+              <div className="mt-5 ">
                 <DropdownHome />
               </div>
               
@@ -36,6 +60,7 @@ export const Home = () => {
             
           </div>
         </div>
+        
 
       <div className="espaciofooter"></div>
       
