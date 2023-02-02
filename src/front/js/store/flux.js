@@ -140,6 +140,7 @@ const getState = ({ getStore, setStore }) => {
 			);
   
 			if (resp.status !== 200) {
+				swal(`Lo siento`, `Compruebe que su email y contraseña están registrados, o bien escritos`, "error")
 			  console.error("there has been some error");
 			  return false;
 			}

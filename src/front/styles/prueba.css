@@ -1,0 +1,57 @@
+.pruebacontainer{
+    max-width: 50%;
+    background-color: #fcf9db;
+    color:#044E39;
+   
+    
+}
+
+.cardlogin{
+    border: 0;
+    
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+.columnalogin{
+    background-color: #fcf9db;
+}
+
+.imagenlogin{
+    margin: 0 auto;
+    align-items: center;
+    background-color: #fcf9db;
+}
+
+.bt-login{
+    
+        background-color: #D0F3C6;
+        color:#044E39;
+        border: none;
+        border-radius: 1.5rem;
+        font-size: x-large;
+        width: 100%;
+        
+    }
+
+.bt-login:hover{
+        background-color: hwb(107 67% 7%);
+        color:black;
+        transform: translateY(10%);
+    }
+
+    .bt-login:active{
+        background-color: #D0F3C6;
+        color:#044E39;
+        border: none;
+        border-radius: 1.5rem;
+        font-size: x-large;
+        width: 100%;
+    }
+
+
+    .checkboxsignup{
+        font-size: larger;       
+    }
+   
+    .spanayuda{
+        cursor:help
+    }

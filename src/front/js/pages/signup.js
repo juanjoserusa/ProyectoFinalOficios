@@ -1,8 +1,24 @@
 import React, { useState } from "react";
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput,
+  MDBCheckbox
+}
+from 'mdb-react-ui-kit';
+import handlehome from "../../assets/Handlehome.png"
+
+import register from "../../assets/registro2.png"
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../../styles/login.css";
 
@@ -10,6 +26,7 @@ export const SignUp = () => {
   const [mensaje, setMensaje] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+  const navigate = useNavigate();
 
   const [datos, setDatos] = useState({
     email: "",
@@ -39,71 +56,79 @@ export const SignUp = () => {
       redirect: "follow",
     };
 
-    fetch(process.env.BACKEND_URL + "/api/signup", requestOptions)
+    const signup = fetch(process.env.BACKEND_URL + "/api/signup", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setMensaje(result.mensaje);
+        if (result.mensaje === "Usuario ya registrado")
+        {swal(`Lo siento, algo ha fallado`, `Puede que su email y contraseña ya esten registrados, o mal escritos`, "error") 
+        navigate("/signup")
+      } else {
+        swal(`enhorabuena`, `Su cuenta se ha registrado con exito`, "success")
+        navigate("/login")}
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => swal(`Lo siento`, `Compruebe que su email y contraseña están registrados, o bien escritos`, "error"));
 
-    setShow(true);
   };
 
   return (
-    <div className=" text-center pageLogin">
-      <div className="signupFrm">
-        <form onSubmit={enviarDatos} className="formulariologin">
-          <h1 className="title">Crear Usuario</h1>
-          <div className="inputContainer">
-            <input
-              id="email"
-              type="email"
-              placeholder="Ingrese su email"
-              className="inputlogin"
-              onChange={handleInputChange}
+    <div >
+      <MDBContainer className="mt-4  mb-5 pruebacontainer" >
+      <form onSubmit={enviarDatos}>
+      <MDBCard className="cardlogin">
+        <MDBRow className='g-0'>
+          <MDBCol md='6'>
+            <MDBCardBody className='d-flex flex-column columnalogin'>
+
+              <div className='d-flex flex-row mt-2 justify-content-center'>
+                
+                <img className="h1 fw-bold mb-0 " src={handlehome} width="75%"/>
+              </div>
+
+              <h3 className="fw-normal mt-4 mb-2 pb-3 text-center" style={{letterSpacing: '1px'}}>Crea un nuevo usuario</h3>
+
+              <MDBInput onChange={handleInputChange}
               name="email"
-              required
-            ></input>
-            <label for="" class="labellogin">
-              Email
-            </label>
-          </div>
-          <div className="inputContainer">
-            <input
-              id="password"
-              minLength="2"
-              type="password"
-              placeholder="Ingrese su password"
-              className="inputlogin"
+              required label='Email' id='typeEmail' type='email' wrapperClass ='mb-2'/>
+
+          <span id='textExample2' className='form-text'>
+            Debe tener de 4-8 caracteres.
+          </span>
+
+          <MDBInput minLength="2"
+              maxLength="8"
               onChange={handleInputChange}
               name="password"
-              required
-            ></input>
-            <label for="" class="label">
-              Password
-            </label>
-          </div>
-
-          <div className="checkbox">¿Quieres crear un perfil profesional?</div>
-          <div>
-            <input
-              className="cuadrocheck"
-              type="checkbox"
-              onClick={() => {
+              required label='Contraseña' id='typePassword' type='password' wrapperClass ='mb-2'/>
+                
+          
+        <div className="d-flex  justify-content-center text-center checkboxsignup ">
+                <MDBCheckbox onClick={() => {
                 setDatos({ ...datos, user_type: !datos.user_type });
               }}
-              name="user_type"
-            ></input>
-          </div>
+              name="user_type"  id='formControlLg'  value='' label='Crear un perfil profesional'  className="checkboxsignup text-center "/>
+                
+                </div>
+                <div><span id='textExample2' className='form-text d-flex  justify-content-center text-center spanayuda'>
+            ¿Que es un perfil profesional?
+          </span></div>
+          <button className="mt-5 mb-4 px-5 bt-login" onClick={enviarDatos} >Crear usuario</button>
+              
+              
 
-          <Button
-            variant="primary"
-            type="submit"
-            className="btn btn-primary submitBtn"
-          >
-            Enviar
-          </Button>
-        </form>
+            </MDBCardBody>
+          </MDBCol>
+
+          <MDBCol className="imagenlogin d-flex justify-content-center"  md='6'>
+            <MDBCardImage src={register} alt="login form" className='rounded-start w-100 imagenlogin'/>
+          </MDBCol>
+
+        </MDBRow>
+        
+      </MDBCard>
+      </form>
+
+    </MDBContainer>
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header
@@ -158,6 +183,6 @@ export const SignUp = () => {
           )}
         </Modal>
       </div>
-    </div>
+   
   );
 };

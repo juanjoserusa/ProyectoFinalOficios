@@ -24,6 +24,7 @@ import AnunciosFontanero from "./pages/AnunciosFontanero";
 import AnunciosElectricista from "./pages/AnunciosElectricista";
 import AnunciosCarpintero from "./pages/AnunciosCarpintero";
 import AnunciosAlbañil from "./pages/AnunciosAlbañil";
+import  Prueba  from "./pages/paginaprueba";
 
 
 //create your first component
@@ -76,6 +77,7 @@ function Layout() {
           />
 
           <Route element={<Login />} path="/login" />
+          <Route element={<Prueba />} path="/prueba" />
           <Route element={<SignUp />} path="/signup" />
            <Route element={<RequestPass /> } path="/request_password" />
             <Route element={<Reset_Pass /> } path="/reset_password" />
