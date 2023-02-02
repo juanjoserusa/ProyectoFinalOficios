@@ -119,8 +119,8 @@ export const SignUp = () => {
             </MDBCardBody>
           </MDBCol>
 
-          <MDBCol className="imagenlogin d-flex justify-content-center"  md='6'>
-            <MDBCardImage src={register} alt="login form" className='rounded-start w-100 imagenlogin'/>
+          <MDBCol className="imagenlogin2 d-flex justify-content-center"  md='6'>
+            <MDBCardImage src={register} alt="login form" className='rounded-start w-100 imagenlogin2'/>
           </MDBCol>
 
         </MDBRow>
