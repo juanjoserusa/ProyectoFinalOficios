@@ -99,8 +99,13 @@ const CardAnuncioTablon = ({
         </MDBRow> 
         <MDBRow className='g-0'>
         <MDBCol md='4'>
-          <div>
-           {`${profesion}` == "Fontanero" ? (
+          <div><iframe
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12681.497860807069!2d-6.01035405!3d37.380975649999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c6ac499fde3%3A0x1c046400c8a750c0!2s${codigoPostal}%20Madrid!5e0!3m2!1ses!2ses!4v1675429437730!5m2!1ses!2ses`}
+          className='w-100 fotoprofesion'
+          height='200'
+          loading='lazy'
+        ></iframe>
+           {/* {`${profesion}` == "Fontanero" ? (
         <MDBCardImage src={fontanero}  alt='Fontanero' fluid  className="fotoprofesion"/>
       ) : (
         ""
@@ -119,7 +124,7 @@ const CardAnuncioTablon = ({
         <MDBCardImage src={albañil}  alt='Albañil' fluid />
       ) : (
         ""
-      )} 
+      )}  */}
       </div>
           {/* <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid /> */}
         </MDBCol>
