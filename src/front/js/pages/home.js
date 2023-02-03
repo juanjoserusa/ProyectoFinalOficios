@@ -10,6 +10,7 @@ import mensajes from "/workspace/ProyectoFinalOficios/src/front/assets/mensajea.
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -22,18 +23,18 @@ export const Home = () => {
       <div class="row">
         <h2 className="text-center mb-5 fw-bold">En pocos pasos</h2>
           <div class="col-lg-4 text-center">
-            <img class="rounded-circle mb-2" src={buscar} alt="Generic placeholder image" width="250" height="250"/>
-            <h3>Busca</h3>
+          <Link to={"/profesiones/anuncios"} className="linkHome"><img class="rounded-circle mb-2" src={buscar} alt="Generic placeholder image" width="250" height="250"/>
+            <h3>Busca</h3></Link>
             <p className="parrafoscta">Busca al profesional viendo una descripcion de los trabajos que realiza</p>
           </div>
           <div class="col-lg-4 text-center">
-            <img class="rounded-circle mb-2" src={registrar} alt="Generic placeholder image" width="250" height="250"/>
-            <h3>Registrate</h3>
+          <Link to={"/signup"} className="linkHome"><img class="rounded-circle mb-2" src={registrar} alt="Generic placeholder image" width="250" height="250"/>
+            <h3>Registrate</h3></Link>
             <p className="parrafoscta">Registrate para poder acceder a mas informacion</p>
           </div>
           <div class="col-lg-4 text-center">
-            <img class="rounded-circle mb-2" src={mensajes} alt="Generic placeholder image" width="250" height="250"/>
-            <h3>Contacta</h3>
+          <Link to={"/login"} className="linkHome"><img class="rounded-circle mb-2" src={mensajes} alt="Generic placeholder image" width="250" height="250"/>
+            <h3>Contacta</h3></Link>
             <p className="parrafoscta">Habla directamente con tu profesional a traves de HandleHome</p>
             
           </div>

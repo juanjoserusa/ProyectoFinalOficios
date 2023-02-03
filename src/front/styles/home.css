@@ -37,6 +37,8 @@
 
  */
 
+
+
  .parrafoscta{
   font-size: large;
  }
@@ -56,6 +58,14 @@
     width: 50%;
  }
 
+ .linkHome{
+  color: #044E39;
+ }
+
+ .linkHome:hover{
+  color: hwb(107 67% 7%);
+  transform: translateY(10%);
+ }
 
 
  /* MONITOR JUANJO */
