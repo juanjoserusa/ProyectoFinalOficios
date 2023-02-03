@@ -27,7 +27,7 @@ const AnunciosProfesiones = () => {
 
   return (
     
-    <MDBRow className='row-cols-1 row-cols-md-3 g-4 container d-flex justify-content-center carouserCards mt-5 mb-5 text-center' >
+    <MDBRow className='row-cols-1 row-cols-md-3 g-4 container-fluid d-flex justify-content-center carouserCards mt-5 mb-5  text-center' >
   
  
         {

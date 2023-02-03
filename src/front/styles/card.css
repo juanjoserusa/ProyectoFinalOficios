@@ -59,10 +59,10 @@ ul {
     background-color: #D0F3C6;
     border-radius: 5%;
     border: none;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    width: 75%;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .btnMensaje:hover{

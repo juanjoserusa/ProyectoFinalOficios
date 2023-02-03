@@ -98,11 +98,11 @@ const CardAnuncioTablon = ({
         <MDBCardImage src={chincheta} alt=".." className="chincheta" />
         </MDBRow> 
         <MDBRow className='g-0'>
-        <MDBCol md='4'>
+        <MDBCol md='6'>
           <div><iframe
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12681.497860807069!2d-6.01035405!3d37.380975649999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c6ac499fde3%3A0x1c046400c8a750c0!2s${codigoPostal}%20Madrid!5e0!3m2!1ses!2ses!4v1675429437730!5m2!1ses!2ses`}
-          className='w-100 fotoprofesion'
-          height='200'
+          src={`https://www.google.com/maps/embed/v1/place?q=${codigoPostal}&key=AIzaSyAkvRPKBX5iNWrZmgZWOCVZvaHFTFP3x7o`}
+          className=' fotoprofesion'
+          
           loading='lazy'
         ></iframe>
            {/* {`${profesion}` == "Fontanero" ? (
@@ -128,20 +128,20 @@ const CardAnuncioTablon = ({
       </div>
           {/* <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid /> */}
         </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>{profesion}</MDBCardTitle>
+        <MDBCol md='6'>
+          <MDBCardBody className="cardbodyanunciosaver text-center">
+            <MDBCardTitle className="titlecard">{profesion}</MDBCardTitle>
             <MDBCardText className="comolaa">
               {description}
             </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>{mail}</small>
+            <MDBCardText className="d-flex justify-content-around mb-1">
+              <small className='text-muted text-left'>Nombre: {mail}</small>    
+              <small className='text-muted text-left'>C.P: {codigoPostal}</small>
+              </MDBCardText>
+              <MDBCardText className="d-flex justify-content-center"> 
+              <small className='text-muted text-left'>Precio aproximado: {precio}€ por hora</small>
             </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-     <MDBRow>
-     <div className="botoncito">
+            <div className="botoncito">
           {token ? (
             <Link to={`/single/${id}`} className="btn btnMensaje">
               Enviar Mensaje
@@ -162,6 +162,11 @@ const CardAnuncioTablon = ({
             </Link>
           )}
         </div>
+          </MDBCardBody>
+        </MDBCol>
+      </MDBRow>
+     <MDBRow>
+     
       </MDBRow> 
     </MDBCard>
     </MDBCol>

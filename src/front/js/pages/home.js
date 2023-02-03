@@ -19,6 +19,7 @@ export const Home = () => {
     <div className="container-flex pagehome">
       <RegistroUsuario />
       <JumboCliente />
+      
       <div class="container marketing">   
       <div class="row">
         <h2 className="text-center mb-5 fw-bold">En pocos pasos</h2>
