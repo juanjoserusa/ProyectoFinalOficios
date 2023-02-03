@@ -1,6 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
 import CardAnuncioTablon from "./CardAnuncioTablon.js";
 import { Context } from"../store/appContext"
+import {
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
+
+import corcho from "../../assets/corcho2.jpg";
 
 const AnunciosProfesiones = () => {
 
@@ -16,15 +27,17 @@ const AnunciosProfesiones = () => {
 
   return (
     
-    <div className="container-fluid anunciosprofesiones ">
-      <div className="row d-flex justify-content-center  mt-5 mb-5 contenidoanuncio">
+    <MDBRow className='row-cols-1 row-cols-md-3 g-4 container d-flex justify-content-center carouserCards mt-5 mb-5 text-center' >
+  
+ 
         {
           store.search.map((element, index) => {
             return <CardAnuncioTablon key={index} description={element.description} mail={element.mail} codigoPostal={element.zipcode} precio={element.price} profesion={element.profession} id={element.user_id} />
           })
-        }  
-      </div>
-    </div>
+        } 
+       
+     
+    </MDBRow>
     
   );
 };

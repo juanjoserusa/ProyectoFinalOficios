@@ -47,6 +47,9 @@ export const PublicarAnuncio = () => {
       swal("¡Enhorabuena!", "¡ Tu anuncio se ha publicado con exito!", "success")
       navigate("/");
   };
+
+
+  
   return (
     <Fragment>
       <div className="text-center pageLogin">

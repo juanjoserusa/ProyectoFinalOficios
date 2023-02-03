@@ -1,74 +1,127 @@
-.pruebacontainer{
-    max-width: 50%;
-    background-color: #fcf9db;
-    color:#044E39;
-   
-    
+.pruebacontainer {
+  max-width: 50%;
+  background-color: #fcf9db;
+  color: #044e39;
 }
 
-.cardlogin{
-    border: 0;
-    
-    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-}
-.columnalogin{
-    background-color: #fcf9db;
-}
+.cardlogin {
+  border: 0;
 
-.imagenlogin{
-    margin: 0 auto;
-    align-items: center;
-    background-color: #fcf9db;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+}
+.columnalogin {
+  background-color: #fcf9db;
 }
 
-.imagenlogin2{
-    margin: 0 auto;
-    align-items: center;
-    background-color: #fcf9db;
-    
+.imagenlogin {
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fcf9db;
 }
 
-.bt-login{
-    
-        background-color: #D0F3C6;
-        color:#044E39;
-        border: none;
-        border-radius: 1.5rem;
-        font-size: x-large;
-        width: 100%;
-        
-    }
+.imagenlogin2 {
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fcf9db;
+}
 
-.bt-login:hover{
-        background-color: hwb(107 67% 7%);
-        color:black;
-        transform: translateY(10%);
-    }
+.bt-login {
+  background-color: #d0f3c6;
+  color: #044e39;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: x-large;
+  width: 100%;
+}
 
-    .bt-login:active{
-        background-color: #D0F3C6;
-        color:#044E39;
-        border: none;
-        border-radius: 1.5rem;
-        font-size: x-large;
-        width: 100%;
-    }
+.bt-login:hover {
+  background-color: hwb(107 67% 7%);
+  color: black;
+  transform: translateY(10%);
+}
 
+.bt-login:active {
+  background-color: #d0f3c6;
+  color: #044e39;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: x-large;
+  width: 100%;
+}
 
-    .checkboxsignup{
-        font-size: larger;       
-    }
-   
-    .spanayuda{
-        cursor:help
-    }
+.checkboxsignup {
+  font-size: larger;
+}
 
-    .carouserCards{
-        margin: 0 auto;
-        overflow-y: scroll;
-        max-height: 33vw;
-    }
+.spanayuda {
+  cursor: help;
+}
 
-    .cardbodyanunciosaver{
-        padding: 10px 10px 0 10px;
-    }
+.carouserCards {
+  margin: 0 auto;
+  overflow-y: auto;
+  max-height: 50vw;
+  background-color: #d0f3c663;
+  padding-bottom: 24px;
+  padding-left: 30px;
+  padding-right: 30px
+}
+
+.cardbodyanunciosaver {
+  padding: 10px 10px 0 10px;
+}
+
+.cardpostit {
+  text-decoration: none;
+  color: #000;
+  background: #ffc;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: -moz-transform 0.15s linear;
+  max-width: 360.788px;
+  max-height: 295.675px;
+}
+
+.cardpostit:hover,
+.cardpostit:focus {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
+.cardpostit:nth-child(even) .comolaa {
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+}
+.cardpostit:nth-child(3n) .comolaa {
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+}
+.cardpostit:nth-child(5n) .comolaa {
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+.fotoprofesion {
+  width: 100%;
+}
+
+.chincheta {
+    position: relative;
+  align-items: center;
+    top: -30px;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+}

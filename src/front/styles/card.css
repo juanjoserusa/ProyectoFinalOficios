@@ -105,3 +105,8 @@ ul {
     border-radius: calc(0.25rem - 1px);
 }
 
+.comolaa{
+    overflow-y: auto;
+    height: 5vw;
+
+}
