@@ -58,16 +58,22 @@
 }
 
 .carouserCards {
-  margin: 0 auto;
+  
   overflow-y: auto;
   max-height: 50vw;
   background-color: #d0f3c663;
   padding-bottom: 24px;
-  padding-left: 30px;
-  padding-right: 30px
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 90%;
+  margin-left: 4%;
+  
 }
 
 .cardbodyanunciosaver {
+  position: relative;
+  top: -30%;
+ 
   padding: 10px 10px 0 10px;
 }
 
@@ -90,9 +96,8 @@
 .cardpostit:hover,
 .cardpostit:focus {
   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  transform: scale(1.25);
+
+  transform: scale(1.1);
   position: relative;
   z-index: 5;
 }
@@ -114,14 +119,26 @@
 }
 
 .fotoprofesion {
-  width: 100%;
+  
+  position: relative;
+  top: -82px;
+  margin: 0 auto;
+  left: -20px;
+  height:280px;
+  width: 230px;
 }
 
 .chincheta {
     position: relative;
   align-items: center;
-    top: -30px;
+    top: -40px;
+    left: 5px;
   margin: 0 auto;
   width: 15%;
   height: 15%;
+  
+}
+
+.titlecard{
+  font-size: xx-large;
 }
