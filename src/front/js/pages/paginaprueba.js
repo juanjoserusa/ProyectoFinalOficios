@@ -1,356 +1,75 @@
-
-import React from 'react';
+import React from "react";
+import mensajeo from "../../assets/mensajeo.png";
 import {
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
   MDBRow,
-  MDBCol
-} from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
-import swal from 'sweetalert';
-
-
+  MDBCol,
+  MDBInput,
+  MDBCardImage,
+  MDBTextArea,
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+} from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 function Prueba() {
   return (
-  <MDBRow className='row-cols-1 row-cols-md-3 g-4 container d-flex justify-content-center carouserCards mt-4 mb-5'>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-     <MDBRow>
-     <div className="botoncito">
-          
-            <Link to={`/single/`} className="btn btnMensaje">
-              Enviar Mensaje
-            </Link>
-          
-        </div>
-      </MDBRow> 
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-  <MDBCol>
-  <MDBCard style={{ maxWidth: '540px' }}>
-      <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-          <MDBCardBody className="cardbodyanunciosaver">
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </MDBCardText>
-          </MDBCardBody>
-        </MDBCol>
-      </MDBRow>
-    </MDBCard>
-  </MDBCol>
-</MDBRow>
-);;
-}
+    <div className="">
 
-export default Prueba;
+<MDBContainer className="mt-4 mb-5 pruebacontainer">
+    
+          <MDBCard className="cardlogin">
+            <MDBRow className='g-0'>
+    
+              <MDBCol className="imagenlogin d-flex justify-content-center ps-5   "  md='5'>
+              <MDBCardImage
+          src={mensajeo}
+          alt="login form"
+          className="rounded-start w-100 imagelogin "
+        />
+              </MDBCol>
+    
+              <MDBCol md="7" className="columnalogin" >
+        <form className="ps-5 pe-5 py-3 ">
+          <h2
+            className="fw-normal mt-4 mb-3 pb-3 text-center"
+            style={{ letterSpacing: "1px" }}
+          >
+            Enviar mensaje
+          </h2>
 
+          <MDBInput
+            wrapperClass="mb-4"
+            type="text"
+            id="form6Example5"
+            label="Asunto del mensaje"
+          />
+          <MDBTextArea
+            wrapperClass="mb-4"
+            textarea
+            id="form6Example7"
+            rows={5}
+            label="Texto del mensaje"
+          />
 
-
-// <div className="col-1 card  cardanuncio ms-3 me-3 mb-3 bs -3">
-      {/* {`${profesion}` == "Fontanero" ? (
-        <img className="imagenprofesion" src={fontanero} alt="Card image" />
-      ) : (
-        ""
-      )}
-      {`${profesion}` == "Carpintero" ? (
-        <img className="imagenprofesion" src={carpintero} alt="Card image" />
-      ) : (
-        ""
-      )}
-      {`${profesion}` == "Electricista" ? (
-        <img className="imagenprofesion" src={electricista} alt="Card image" />
-      ) : (
-        ""
-      )}
-      {`${profesion}` == "Albañil" ? (
-        <img className="imagenprofesion" src={albañil} alt="Card image" />
-      ) : (
-        ""
-      )} */}
+          <MDBBtn className="mb-4 mb-4 px-5 bt-login" type="submit" block>
+            Publicar anuncio
+          </MDBBtn>
+        </form>
+      </MDBCol>
+    
+            </MDBRow>
+          </MDBCard>
+    
+        </MDBContainer>
 
 
       
-      {/* <div class="card-img3">
-        <div className=" Anuncio">
-          <h4 className="card-title tituloCard ">{profesion}</h4>
+    </div>
+  );
+}
 
-          <div className="datosCard">
-            <div className="respuestafila">
-              <h5 className="principiotabla">Nombre:</h5>
-              <h5 className="finaltabla">{mail}</h5>
-            </div>
-            <div className="respuestafila">
-              <h5 className="principiotabla">Codigo Postal:</h5>
-              <h5 className="finaltabla">{codigoPostal}</h5>
-            </div>
-            <div className="respuestafila">
-              <h5 className="principiotabla">Precio por hora : </h5>
-              <h5 className="finaltabla">{precio}€</h5>
-            </div>
-          </div>
-
-          <p className="card-text  anuncio">{description}</p>
-        </div>
-        <div className="botoncito">
-          {token ? (
-            <Link to={`/single/${id}`} className="btn btnMensaje">
-              Enviar Mensaje
-            </Link>
-          ) : (
-            <Link
-              to={`/signup`}
-              onClick={() =>
-                swal(
-                  "Oops!",
-                  "Tienes que tener una cuenta registrada para poder enviar mensajes ",
-                  "error"
-                )
-              }
-              className="btn btnMensaje"
-            >
-              Enviar Mensaje
-            </Link>
-          )}
-        </div>
-      </div>
-    </div> */}
+export default Prueba;

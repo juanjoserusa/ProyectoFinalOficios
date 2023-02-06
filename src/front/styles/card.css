@@ -1,112 +1,87 @@
-ul {
-    list-style: none;
-    
-    
-}
 
-.cardanuncio{
-    
-    background-color: #ffface;
-    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-    width: 20%;
-    max-height: 70%;
-    border-radius: 5%;
-    overflow: auto;
-    
-}
-
-
-.tituloCard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.5vw;
-    font-weight: bolder;
-}
-
-.respuestafila{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.principiotabla{
-    color: #07AA7C ;
-    font-weight: bold;
-}
-
-.finaltabla{
-    color: #044E39;
-    margin-left: 12px;
-}
-.datosCard{
-    font-size: 1vw;
-    
-}
-
-.anuncio{
-    margin-top: 1px;
-    font-size: 1vw;
-    color: #044E39;
-    height: 80px;
-    
-    
-}
-
-.btnMensaje{
-    color: #044E39;
-    background-color: #D0F3C6;
-    border-radius: 5%;
-    border: none;
-    width: 75%;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-.btnMensaje:hover{
-    color: #044E39;
-    background-color: hwb(107 67% 7%);
-    transform: translateY(-2px);
-}
-
-.btnMensajeSignup{
-    color: white;
-    background-color: rgb(228, 167, 167);
-    border-radius: 5%;
-    border: none;
-    width: 100%;
-    margin-left: 0%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.btnMensajeSignup:hover{
-    color: white;
-    background-color: rgb(207, 110, 110);
-    transform: translateY(-2px);
-}
-
-.imagenprofesion{
-    width: 80%;
-    
-    margin: 0 auto;
-    opacity: .09;
-}
-
-.card-img3 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    border-radius: calc(0.25rem - 1px);
-}
-
-.comolaa{
+.carouserCards {
+  
     overflow-y: auto;
-    height: 5vw;
-
-}
+    max-height: 50vw;
+    background-color: #d0f3c663;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 90%;
+    margin-left: 4%;
+    
+  }
+  
+  .cardbodyanunciosaver {
+    position: relative;
+    top: -30%;
+   
+    padding: 10px 10px 0 10px;
+  }
+  
+  .cardpostit {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    transition: -moz-transform 0.15s linear;
+    max-width: 360.788px;
+    max-height: 295.675px;
+  }
+  
+  .cardpostit:hover,
+  .cardpostit:focus {
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  
+    transform: scale(1.1);
+    position: relative;
+    z-index: 5;
+  }
+  
+  .cardpostit:nth-child(even) .comolaa {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+  }
+  .cardpostit:nth-child(3n) .comolaa {
+    transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+  }
+  .cardpostit:nth-child(5n) .comolaa {
+    transform: rotate(5deg);
+    position: relative;
+    top: -10px;
+  }
+  
+  .fotoprofesion {
+    
+    position: relative;
+    top: -82px;
+    margin: 0 auto;
+    left: -20px;
+    height:280px;
+    width: 230px;
+  }
+  
+  .chincheta {
+      position: relative;
+    align-items: center;
+      top: -40px;
+      left: 5px;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    
+  }
+  
+  .titlecard{
+    font-size: xx-large;
+  }
+  
