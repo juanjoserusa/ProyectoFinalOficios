@@ -4,6 +4,16 @@ import "../../styles/formulario.css";
 import "../../styles/login.css";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import hombre from "../../assets/hombre.png";
+import mujer from "../../assets/mujer.png";
+import {
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCardImage,
+  MDBTextArea,
+  MDBBtn,
+} from "mdb-react-ui-kit";
 
 export const PublicarAnuncio = () => {
   const [datos, setDatos] = useState({
@@ -26,7 +36,6 @@ export const PublicarAnuncio = () => {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    
 
     var raw = JSON.stringify(datos);
 
@@ -44,88 +53,96 @@ export const PublicarAnuncio = () => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-      swal("¡Enhorabuena!", "¡ Tu anuncio se ha publicado con exito!", "success")
-      navigate("/");
+    swal("¡Enhorabuena!", "¡ Tu anuncio se ha publicado con exito!", "success");
+    navigate("/");
   };
 
-
-  
   return (
-    <Fragment>
-      <div className="text-center pageLogin">
-        <div className="signupFrmanuncio">
-          <form className="formanuncio" onSubmit={enviarDatos}>
-            <h1 className="title">Formulario de anuncio</h1>
-            <div className="inputContainer">
-              <select
-                id="profession"
-                type="text"
-                placeholder="Profesion"
-                className="form-control mb-2 input"
-                onChange={handleInputChange}
-                name="profesion"
-              >
-                <option selected>Selecciona tu profesión</option>
-                <option> Fontanero</option>
-                <option> Albañil</option>
-                <option> Carpintero</option>
-                <option> Electricista</option>
-              </select>
-            </div>
-            <div className="inputContainer">
-              <input
-                id="name"
-                type="text"
-                placeholder="Nombre"
-                className="form-control input"
-                onChange={handleInputChange}
-                name="nombre"
-              ></input>
-            </div>
+    <div className=" mb-5 pruebaanuncio d-flex justify-content-center">
+      <MDBCol md="4">
+        <MDBCardImage
+          src={mujer}
+          alt="login form"
+          className="rounded-start w-100 imagenanuncio"
+        />
+      </MDBCol>
+      <MDBCol md="4">
+        <form
+          className=" cardanuncionuevo ps-5 pe-5 py-3 "
+          onSubmit={enviarDatos}
+        >
+          <h2
+            className="fw-normal mt-4 mb-3 pb-3 text-center"
+            style={{ letterSpacing: "1px" }}
+          >
+            Publica tu anuncio
+          </h2>
 
-            <div className="inputContainer">
-              <input
-                id="zipcode"
-                type="text"
-                placeholder="Codigo postal"
-                className="form-control input"
-                onChange={handleInputChange}
-                name="codigoPostal"
-              ></input>
-            </div>
-            <div className="inputContainer">
-              <input
-                id="price"
-                type="text"
-                placeholder="Precio por hora"
-                className="form-control input"
-                onChange={handleInputChange}
-                name="precio"
-              ></input>
-            </div>
-            <div className="inputContainer">
-              <textarea
-                id="announce"
-                rows="5"
-                cols="1"
-                type="text"
-                placeholder="Anuncio"
-                className="form-control areaAnuncio"
-                onChange={handleInputChange}
-                name="anuncio"
-              ></textarea>
-            </div>
-            <div className="inputContainer">
-              <button
-                type="submit"
-                className="btn btn-primary submitBtn formbtn mb-3 mt-5 "
-              >
-                Enviar
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </Fragment>
+          <select
+            id="profession"
+            type="text"
+            placeholder="Profesion"
+            className="areaarea "
+            name="profesion"
+            lable="Profesion"
+            onChange={handleInputChange}
+            required
+          >
+            <option selected>Selecciona tu profesión</option>
+            <option> Fontanero</option>
+            <option> Albañil</option>
+            <option> Carpintero</option>
+            <option> Electricista</option>
+          </select>
+          <label className="mb-4">Profesión</label>
+          <MDBInput
+            wrapperClass="mb-4"
+            label="Nombre"
+            onChange={handleInputChange}
+            id="name"
+            name="nombre"
+            required
+          />
+          <MDBInput
+            wrapperClass="mb-4"
+            type="number"
+            id="zipcode"
+            name="codigoPostal"
+            label="Codigo Postal"
+            onChange={handleInputChange}
+            required
+          />
+          <MDBInput
+            wrapperClass="mb-4"
+            type="number"
+            id="price"
+            name="precio"
+            label="Precio por hora"
+            onChange={handleInputChange}
+            required
+          />
+          <MDBTextArea
+            wrapperClass="mb-4"
+            textarea
+            id="announce"
+            name="anuncio"
+            rows={4}
+            label="Descripcion del anuncio"
+            onChange={handleInputChange}
+            style={{ resize: "none" }}
+            required
+          />
+
+<button className="mb-4 px-5 bt-login" type="submit" >Publicar anuncio</button>
+        </form>
+      </MDBCol>
+      <MDBCol md="4">
+        <MDBCardImage
+          src={hombre}
+          alt="login form"
+          className="rounded-start w-100 imagenanuncio"
+        />
+      </MDBCol>
+    </div>
   );
 };
