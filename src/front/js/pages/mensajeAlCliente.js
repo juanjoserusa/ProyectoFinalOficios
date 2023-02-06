@@ -2,6 +2,19 @@ import React, { useState, useContext,} from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 import { useNavigate, useParams } from "react-router-dom";
 import '../../styles/mensaje.css'
+import mensajeo from "../../assets/mensajeo.png";
+import {
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBCardImage,
+  MDBTextArea,
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBIcon,
+} from "mdb-react-ui-kit";
 
 export const Mensaje = (props) => {
 
@@ -51,43 +64,61 @@ export const Mensaje = (props) => {
       navigate("/")
   }
   return (
-    <div className=" text-center pageLogin2">
-    <div className="signupFrm2">
-    <form onSubmit={enviarDatos} className="form2">
-      <h1 className="title2">Enviar mensaje a un profesional</h1>
+    <div className="">
 
-      
-      <div className="inputContainer2 ">
-        <label for="" class="label2">Asunto</label>
-        <input
-          type="text"
-          className="input2"
-          id="exampleFormControlInput1"
-          placeholder="Asunto"
-          onChange={handleInputChange}
-          name="subject"
+<MDBContainer className="mt-4 mb-5 pruebacontainer">
+    
+          <MDBCard className="cardlogin">
+            <MDBRow className='g-0'>
+    
+              <MDBCol className="imagenlogin d-flex justify-content-center ps-5   "  md='5'>
+              <MDBCardImage
+          src={mensajeo}
+          alt="login form"
+          className="rounded-start w-100 imagelogin "
         />
-      </div>
+              </MDBCol>
+    
+              <MDBCol md="7" className="columnalogin" >
+        <form onSubmit={enviarDatos} className="ps-5 pe-5 py-3 ">
+          <h2
+            className="fw-normal mt-4 mb-3 pb-3 text-center"
+            style={{ letterSpacing: "1px" }}
+          >
+            Enviar mensaje
+          </h2>
 
-      <div className="inputContainer2">
-        <label for="" class="label2">Mensaje</label>
-        <textarea
-          className="form-control areamensaje"
-          id="exampleFormControlTextarea1"
-          rows="5"
-          cols="1"
-          placeholder="Mensaje"
+          <MDBInput
+            wrapperClass="mb-4"
+            type="text"
+            id="exampleFormControlInput1"
+          name="subject"
+          onChange={handleInputChange}
+            label="Asunto del mensaje"
+          />
+          <MDBTextArea
+            wrapperClass="mb-4"
+            textarea
+            id="exampleFormControlTextarea1"
           onChange={handleInputChange}
           name="message"
-        ></textarea>
-      </div>
-      <div className="d-flex justify-content-center mt-3">
-        <button type="submit" className="btn btn-primary submitBtn2">
-          Enviar
-        </button>
-      </div>
-    </form>
-    </div>
+            rows={5}
+            label="Texto del mensaje"
+          />
+
+          <MDBBtn className="mb-4 mb-4 px-5 bt-login" type="submit" block>
+            Publicar anuncio
+          </MDBBtn>
+        </form>
+      </MDBCol>
+    
+            </MDBRow>
+          </MDBCard>
+    
+        </MDBContainer>
+
+
+      
     </div>
   );
 };
