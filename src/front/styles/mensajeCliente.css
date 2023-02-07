@@ -10,6 +10,22 @@
   font-size: medium;
 }
 
+.textoMensajedesc{
+  color: #044e39;
+  margin-top: 30px;
+  font-size: medium;
+  overflow-y: auto;
+}
+
+.textoMensaje4{
+  
+    color: #044e39;
+    margin-top: 30px;
+    font-size: small;
+    font-style: italic;
+  
+}
+
 .cardMensaje {
   background-color: #ffface;
 }

@@ -70,7 +70,7 @@ const MensajesClientes = ({ sender, subject, message, from, to }) => {
   return (
     <div className="">
       <MDBCol className="mt-5 mb-2">
-      <Card className="cardMensaje" >
+      <Card className="cardMensaje " >
         <Card.Body className="cardMensaje">
         {/* <button
             onClick={(e) => {
@@ -80,9 +80,10 @@ const MensajesClientes = ({ sender, subject, message, from, to }) => {
             Leido
           </button> */}
           <Card.Title className="tituloMensaje">{subject} </Card.Title>
-          <Card.Text className="textoMensaje">{message}</Card.Text>
+          <Card.Text className="textoMensajedesc">{message}</Card.Text>
         </Card.Body>
         <Card.Body className="cardMensajeMail">
+        <Card.Text className="textoMensaje4">Enviado por: {sender}</Card.Text>
         <button onClick={toggleShow} className="mb-4 px-5 bt-loginparaformmensaje" >Responder Mensaje</button>
       <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1' >
         <MDBModalDialog >
