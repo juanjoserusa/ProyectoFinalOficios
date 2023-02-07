@@ -1,0 +1,80 @@
+
+   */
+  .title {
+    font-size: 25px;
+    margin-bottom: 35px;
+    color:#044E39;
+  }
+   .text-center pageRequest{
+    height:600px;
+    width: 500px;
+    padding: auto;
+   }
+   h1{
+    font-size: 20px;
+
+   }
+
+   .request Frm {
+    position: relative;
+    top: 200px;
+    left: 10px;
+    height: 600px;
+    width:500px;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 20px;
+    outline: none;
+    background: none;
+   }
+   
+
+   #user_email {
+    top:150px;
+    position: absolute;
+    height: 45px;
+    width: 250px;
+    margin-bottom: 17px;
+  }
+
+   .email input{
+    position: relative;
+    top: 200px;
+    left: auto;
+    height: 50%;
+    width: 50px;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+    background-color: white;
+  }
+  
+  
+  ::placeholder {
+    color: #044E39;
+    
+  }
+
+
+  .btn btn-primary {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: #D0F3C6;
+    color: #044E39;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  
+  .btn btn-primary:hover {
+    background-color: hwb(107 67% 7%);
+    transform: translateY(-2px);
+  }
+
+ 

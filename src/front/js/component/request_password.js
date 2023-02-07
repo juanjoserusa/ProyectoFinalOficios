@@ -1,14 +1,16 @@
 import React, { useState, useRef, useContext,useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import moment from 'moment';
-import { Context } from "../store/appContext.js";
+import { Context } from "../store/appContext.js"
+import "../../styles/requestpass.css"
 
 export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
     const { store, actions } = useContext(Context);
     const [key, setKey] = useState("");
     const [key_pass ,setKey_pass] =useState ('');
-    const [expirationDate, setExpirationDate] = useState("")
+    const [expirationDate, setExpirationDate] = useState("");
+    
    
 
 
@@ -34,8 +36,9 @@ export const RequestPass  = () => {
     const handleChange = (event) =>{
       setEmail (event.target.value) 
      }
-  
-    const form = useRef();
+
+     const form = useRef(); 
+
  
   const sendEmail = (e) => {
     e.preventDefault();
@@ -73,20 +76,20 @@ export const RequestPass  = () => {
 
     }
 
-    setTimeout(function(){
-      window.location.href ="request_password/reset_password";
-    }, 30000);
+    // setTimeout(function(){
+    //   window.location.href ="request_password/reset_password";
+    // }, 20000);
 
 
   return (
-    <div className="container-fluid center">
-      <div className="row">
-        <form ref={form} onSubmit={sendEmail}>
+    <div className=" text-center pageRequest">  
+      <div className="request Frm">
+        <form className="form" ref={form} onSubmit={sendEmail}>
           <div className="form-group">
-            <label for="user_email">Recupera tu contraseña</label> 
+            <h1>Recupera tu contraseña</h1> 
             <input
               type="email"
-              class="form-control input"
+              className="email input"
               placeholder="Enter email"
               id="user_email"
               name="user_email" 
@@ -108,7 +111,7 @@ export const RequestPass  = () => {
           </button>
         </form>
       </div>
-    </div>
+     </div> 
   );
 };
 

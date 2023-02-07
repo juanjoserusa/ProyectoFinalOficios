@@ -77,7 +77,7 @@ function Layout() {
 
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
-          <Route element={<RequestPass /> } path="/request_password" />
+          <Route element={<RequestPass /> } path= "/request_password" />
           <Route element={<RessetPass /> } path= "/request_password/reset_password" />
 
 
