@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../../styles/formTrabajos.css"
+import { MDBInput, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 
 export const FormularioTrabajos = () => {
   const { store, actions } = useContext(Context);
@@ -48,102 +49,61 @@ export const FormularioTrabajos = () => {
 
     navigation(0);
   };
+  
   return (
-    <div className="container ">
-      <form onSubmit={enviarDatos} className="row ">
-        <div className="d-flex justify-content-center">
-        <h1 className="titleformtrabajo mb-3">Formulario</h1>
-        </div>
-        
-        <div className="d-flex justify-content-center paginaformulario">
-        
-        <input
-          required
-          type="text"
-          className="form-control me-3 inputprecio"
-          id="exampleFormControlInput1 "
-          placeholder="Cliente"
+    <div className="container">
+      <form onSubmit={enviarDatos}>
+      <MDBRow>
+      <MDBCol>
+          <MDBInput           id="exampleFormControlInput1 "
           onChange={handleInputChange}
-          name="cliente"
-        />
-        
-        <input
-          required
-          type="number"
-          className="form-control  me-3 inputprecio"
-          id="exampleFormControlInput1"
-          placeholder="Precio"
-          onChange={handleInputChange}
+          name="cliente" label='Cliente' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
           name="precio"
-        />
+          onChange={handleInputChange} label='Precio por hora' type='number' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="horas" label='Horas trabajadas' type='number' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="dia" label='Dia' type='number'/>
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="mes" label='Mes' type='number'/>
+        </MDBCol>
+        <MDBCol>
+          <MDBInput id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="anio" label='Año' type='number' />
+        </MDBCol>
+      </MDBRow>
 
-        
-        <input
-          required
-          type="number"
-          className="form-control me-3 inputprecio"
-          id="exampleFormControlInput1"
-          placeholder="Horas"
-          onChange={handleInputChange}
-          name="horas"
-        />
-        
-        
-        
-        <input
-          required
-          type="number"
-          className="form-control me-3 inputfecha"
-          id="exampleFormControlInput1"
-          placeholder="Dia"
-          onChange={handleInputChange}
-          name="dia"
-        />
 
-        
-        <input
-          required
-          type="number"
-          className="form-control me-3 inputfecha"
-          id="exampleFormControlInput1"
-          placeholder="Mes"
+      <MDBRow>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlTextarea1"
           onChange={handleInputChange}
-          name="mes"
-        />
-        
-       
-        
-        <input
-          required
-          type="number"
-          className="form-control inputfecha"
-          id="exampleFormControlInput1"
-          placeholder="Año"
-          onChange={handleInputChange}
-          name="anio"
-        />
-        </div>
-        <div className="d-flex justify-content-center">
-        
+          name="descripcion" label='Descripcion del trabajo' />
+        </MDBCol>
+      </MDBRow>
 
-        
-        <textarea
-          required
-          className="form-control mt-3"
-          id="exampleFormControlTextarea1"
-          rows="2"
-          cols="1"
-          placeholder="descripcion"
-          onChange={handleInputChange}
-          name="descripcion"
-        ></textarea>
-        </div>
-        <div className="d-flex justify-content-center mt-3">
-          <button type="submit" className="btn boton-enviar-form mb-4">
+
+      <MDBRow>
+        <MDBCol className="d-flex justify-content-center">
+      <button type="submit" className="btn boton-enviar-form mb-4 ">
             Enviar
           </button>
+          </MDBCol>
+          </MDBRow>
+          </form>
         </div>
-      </form>
-    </div>
   );
 };
