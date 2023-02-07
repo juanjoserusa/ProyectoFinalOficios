@@ -57,11 +57,11 @@ const PerfilProfesional = () => {
                 Historico  ganancias
               </MDBTabsLink>
             </MDBTabsItem>
-            <MDBTabsItem>
+            {/* <MDBTabsItem>
               <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab4')} active={verticalActive === 'tab4'}>
                 Anuncios publicados
               </MDBTabsLink>
-            </MDBTabsItem>
+            </MDBTabsItem> */}
           </MDBTabs>
         </MDBCol>
         <MDBCol size='9'>
@@ -74,7 +74,7 @@ const PerfilProfesional = () => {
             </MDBTabsPane>
             <MDBTabsPane show={verticalActive === 'tab2'}>
               <div className="container">
-            <div className="row row-cols-1 row-cols-md-4 g-3 d-flex justify-content-center  columnasdemensajes">
+              <MDBRow className='row-cols-1 row-cols-md-2 g-4 container-fluid d-flex justify-content-center carouserCards text-center'>
               {store.mensajeCliente.map((element, index) => {
                 return (
                   <MensajesClientes
@@ -86,7 +86,7 @@ const PerfilProfesional = () => {
                   />
                 );
               })}
-            </div>
+            </MDBRow>
           </div>
           </MDBTabsPane>
             <MDBTabsPane show={verticalActive === 'tab3'}>
@@ -129,12 +129,12 @@ const PerfilProfesional = () => {
     </div>
   </div>
             </MDBTabsPane>
-            <MDBTabsPane show={verticalActive === 'tab4'}>
+            {/* <MDBTabsPane show={verticalActive === 'tab4'}>
             <div className="container">
             
             </div>
             
-            </MDBTabsPane>
+            </MDBTabsPane> */}
           </MDBTabsContent>
         </MDBCol>
       </MDBRow>
