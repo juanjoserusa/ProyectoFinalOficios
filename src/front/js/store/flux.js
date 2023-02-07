@@ -10,7 +10,6 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
-		key_pass:null,
 	  },
 	  actions: {
 
@@ -131,13 +130,14 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		 },
-		    reset_password: async (email,new_password) => {
+
+		    reset_password: async (email,newpassword) => {
 				const opts = {
 				method: 'POST',
 				headers:{"Content-Type": "application/json"} ,
 				body: JSON.stringify({
 					email: email,
-					new_password:new_password
+					key_pass:newpassword
 				  }),
 				};
 				try {
@@ -148,39 +148,14 @@ const getState = ({ getStore, setStore }) => {
 
 					const data = await resp.json();
 					console.log(data)
-					setStore({ email: data.email, id: data.id ,new_password:data.password});
+					setStore({ email: data.email, id: data.id ,newpassword:data.password});
 					return data;
 				  } catch (error) {
 					console.log("Error datos incorrectos", error);
 			      }
 
-			},
-
-			validateKeyPass: () => {
-				var requestOptions = {
-					method: 'GET',
-					headers: myHeaders,
-					body: raw,
-					redirect: 'follow'
-				};	
-
-				var myHeaders = new Headers();
-				myHeaders.append("Content-Type", "application/json");
-
-				var raw = JSON.stringify({
-					"email": " ",
-					"key_pass": " "
-				});
-					
-				fetch( process.env.BACKEND_URL + "/api/validateKeyPass",
-				requestOptions)
-				.then(response => response.json())
-				.then(result => {
-				setStore({key_pass:data.key_pass, email:data.email})
-				console.log(result)
-				})
-				.catch(error => console.log('error', error));					
-	        },	
+			},			
+	    
 		},
 	};
   };

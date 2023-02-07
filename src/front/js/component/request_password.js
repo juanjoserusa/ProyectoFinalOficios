@@ -1,27 +1,36 @@
 import React, { useState, useRef, useContext,useEffect } from "react";
-import { Router, useHistory } from 'react-router-dom';
 import emailjs from "@emailjs/browser";
 import moment from 'moment';
-import { Context} from "../store/appContext"
+import { Context } from "../store/appContext.js";
 
 export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
     const { store, actions } = useContext(Context);
-    const [key_pass, setKey_pass] = useState(generateTemporaryKey);
+    const [key, setKey] = useState("");
+    const [key_pass ,setKey_pass] =useState ('');
+    const [expirationDate, setExpirationDate] = useState("")
+   
+
 
     const generateTemporaryKey = () => {
       const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*?<>';
       let key = '';
-  
+    
       for (let i = 0; i < 12; i++) {
           key += characters.charAt(Math.floor(Math.random() * characters.length));
       }
-  
-      const expirationDate = moment().add(30, 'minutes').fromNow();
-  
-      return { key_pass, expirationDate };
-  }
-
+    
+      const expirationDate = moment().add(45, 'minutes').fromNow();
+    
+      return { key, expirationDate };
+    }
+    
+    useEffect(() => {
+      const  keyObject = generateTemporaryKey();
+      setKey(keyObject.key);
+      setExpirationDate(keyObject.expirationDate);
+    }, []);
+    
     const handleChange = (event) =>{
       setEmail (event.target.value) 
      }
@@ -31,7 +40,7 @@ export const RequestPass  = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
+    //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, 'qjkj3ZGqx0BDvFYnH')
     //     .then((result) => {
     //         console.log(result);
     //     }, (error) => {
@@ -41,10 +50,10 @@ export const RequestPass  = () => {
    const data = {
     service_id: 'service_ru0grmi',
     template_id: 'template_i02czvn',
-    user_id: '0XdsQdYfjEG1lc2qh',
+    user_id: 'qjkj3ZGqx0BDvFYnH',
     template_params: {
         'user_email': email ,
-        'key_pass': key_pass,
+        'key_pass': key,
         'expiration_date': expirationDate
     }
     };
