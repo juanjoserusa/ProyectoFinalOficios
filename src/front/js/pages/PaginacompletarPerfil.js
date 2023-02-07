@@ -23,7 +23,7 @@ const PaginacompletarPerfil =() =>{
       
       <MDBInput wrapperClass='mb-4' type='tel' id='form6Example6' label='Telefono' />
 
-      <MDBInput wrapperClass='mb-4' textarea id='form6Example7' rows={4} label='Additional information' />
+      <MDBInput wrapperClass='mb-4' textarea id='form6Example7' rows={4} label='Informacion adicional' />
 
 
       <MDBBtn className='mb-4' type='submit' block>

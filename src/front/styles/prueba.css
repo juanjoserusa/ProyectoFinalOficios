@@ -4,6 +4,12 @@
   color: #044e39;
 }
 
+.pruebacontainermensaje{
+  max-width: 100%;
+  background-color: #fcf9db;
+  color: #044e39;
+}
+
 
 
 .cardlogin {
@@ -25,6 +31,29 @@
   margin: 0 auto;
   align-items: center;
   background-color: #fcf9db;
+}
+
+.bt-loginparaformmensaje{
+  background-color: #d0f3c6;
+  color: #044e39;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: large;
+  width: 75%;
+}
+.bt-loginparaformmensaje:hover{
+  background-color: hwb(107 67% 7%);
+  color: black;
+  transform: translateY(10%);
+}
+
+.bt-loginparaformmensaje:active{
+  background-color: #d0f3c6;
+  color: #044e39;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: x-large;
+  width: 100%;
 }
 
 .bt-login {
