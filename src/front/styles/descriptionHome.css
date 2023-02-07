@@ -2,24 +2,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:#FCF5AB;
+    color:#044E39;
+    width: 90%;
 }
 
-p{
-    color: #FCF5AB
+.parrafoDescription{
+    color: #044E39
 }
 
-h3{
-    color:#FCF5AB
+.titledescription{
+    color:#044E39
 }
 
 .description{
-    background-color: #07AA7C;
-    
+    background-color: #fcf9db;    
 }
 
+.linea{
+    padding: 0;
+    margin-top: 10px;
+    margin: 0;
+    height: 50%;
+    background-color: #fcf9db;
+}
 
-.cardsDescription{
-    border: 1px solid #FCF5AB;
-    padding: 2vw;
+.pagehome{
+    background: #fcf9db;
+}
+
+.espaciofooter{
+    height: 18px;
+    background-color: #fcf9db;
+}
+
+.textocolumnas{
+    margin-left: 5%;
 }

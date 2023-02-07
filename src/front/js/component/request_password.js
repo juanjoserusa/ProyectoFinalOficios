@@ -86,7 +86,7 @@ export const RequestPass  = () => {
             <label for="user_email">Recupera tu contraseña</label> 
             <input
               type="email"
-              class="form-control"
+              class="form-control input"
               placeholder="Enter email"
               id="user_email"
               name="user_email" 

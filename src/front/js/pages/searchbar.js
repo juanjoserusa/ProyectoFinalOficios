@@ -1,94 +1,88 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { BiMap } from "react-icons/bi";
+import DropdownHome from "../component/DropdownHome";
+import { useNavigate } from "react-router-dom";
+import "/workspace/ProyectoFinalOficios/src/front/styles/searchbar.css"
+import "../../styles/index.css"
 
 export const Searchbar = () => {
-
-
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const {actions} = useContext(Context)
+  const { actions } = useContext(Context);
+  const mensaje= "No se encuentra ese codigo postal"
+
   const handleChange = (event) => {
     setQuery(event.target.value);
+    
   };
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-   
-    fetch('/search', {
-      method: 'POST',
+
+    fetch("/search", {
+      method: "POST",
       body: JSON.stringify({
-        query: query
+        query: query,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     })
-      .then(response => response.json())
-      .then(results => {
+      .then((response) => response.json())
+      .then((results) => {
         setResults(results);
+        
+
+        
+        
       });
   };
   return (
     <div>
-      <div>
-        <nav
-          className="navbar navbar-expand-lg p-4"
-          style={{ backgroundColor: "#d0f3c6" }}
-        >
-          <div className="container-fluid" style={{ width: "1100px" }}>
-            <form class="row gy-2 gx-3 align-items-center">
+      <div className="container-fluid busqueda pb-3  pt-3 mt-3">
+        
+        
+          <div className="container-fluid d-flex justify-content-around barrabusqueda " >
+            <form class=" align-items-center ">
               <div class="col-auto">
-                <div className="input-group">
-                  <button className="btn btn-outline-success">
-                    <BiMap />
-                  </button>
+                <div className="input-group ">
                   <input
                     onChange={handleChange}
-                    type="text"
-                    className="form-control"  style={{ width: "500px" }}
+                    type="number"
+                    className="form-control input-busqueda"
                     id="autoSizingInputGroup"
-                    placeholder="Selecciona tu ciudad..."
+                    placeholder="Codigo postal ..."
                   ></input>
+                  <button
+                    className="btn btnBusqueda me-4"
+                    onClick={(event) => {
+                      actions.search(query);
+                    }}
+                    type="button"
+                  >
+                    Buscar
+                  </button>
+                  <div>
+                    <DropdownHome />
+                  </div>
+                  <div>
+                    <button
+                      className="btn ms-3 btnReiniciarBusqueda"
+                      onClick={() => navigate("/profesiones/anuncios")}
+                    >
+                      Reiniciar busqueda
+                    </button>
+                  </div>
                 </div>
-              </div>
-         {/*      <div className="col-auto">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="autoSizingInput"
-                  placeholder="Elige tu presupuesto"
-                ></input>
-              </div> */}
-              <div className="col-auto">
-                <label className="visually-hidden" for="autoSizingSelect">
-                  Preference
-                </label>
-              </div>
-              <div className="col-auto">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="autoSizingCheck"
-                  ></input>
-                  <label className="form-check-label" for="autoSizingCheck">
-                    Urgente
-                  </label>
-                </div>
-              </div>
-              <div className="col-auto">
-              <button className="btn btn-warning" onClick={(event) => {
-
-                  actions.search(query)}}
-                  type="button">
-                  Buscar
-                </button>
               </div>
             </form>
+            
           </div>
-        </nav>
+          
       </div>
+      
     </div>
   );
 };

@@ -1,62 +1,41 @@
-.card-img{
-    margin: auto;
-    width: 60%; 
-    padding: 50px;
+.imagenjumbo{
+    
+    width: 70%; 
+    
     font-family: 'Avenir', sans-serif; 
     color: #33475b;
 }
 
-.btnLoginCliente{
-    width: 35vw;
-    background-color: #FCF5AB;
-    color: #044E39;
-    border:0;
+.jumbotron{
+    background-color: #fcf9db;
 }
 
-.btnLoginCliente:hover{
-    background-color: #07AA7C;
-    color: #FCF5AB;
+.coljumbo1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coljumbo2{
+
+    align-items: center;
 }
 
+.titlejumbo{
+    width: 80%;
+    margin: 0 auto;
 
-.btn-outline-success{
-    background-color: #FCF5AB;
-    color: #044E39;
-    border:0;
 }
 
-.btn-outline-success:hover{
-    background-color: #07AA7C;
-    color: #FCF5AB;
-}
-
-
+/* 
 .form-control{
     width: 29vw;
-} 
+}  */
 
 .card-title{
     color: #044E39;
 }
 
-.card-img-overlay{
-display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.btnLoginProfesional{
-    width: 12vw;
-    background-color: #FCF5AB;
-    color: #044E39;
-    border:0;
-}
 
-.btnLoginProfesional:hover {
-    background-color: #07AA7C;
-    color: #FCF5AB;
-}
 
-.oficios{
-    font-size: 32px;
-}
+

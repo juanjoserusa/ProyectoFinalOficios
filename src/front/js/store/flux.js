@@ -1,4 +1,5 @@
 
+import swal from 'sweetalert';
 
 const getState = ({ getStore, setStore }) => {
 	return {
@@ -10,6 +11,8 @@ const getState = ({ getStore, setStore }) => {
 		search: [],
 		mensajeCliente: [],
 		id:null,
+		emailCliente:null,
+		trabajosRecibidos: [],
 	  },
 	  actions: {
 
@@ -24,6 +27,25 @@ const getState = ({ getStore, setStore }) => {
 				.then(response => response.json())
 				.then(result => {
 					setStore({mensajeCliente:result})
+					console.log(result)
+				  })
+				.catch(error => console.log('error', error));
+		},
+
+		loadTabla : (id) => {
+
+			var requestOptions = {
+				method: 'GET',
+				redirect: 'follow',
+				
+					
+			  };
+			
+			  
+			  fetch(process.env.BACKEND_URL + "/api/recibirTrabajos/"+id, requestOptions)
+				.then(response => response.json())
+				.then(result => {
+					setStore({trabajosRecibidos:result})
 					console.log(result)
 				  })
 				.catch(error => console.log('error', error));
@@ -96,7 +118,7 @@ const getState = ({ getStore, setStore }) => {
 			  .then(results => {
 				console.log(results)
 				setStore({search:results.result});
-
+				if (results.result == 0) { swal("Oops!", "No hemos encontrado ningun anuncio en ese codigo postal", "error");}
 			  });
 	    },
 
@@ -116,7 +138,7 @@ const getState = ({ getStore, setStore }) => {
 			);
   
 			if (resp.status !== 200) {
-			  alert("there has been some error");
+			  console.error("there has been some error");
 			  return false;
 			}
 			const data = await resp.json();

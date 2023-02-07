@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Announce, Message
+from api.models import db, User, Announce, Message, Trabajos
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token,jwt_required, get_jwt_identity
 
@@ -32,7 +32,7 @@ def get_hello():
     email= get_jwt_identity()
     user = User.query.filter_by(email=email).first()
     dictionary= {
-        "message": "Has iniciado sesion con éxito",
+        "message": "has iniciado sesion con éxito",
         "email" : user.email,
         "id" : user.id
     }
@@ -72,7 +72,7 @@ def anuncios():
 @api.route('/enviarMensaje', methods=['POST'])
 def enviar_mensaje():
     body = request.get_json()
-    mensaje = Message( sender=body["from"], to=body["to"], subject=body['subject'], message=body['message'])
+    mensaje = Message( sender=body['from'], to=body['to'], subject=body['subject'], message=body['message'])
     print(body)
     db.session.add(mensaje)
     db.session.commit()
@@ -83,8 +83,8 @@ def enviar_mensaje():
 @api.route('/recibirMensaje/<int:id>', methods=['GET'])
 def recibirMensaje(id):
     all_mensaje = Message.query.filter_by(to=id)
-    all_mensaje = list(map(lambda x: x.serialize(), all_mensaje))
-    return jsonify(all_mensaje)
+    all_mensajes = list(map(lambda x: x.serialize(), all_mensaje))
+    return jsonify(all_mensajes)
 
 
 
@@ -109,6 +109,7 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
+
 @api.route("/reset_password", methods=["POST"])
 def reset_password():
     email = get_jwt_identity()
@@ -126,7 +127,19 @@ def reset_password():
     if user:
       return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
     
-  
-    
-    
-    
+@api.route('/enviartrabajos', methods=['POST'])
+def enviar_trabajos():
+    body = request.get_json()
+    trabajo = Trabajos(id_profesional=body['id_profesional'], cliente=body['cliente'], descripcion=body['descripcion'], precio=body['precio'], horas=body['horas'], dia=body['dia'], mes=body['mes'], anio=body['anio'])
+    print(body)
+    db.session.add(trabajo)
+    db.session.commit()
+    return jsonify({"enviar los trabajos": "Check!"}),200
+
+
+@api.route('/recibirTrabajos/<int:id>', methods=['GET'])
+def recibirTrabajos(id):
+    recibir_trabajo = Trabajos.query.filter_by(id_profesional=id)
+    recibir_trabajos = list(map(lambda x: x.serialize(), recibir_trabajo))
+    return jsonify(recibir_trabajos)
+

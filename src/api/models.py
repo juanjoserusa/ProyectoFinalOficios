@@ -63,5 +63,36 @@ class Message(db.Model):
             
             "subject": self.subject,
             "message": self.message,
+            "sender": self.sender
+            # do not serialize the password, its a security breach
+        }
+
+class Trabajos(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    cliente = db.Column(db.String(100), unique=False, nullable=False)
+    descripcion = db.Column(db.String(500), unique=False, nullable=False)
+    precio = db.Column(db.Integer, unique=False, nullable=False)
+    horas = db.Column(db.Integer, unique=False, nullable=False)
+    dia = db.Column(db.Integer, unique=False, nullable=False)
+    mes = db.Column(db.Integer, unique=False, nullable=False)
+    anio = db.Column(db.Integer, unique=False, nullable=False)
+    #date = db.Column(db.DateTime, nullable= True)
+    id_profesional = db.Column(db.Integer, db.ForeignKey("user.id") , nullable=False)
+    rel_user = db.relationship(User)
+
+    def __repr__(self):
+        return f'<Trabajos {self.id}>'
+
+    def serialize(self):
+        return {
+            
+            "cliente": self.cliente,
+            "descripcion": self.descripcion,
+            "precio" :self.precio,
+            "horas" : self.horas,
+            "dia" : self.dia,
+            "mes" : self.mes,
+            "anio" : self.anio
+            
             # do not serialize the password, its a security breach
         }

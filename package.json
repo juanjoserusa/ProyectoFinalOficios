@@ -78,12 +78,14 @@
 		"bootstrap": "^5.2.3",
 		"bootstrap-icons": "^1.10.3",
 		"moment": "^2.29.4",
+		"boxicons": "^2.1.4",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.7.0",
 		"react-dom": "^16.8.4",
 		"react-icons": "^4.7.1",
 		"react-polyfills": "0.0.1",
-		"react-router-dom": "^6.3.0"
+		"react-router-dom": "^6.3.0",
+		"sweetalert": "^2.1.2"
 	}
 }

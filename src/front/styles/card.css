@@ -1,0 +1,88 @@
+ul {
+    list-style: none;
+    
+    
+}
+
+.cardanuncio{
+    
+    background-color: #ffface;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    width: 20%;
+    max-height: 70%;
+    border-radius: 5%;
+    overflow: auto;
+    
+}
+
+.tituloCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+.respuestafila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principiotabla{
+    color: #07AA7C ;
+    font-weight: bold;
+}
+
+.finaltabla{
+    color: #044E39;
+    margin-left: 12px;
+}
+.datosCard{
+    font-size: 1vw;
+    
+}
+
+.anuncio{
+    margin-top: 15px;
+    font-size: 1vw;
+    color: #044E39;
+    
+    
+}
+
+.btnMensaje{
+    color: #044E39;
+    background-color: #D0F3C6;
+    border-radius: 5%;
+    border: none;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btnMensaje:hover{
+    color: #044E39;
+    background-color: hwb(107 67% 7%);
+    transform: translateY(-2px);
+}
+
+.btnMensajeSignup{
+    color: white;
+    background-color: rgb(228, 167, 167);
+    border-radius: 5%;
+    border: none;
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btnMensajeSignup:hover{
+    color: white;
+    background-color: rgb(207, 110, 110);
+    transform: translateY(-2px);
+}
+

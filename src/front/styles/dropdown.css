@@ -1,0 +1,26 @@
+.dropdown-boton {
+  border: solid 3px #0d4d36;
+  background-color: #fbf9db;
+  color: #0d4d36;
+  width: 25vw;
+
+  border-radius: 2vw;
+  font-size: 1vw;
+  text-align: center;
+}
+
+.dropdown-boton:hover {
+  background-color: #d0f2c6;
+  border:none;
+  text-align: center;
+}
+
+.dropdown-menu1 {
+  background-color:  #d0f2c6;
+  width: 25vw;
+  border-radius: 2vw;
+  font-size: 1vw;
+  text-align: center;
+}
+
+

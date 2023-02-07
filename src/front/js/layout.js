@@ -2,15 +2,16 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
+
 import Single from "./pages/single";
-import { Profesiones } from "./pages/profesiones.js";
+
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Anuncios } from "./pages/anuncios";
-import { PerfilCliente } from "./pages/perfilCliente";
+
 
 import PerfilProfesional from "./pages/perfilProfesional";
 import { PublicarAnuncio } from "./pages/publicarAnuncio";
@@ -39,9 +40,10 @@ function Layout() {
         <Navbar />
         <Routes>
           <Route element={<Home />} path="/" />
-          <Route element={<Demo />} path="/demo" />
+
 
           <Route element={<Single />} path="/single" />
+          
           <Route element={<PublicarAnuncio />} path="/publicarAnuncio" />
 
           <Route
@@ -73,7 +75,6 @@ function Layout() {
             path="/profesiones/anuncios/perfil_profesional/:id"
           />
 
-          <Route element={<PerfilCliente />} path="/perfilcliente/:id" />
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
           <Route element={<RequestPass /> } path="/request_password" />

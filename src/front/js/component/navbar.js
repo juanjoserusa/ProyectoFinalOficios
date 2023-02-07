@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/navbar.css";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import logo from "/workspace/ProyectoFinalOficios/src/front/assets/Handlehome.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -13,11 +14,10 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand nav-title" href="/">
-          HandleHome
-        </a>
-
+      <div className="container-fluid ">
+      <Link to="/">
+      <img src={logo} className="nav-title" alt="cliente" href="/"/>
+      </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,8 +30,8 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="50"
+              height="50"
               fill="black"
               class="bi bi-list"
               viewBox="0 0 16 16"
@@ -44,53 +44,48 @@ export const Navbar = () => {
           </span>
         </button>
         <div className="d-flex justify-content-center ">
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse " id="navbarNav">
+            <div className=" me-5">
             <ul className="navbar-nav ">
-              <li className="nav-item me-5">
+              <li className="nav-item me-4">
                 <Link to="/">
                   <a className="nav-link active enlacesNavbar">Inicio</a>
                 </Link>
               </li>
-              <li className="nav-item me-5">
+              <li className="nav-item me-4">
                 <Link to="/profesiones/anuncios">
                   <a className="nav-link enlacesNavbar">Profesiones</a>
                 </Link>
               </li>
 
               {token ? (
-                <li className="nav-item me-5 ">
+                <li className="nav-item me-4">
                   {user_type === true ? (
                     <Link to={`profesiones/anuncios/perfil_profesional/${id}`}>
                       <a className="nav-link enlacesNavbar">
                         Mi perfil profesional{" "}
                       </a>
                     </Link>
-                  ) : (
-                    <Link to={`/perfilcliente/${id}`}>
-                      <a className="nav-link enlacesNavbar">
-                        Mi perfil cliente{" "}
-                      </a>
-                    </Link>
-                  )}
+                  ) : ("")}
                 </li>
               ) : (
                 ""
               )}
             </ul>
-          </div>
-        </div>
-        <div className="d-flex justify-content-end ">
+            </div>
+        
+        <div className="d-flex justify-content-end  me-5">
           <div className="ml-auto">
             {!token ? (
               <Link to="/signup">
-                <button className="btn btn-danger nav-bt me-3" type="button">
+                <button className="btn nav-bt me-3" type="button">
                   Crear Usuario
                 </button>
               </Link>
             ) : (
               <Link to="/publicarAnuncio">
                 {user_type === true ? (
-                  <button className="btn btn-warning nav-bt" type="button">
+                  <button className="btn nav-bt me-3" type="button">
                     Crear Anuncio
                   </button>
                 ) : (
@@ -101,7 +96,7 @@ export const Navbar = () => {
 
             {!token ? (
               <Link to="/login">
-                <button className="btn btn-danger nav-bt me-3" type="button">
+                <button className="btn nav-bt  " type="button">
                   Inicia Sesión
                 </button>
               </Link>
@@ -111,13 +106,15 @@ export const Navbar = () => {
                   actions.logout();
                   navigate("/")
                 }}
-                className="btn btn-danger nav-bt"
+                className="btn nav-bt "
                 type="button"
               >
                 Cerrar Sesión
               </button>
             )}
           </div>
+          </div>
+        </div>
         </div>
       </div>
     </nav>

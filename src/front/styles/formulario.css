@@ -1,61 +1,57 @@
-.formulario {
-    display:table-column;
-    justify-content: center;
-    align-items: center;
-    
-}
 
 
-.botonEnviar {
-    margin-top: 2rem;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin:0;
-    margin-bottom: 1rem;
-    padding: 0;
-    
-}
-
-.anuncio{
-    color:black;
-    font-size: medium;
-    
-}
-
-.cardAnuncioEjemplo{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    
-    
-}
-
-
-
-.tituloCard{
-    font-size:x-large;
-    text-decoration:underline;
-    margin-bottom: 1rem;
-}
-
-.datosCard{
-    font-size: small;
-    display: block;
-    align-items: center;
-    text-align: center;
-    
-}
-
-textarea {
+.areaAnuncio {
     resize: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+    background-color: white;
+    max-width: 96%; 
+
   }
+
+  .formbtn{
+    
+    margin-top: 100px !important;
+  }
+
+
+  .formanuncio {
+    background-color: #FCF5AB;
+    width: 400px;
+    height: 90%; 
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  }
+
+  .signupFrmanuncio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:700px;
+  }
+
+  .boton-enviar-form{
+    background-color: #D0F3C6;
+    color:#044E39;
+    border: none;
+    border-radius: 1.5rem;
+    font-size:1.3rem;
+    width: 15rem;
+    
+
+  }
+
+  .boton-enviar-form:hover{
+    background-color: hwb(107 67% 7%);
+    color:#044E39;
+    transform: translateY(15%);
+}

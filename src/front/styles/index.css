@@ -4,8 +4,63 @@
 
 * {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 #app{
-    background-color: #fcf9db;
+    background-color: #fcf9db;  
+    max-width: 100%;
+    overflow-x: hidden;
+   
 }
+
+.btnBusqueda{
+    display: block;
+    margin-left: auto;
+    border: none;
+    background-color: #07AA7C;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+   
+}
+
+.btnBusqueda:hover {
+    background-color: hwb(107 67% 7%);
+    
+  }
+
+  .btnReiniciarBusqueda{
+    
+    margin-left: auto;
+    background-color: rgb(199, 94, 94);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: large;
+  }
+
+  .btnReiniciarBusqueda:hover{
+    background-color: rgb(207, 110, 110);
+  }
+
+.barrabusqueda {
+  background-color: #fcf9db;
+  
+}
+
+
+.busqueda {
+  box-shadow: 0 3px 10px #044E39;
+}
+
+
+
+.contenidoanuncio{
+  overflow-y: scroll;
+  height: 22vw;  
+}
+

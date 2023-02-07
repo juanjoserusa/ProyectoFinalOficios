@@ -1,25 +1,28 @@
 .navbar {
-    background-color: #07AA7C;
+    background-color: #fcf9db;
     font-size: x-large;
 }
 
+
 .nav-link {
-    color:#FCFBF6;
+    color:#044E39;
     text-decoration: none;
 }
 .nav-link:hover {
     color:#FCFBF6;
-    text-decoration: none
+    text-decoration: none;
+    transform: translateY(1%);
 }
 
 a:link, a:visited, a:active {
     text-decoration:none;
+
 }
 
 .enlacesNavbar{
-    color: #D0F3C6;
+    color: #044E39;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 
 .enlacesNavbar:hover{
@@ -28,31 +31,36 @@ a:link, a:visited, a:active {
 
 .nav-bt{
     background-color: #D0F3C6;
-    color:black;
-    border: 0;
-    border-radius: 10px;
-    font-size:large;
+    color:#044E39;
+    border: none;
+    border-radius: 1.5rem;
+    font-size:80%;
+    width: 12rem;
 }
 .nav-bt:hover{
     background-color: hwb(107 67% 7%);
-    color:black
+    color:black;
+    transform: translateY(10%);
 }
 
 .nav-title{
-    color:#FCFBF6;
-    font-size: 30px;
-    margin-left: 5px;
+    color:#044E39;
+    width: 13vw;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 .nav-title:hover {
     color:#FCFBF6;
+    transform: translateY(-2px);
+
 }
 
 .navbar-toggler-icon{
     background-color: #D0F3C6;
     color:#FCFBF6;
-    border-radius: 10px;
+    border-radius: 6%;
 }
 
-.nav-item {
-    font-size: 15px;
-}
+
+
+

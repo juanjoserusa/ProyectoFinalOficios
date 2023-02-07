@@ -1,27 +1,88 @@
 .tituloMensaje {
-    color: #044E39;
+  color: #044e39;
+  text-align: center;
+  font-weight: bold;
 }
 
 .textoMensaje {
-    color:#044E39;
+  color: #044e39;
+  margin-top: 30px;
+  font-size: medium;
 }
 
-.cardMensaje{
-    background-color:#FCFBF6;
+.cardMensaje {
+  background-color: #ffface;
 }
-.mensajesRecibidos{
-    display: flex;
-    justify-content: center;
-    
-    
+
+.cardMensaje2 {
+  background-color: red;
+}
+
+.cardMensajeMail {
+  background-color: #ffface;
+  border: none;
+  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+}
+.mensajesRecibidos {
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  font-size: small;
 }
 
 .tabCliente {
-    background-color: #D0F3C6;
-    
-} 
+  background-color: #d0f3c6;
+  font-size: medium;
+  color: black;
+}
 
 .title {
-    color: black;
-  
+  color: black;
+}
+
+.formularioDemail {
+  resize: none;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #dadce0;
+  border-radius: 7px;
+  font-size: 16px;
+  outline: none;
+  background: none;
+  z-index: 1;
+  background-color: white;
+  max-width: 100%;
+}
+
+.submitBtn3 {
+  margin-left: auto;
+  padding: 10px 25px;
+  border: none;
+  background-color: #d0f3c6;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 30px;
+  width: 50%;
+}
+
+.submitBtn3:hover {
+  background-color: hwb(107 67% 7%);
+  color: black;
+  transform: translateY(-2px);
+}
+
+.cambio-color1 {
+  background-color: #044e39;
+  border-radius: 5%;
+  width: 50px;
+}
+
+.cambio-color2 {
+  background-color: red;
+  border-radius: 5%;
+  width: 50px;
 }

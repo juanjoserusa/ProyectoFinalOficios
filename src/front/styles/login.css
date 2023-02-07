@@ -1,5 +1,5 @@
 .pageLogin{
-    background-color: #f3f1d7;
+    background-color: #fcf9db;
 }
 
 .signupFrm {
@@ -9,9 +9,10 @@
     height:600px;
   }
 
-  .form {
-    background-color: #FCF5AB;
-    width: 400px;
+  .formulariologin {
+    background-color: #D0F3C6;
+    width: 25rem;
+
     border-radius: 8px;
     padding: 20px 40px;
     box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
@@ -30,7 +31,7 @@
     margin-bottom: 17px;
   }
 
-  .input {
+  .inputlogin {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -52,7 +53,7 @@
     
   }
 
-  .label {
+  .labellogin {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -69,7 +70,7 @@
     margin-left: auto;
     padding: 15px 30px;
     border: none;
-    background-color: #D0F3C6;
+    background-color: #fcf9db;
     color: #044E39;
     border-radius: 6px;
     cursor: pointer;
@@ -91,12 +92,68 @@
     margin-top: 20px;
   }
   .checkbox{
-    font-size: 18px;
-      display: flex;
-      justify-content: space-around;
+    margin-top: 20px;
+    position: relative;
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
   }
 
   .cuadrocheck{
     cursor: pointer;
   }
 
+  .titlemodal{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .titlewelcome{
+    color: #044E39;
+    display: flex;
+    justify-content: center;
+  }
+
+  .submitBtnmodal{
+    display: flex;
+    justify-content: center;
+    padding: 15px 30px;
+    border: none;
+    background-color: #D0F3C6;
+    color: #044E39;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    width: 50%;
+    
+    
+    
+  }
+
+  .modalbody{
+    background-color: white;
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+
+  .mensajeSignupFail{
+    color: red;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .mensajeSignupOk{
+    
+    text-align: center;
+    margin: 0 auto;}

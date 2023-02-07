@@ -4,7 +4,7 @@ import { Searchbar } from "./searchbar";
 
 import React, { useContext, useState } from 'react';
 import { Context } from "../store/appContext";
-import { BiMap } from "react-icons/bi";
+
 
 
 export const Anuncios = () => {
@@ -36,10 +36,6 @@ export const Anuncios = () => {
     <div>
 
       <Searchbar/>
-    
-
-     
-
       <AnunciosProfesiones />
     </div>
   );
