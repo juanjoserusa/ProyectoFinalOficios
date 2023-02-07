@@ -1,61 +1,114 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext,useEffect } from "react";
 import emailjs from "@emailjs/browser";
-// import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import moment from 'moment';
+import { Context } from "../store/appContext.js";
 
 export const RequestPass  = () => {
-  // const { store, actions } = useContext(Context);
-  // const [email, setEmail] = useState("email");
-  // const correo=store.email;
+    const [email ,setEmail] = useState("")
+    const { store, actions } = useContext(Context);
+    const [key, setKey] = useState("");
+    const [key_pass ,setKey_pass] =useState ('');
+    const [expirationDate, setExpirationDate] = useState("")
+   
 
-  const form = useRef();
 
+    const generateTemporaryKey = () => {
+      const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#@$%&*?<>';
+      let key = '';
+    
+      for (let i = 0; i < 12; i++) {
+          key += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+    
+      const expirationDate = moment().add(45, 'minutes').fromNow();
+    
+      return { key, expirationDate };
+    }
+    
+    useEffect(() => {
+      const  keyObject = generateTemporaryKey();
+      setKey(keyObject.key);
+      setExpirationDate(keyObject.expirationDate);
+    }, []);
+    
+    const handleChange = (event) =>{
+      setEmail (event.target.value) 
+     }
+  
+    const form = useRef();
+ 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, '0XdsQdYfjEG1lc2qh')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  };
-    fetch("https://api.emailjs.com/api/v1.0/email/send-fom",{
+    //   emailjs.sendForm('service_ru0grmi','template_i02czvn', form.current, 'qjkj3ZGqx0BDvFYnH')
+    //     .then((result) => {
+    //         console.log(result);
+    //     }, (error) => {
+    //         console.log(error.text);
+    //     });
+    // };
+   const data = {
+    service_id: 'service_ru0grmi',
+    template_id: 'template_i02czvn',
+    user_id: 'qjkj3ZGqx0BDvFYnH',
+    template_params: {
+        'user_email': email ,
+        'key_pass': key,
+        'expiration_date': expirationDate
+    }
+    };
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send",{
       method: 'POST',
-      headers: {'Content-Type': 'application/json'
-      },
-  })
+      body: JSON.stringify(data),
+      headers: {'Content-Type': 'application/json'},
+     })
+     .then(res => res.json())
+     .then(res => {
+       console.log(res);
+     })
+     .catch(err => {
+       console.log(err);
+     });   
+
+    }
+
+    setTimeout(function(){
+      window.location.href ="request_password/reset_password";
+    }, 30000);
+
 
   return (
-    <div className="text-center pageLogin">
-      <div className="signupFrm">
-        <form ref={form} onSubmit={sendEmail} className="form">
-        <h1 className="title">Recuperar contraseña</h1>
-          <div className="form-group inputContainer ">
-          
-            <label for="user_email" className="label">Recupera tu contraseña</label>
+    <div className="container-fluid center">
+      <div className="row">
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="form-group">
+            <label for="user_email">Recupera tu contraseña</label> 
             <input
               type="email"
               class="form-control input"
               placeholder="Enter email"
               id="user_email"
-              name="user_email"
-            ></input>
+              name="user_email" 
+              onChange={handleChange}
+            />
+             <input type="hidden"  name="key_pass"  id= "key_pass" value={key_pass} />
+             <input type ="hidden" name="expiration_date"  id="expiration_date" value ={expirationDate}/>
             <small className="form-text text-muted">
               Ingrese su email registrado
-            </small>
-
+            </small>        
           </div>
           <button
             type="submit"
             valu="send"
-            class="btn btn-primary submitBtn"
+            class="btn btn-primary" 
             onSubmit={sendEmail}
           >
             Enviar
-            {/* <input type="hidden" id="user_pass" name="user_pass"  value= "user_pass"></input>  */}
           </button>
         </form>
       </div>
     </div>
   );
 };
+

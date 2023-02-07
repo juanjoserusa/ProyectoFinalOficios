@@ -1,3 +1,4 @@
+
 import swal from 'sweetalert';
 
 const getState = ({ getStore, setStore }) => {
@@ -19,12 +20,9 @@ const getState = ({ getStore, setStore }) => {
 
 			var requestOptions = {
 				method: 'GET',
-				redirect: 'follow',
-				
+				redirect: 'follow',			
 					
 			  };
-			
-			  
 			  fetch(process.env.BACKEND_URL + "/api/recibirMensaje/"+id, requestOptions)
 				.then(response => response.json())
 				.then(result => {
@@ -122,7 +120,7 @@ const getState = ({ getStore, setStore }) => {
 				setStore({search:results.result});
 				if (results.result == 0) { swal("Oops!", "No hemos encontrado ningun anuncio en ese codigo postal", "error");}
 			  });
-		  },
+	    },
 
 		login: async (email, password) => {
 		  const opts = {
@@ -153,8 +151,36 @@ const getState = ({ getStore, setStore }) => {
 		  } catch (error) {
 			console.error("there hast been an error login");
 		  }
+		 },
+		    reset_password: async (email,key_pass) => {
+				const opts = {
+				method: 'POST',
+				headers:{"Content-Type": "application/json"} ,
+				body: JSON.stringify({
+					email: email,
+					key_pass:key_pass
+				  }),
+				};
+				try {
+					const resp = await fetch(
+					  process.env.BACKEND_URL + "/api/reset_password",
+					  opts
+					);
+
+					const data = await resp.json();
+					console.log(data)
+					if (data.status === "success") {
+						setStore({ key_pass: data.password });
+					  } else {
+						throw new Error(data.message);
+					  }
+					} catch (error) {
+					  console.log("Error resetting password:", error);
+					}
+
+			},			
+	    
 		},
-	  },
 	};
   };
   

@@ -40,6 +40,7 @@ export const Login = () => {
         "You are logged in with this token" + token
       ) : (
         <div className="signupFrm">
+
           <form action="" class="formulariologin">
             <h1 className="title">Iniciar Sesion</h1>
             <div class="inputContainer">
@@ -49,6 +50,7 @@ export const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 required
+
                 className="inputlogin "
               ></input>
               <label for="" class="labellogin">

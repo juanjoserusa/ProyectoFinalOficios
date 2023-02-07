@@ -18,7 +18,7 @@ import { PublicarAnuncio } from "./pages/publicarAnuncio";
 import { Login } from "./pages/login";
 import {SignUp} from "./pages/signup";
 import { RequestPass } from "./component/request_password";
-import { Reset_Pass } from "./component/reset_password ";
+import { RessetPass } from "./component/reset_password";
 
 import AnunciosFontanero from "./pages/AnunciosFontanero";
 import AnunciosElectricista from "./pages/AnunciosElectricista";
@@ -77,8 +77,8 @@ function Layout() {
 
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
-           <Route element={<RequestPass /> } path="/request_password" />
-            <Route element={<Reset_Pass /> } path="/reset_password" />
+          <Route element={<RequestPass /> } path="/request_password" />
+          <Route element={<RessetPass /> } path= "/request_password/reset_password" />
 
 
           <Route element={<h1>Not found!</h1>} />

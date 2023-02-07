@@ -77,6 +77,7 @@
 		"axios": "^1.2.3",
 		"bootstrap": "^5.2.3",
 		"bootstrap-icons": "^1.10.3",
+		"moment": "^2.29.4",
 		"boxicons": "^2.1.4",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",

@@ -90,13 +90,14 @@ def recibirMensaje(id):
 
 @api.route("/request_password", methods=[ "POST"])
 def request_password():
-    email = request.json.get("email", None)
     user = User.query.filter_by(email=email).first()  
+    email = request.json.get("email") 
     if user:
-        return jsonify({"mensaje":"usuario existe"}),200
-        return  jsonify({"mensaje":"usuario no existe"}),200 
-        console.log(jsonify)    
-
+       key_pass= create_key_pass(identity=email)
+       return jsonify({"mensaje": "key_pass enviada"}),201
+    else:
+        return jsonify({"mensaje":"usuario no existe"}),200 
+       
 
 @api.route('/search', methods=['POST'])
 def handle_search():
@@ -108,6 +109,24 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
+
+@api.route("/reset_password", methods=["POST"])
+def reset_password():
+    email = get_jwt_identity()
+    user = User.query.filter_by(email=email).first()
+    data = request.get_json()
+    email = data.get("email")
+    password = data.get("key_pass")
+    key_pass = user.password
+    user.key_pass = None
+    db.session.commit()
+    if user.key_pass != key_pass:
+       return jsonify({"error": "Key incorrecta."}), 400
+    if not user:
+        return jsonify({"error": "Datos incorrectos."}), 400
+    if user:
+      return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
+    
 @api.route('/enviartrabajos', methods=['POST'])
 def enviar_trabajos():
     body = request.get_json()
