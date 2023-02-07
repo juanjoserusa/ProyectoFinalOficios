@@ -10,14 +10,17 @@ export const RessetPass  = () => {
     const [key_pass, setKey_pass] = useState("");
     const navigate = useNavigate();
     const [error, setError] = useState("");
+   
+
 
       const handleResetPassword =async (e) => {
          e.preventDefault();
-      if (!error) {
-         actions.password(setpassword);
-        navigate("/login");302
-      };
-      }
+
+        if (!error) {
+         actions.reset_password(email, key_pass);
+         navigate("/login");
+       };
+     }
             
     return (
       <div className=" text-center pageReset">  
@@ -39,8 +42,8 @@ export const RessetPass  = () => {
                 <input
                   type="key"
                   placeholder="Ingrese key enviada por correo"
-                  onChange={(e) => setnewPassword(e.target.value)}
-                  value={newpassword}
+                  onChange={(e) => setKey_pass(e.target.value)}
+                  value={key_pass}
                   required
                   className="inputLogin Key"
                 ></input>
@@ -54,4 +57,5 @@ export const RessetPass  = () => {
           </div>
       </div>
     );
-}
+
+  }

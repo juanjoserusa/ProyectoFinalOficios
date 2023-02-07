@@ -109,19 +109,24 @@ def handle_search():
     return jsonify({"result":search_results}), 200
 
 
-
 @api.route("/reset_password", methods=["POST"])
-def create_resetpass():
-    email= get_jwt_identity()
+def reset_password():
+    email = get_jwt_identity()
     user = User.query.filter_by(email=email).first()
     data = request.get_json()
-    newpassword = request.json.get("newpassword")
-    key_pass = newpassword
-    user.password = newpassword
+    email = data.get("email")
+    password = data.get("key_pass")
+    key_pass = user.password
     user.key_pass = None
     db.session.commit()
+    if user.key_pass != key_pass:
+       return jsonify({"error": "Key incorrecta."}), 400
     if not user:
         return jsonify({"error": "Datos incorrectos."}), 400
-    else:
-        return jsonify({"message": "La contraseña ha sido actualizada con éxito."}),201
-
+    if user:
+      return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
+    
+  
+    
+    
+    

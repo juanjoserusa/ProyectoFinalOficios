@@ -130,14 +130,13 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		 },
-
-		    reset_password: async (email,newpassword) => {
+		    reset_password: async (email,key_pass) => {
 				const opts = {
 				method: 'POST',
 				headers:{"Content-Type": "application/json"} ,
 				body: JSON.stringify({
 					email: email,
-					key_pass:newpassword
+					key_pass:key_pass
 				  }),
 				};
 				try {
@@ -148,11 +147,14 @@ const getState = ({ getStore, setStore }) => {
 
 					const data = await resp.json();
 					console.log(data)
-					setStore({ email: data.email, id: data.id ,newpassword:data.password});
-					return data;
-				  } catch (error) {
-					console.log("Error datos incorrectos", error);
-			      }
+					if (data.status === "success") {
+						setStore({ key_pass: data.password });
+					  } else {
+						throw new Error(data.message);
+					  }
+					} catch (error) {
+					  console.log("Error resetting password:", error);
+					}
 
 			},			
 	    
