@@ -1,58 +1,39 @@
-import React, { useState, useContext,} from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
-import { useNavigate, useParams } from "react-router-dom";
-import '../../styles/mensaje.css'
+import { Link, useNavigate, useParams } from "react-router-dom";
+import "../../styles/formTrabajos.css"
+import { MDBInput, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 
-import mensajeo from "../../assets/mensajeo.png";
-import {
-  MDBRow,
-  MDBCol,
-  MDBInput,
-  MDBCardImage,
-  MDBTextArea,
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBIcon,
-} from "mdb-react-ui-kit";
-import { Link } from "react-router-dom";
-import swal from "sweetalert";
-
-
-export const Mensaje = (props) => {
-
+const Prueba = () => {
   const { store, actions } = useContext(Context);
 
-  const token = store.token;
-  const email = store.email
+  const parametros = useParams();
+  const navigation = useNavigate();
 
-  const navigate = useNavigate()
-
-  const parametros = useParams()
-
-  const [datos, setDatos] = useState({
-    from: email,
-    to: parametros.user_id,
-    subject: "",
-    message: "",
-    sender: email,
+  const [trabajos, setTrabajos] = useState({
+    cliente: "",
+    descripcion: "",
+    precio: "",
+    horas: "",
+    dia: "",
+    mes: "",
+    anio: "",
+    id_profesional: parametros.id,
   });
 
   const handleInputChange = (event) => {
-    setDatos({
-      ...datos,
+    setTrabajos({
+      ...trabajos,
       [event.target.name]: event.target.value,
     });
   };
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify(datos);
+    var raw = JSON.stringify(trabajos);
 
     var requestOptions = {
       method: "POST",
@@ -61,73 +42,70 @@ export const Mensaje = (props) => {
       redirect: "follow",
     };
 
-    fetch(process.env.BACKEND_URL + "/api/enviarMensaje", requestOptions)
+    fetch(process.env.BACKEND_URL + "/api/enviartrabajos", requestOptions)
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
-      swal("¡Enhorabuena!", "¡ Tu mensaje ha sido enviado correctamente!", "success")
-     
-      
-      navigate("/")
-  }
-  return (
-    <div className="">
 
-    <MDBContainer className="mt-4 mb-5 pruebacontainermensajes">
-        
-              <MDBCard className="cardlogin">
-                <MDBRow className='g-0'>
-        
-                  <MDBCol className="imagenlogin d-flex justify-content-center ps-5 "  md='5'>
-                  <MDBCardImage
-              src={mensajeo}
-              alt="login form"
-              className="rounded-start w-100 imagelogin "
-            />
-                  </MDBCol>
-        
-                  <MDBCol md="7" className="columnalogin" >
-            <form onSubmit={enviarDatos}  className="ps-5 pe-5 py-3 ">
-              <h2
-                className="fw-normal mt-4 mb-3 pb-3 text-center"
-                style={{ letterSpacing: "1px" }}
-              >
-                Enviar mensaje
-              </h2>
-    
-              <MDBInput
-                wrapperClass="mb-4"
-                type="text"
-                id="exampleFormControlInput1"
-                onChange={handleInputChange}
-                name="subject"
-                label="Asunto del mensaje"
-                required
-              />
-              <MDBTextArea
-                wrapperClass="mb-4"
-                textarea
-                id="exampleFormControlTextarea1"
-                onChange={handleInputChange}
-                name="message"
-                rows={5}
-                label="Texto del mensaje"
-                required
-              />
-    
-                <button type="submit" className="mb-4 mb-4 px-5 bt-login">
-                Enviar Mensaje
-                </button>
-            </form>
+    navigation(0);
+  };
+  
+  return (
+    <div className="container">
+      <form onSubmit={enviarDatos}>
+      <MDBRow>
+      <MDBCol>
+          <MDBInput           id="exampleFormControlInput1 "
+          onChange={handleInputChange}
+          name="cliente" label='Cliente' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          name="precio"
+          onChange={handleInputChange} label='Precio por hora' type='number' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="horas" label='Horas trabajadas' type='number' />
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="dia" label='Dia' type='number'/>
+        </MDBCol>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="mes" label='Mes' type='number'/>
+        </MDBCol>
+        <MDBCol>
+          <MDBInput id="exampleFormControlInput1"
+          onChange={handleInputChange}
+          name="anio" label='Año' type='number' />
+        </MDBCol>
+      </MDBRow>
+
+
+      <MDBRow>
+        <MDBCol>
+          <MDBInput           id="exampleFormControlTextarea1"
+          onChange={handleInputChange}
+          name="descripcion" label='Descripcion del trabajo' />
+        </MDBCol>
+      </MDBRow>
+
+
+      <MDBRow>
+        <MDBCol className="d-flex justify-content-center">
+      <button type="submit" className="btn boton-enviar-form mb-4 ">
+            Enviar
+          </button>
           </MDBCol>
-        
-                </MDBRow>
-              </MDBCard>
-        
-            </MDBContainer>
-    
-    
-          
+          </MDBRow>
+          </form>
         </div>
   );
 };
+
+export default Prueba

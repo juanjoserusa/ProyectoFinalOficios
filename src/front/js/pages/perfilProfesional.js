@@ -1,16 +1,21 @@
-import React, { useEffect, useContext } from "react";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+
+import React, { useEffect, useContext, useState  } from "react";
+
 import { Context } from "../store/appContext";
-
-import MensajesClientes from "../component/MensajesClientes";
 import { useParams } from "react-router-dom";
-import { FormularioTrabajos } from "../component/FormularioTrabajos";
-import TablaProfesional from "../component/TablaProfesional";
-
-import "/workspace/ProyectoFinalOficios/src/front/styles/tablaProfesional.css";
-
-import "../../styles/formTrabajos.css"
+import {
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsContent,
+  MDBTabsPane,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
+import  PaginacompletarPerfil from '../pages/PaginacompletarPerfil';
+import { FormularioTrabajos } from '../component/FormularioTrabajos';
+import TablaProfesional from '../component/TablaProfesional';
+import MensajesClientes from "../component/MensajesClientes";
 
 const PerfilProfesional = () => {
   const parametros = useParams();
@@ -22,22 +27,53 @@ const PerfilProfesional = () => {
     actions.loadTabla(parametros.id);
   }, []);
 
+  const [verticalActive, setVerticalActive] = useState('tab1');
+
+  const handleVerticalClick = (value) => {
+    if (value === verticalActive) {
+      return;
+    }
+
+    setVerticalActive(value);
+  };
+  
   return (
-    <div className="container perfilprofesionalpage">
-      <div className="mt-5 mb-5">
-      <Tabs
-        defaultActiveKey="profile"
-        id="fill-tab-example"
-        className="mb-3 tabCliente  "
-        fill
-      >
-        <Tab
-          eventKey="home"
-          title="Mensajes"
-          className="mensajesRecibidos border border-top-0"
-          style={{ height: "600px" }}
-        >
-          <div className="container">
+    <div className="container-fluid mt-3 mb-3">
+      <MDBRow>
+        <MDBCol size='3'>
+          <MDBTabs pills className='flex-column text-center '>
+            <MDBTabsItem >
+              <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab1')} active={verticalActive === 'tab1'}>
+                Perfil
+              </MDBTabsLink>
+            </MDBTabsItem>
+            <MDBTabsItem>
+              <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab2')} active={verticalActive === 'tab2'}>
+                Mensajes
+              </MDBTabsLink>
+            </MDBTabsItem>
+            <MDBTabsItem >
+              <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab3')} active={verticalActive === 'tab3'} >
+                Historico  ganancias
+              </MDBTabsLink>
+            </MDBTabsItem>
+            <MDBTabsItem>
+              <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab4')} active={verticalActive === 'tab4'}>
+                Anuncios publicados
+              </MDBTabsLink>
+            </MDBTabsItem>
+          </MDBTabs>
+        </MDBCol>
+        <MDBCol size='9'>
+          <MDBTabsContent>
+            <MDBTabsPane show={verticalActive === 'tab1'}>
+            <div className="container">
+              <PaginacompletarPerfil />
+            </div>
+            
+            </MDBTabsPane>
+            <MDBTabsPane show={verticalActive === 'tab2'}>
+              <div className="container">
             <div className="row row-cols-1 row-cols-md-4 g-3 d-flex justify-content-center  columnasdemensajes">
               {store.mensajeCliente.map((element, index) => {
                 return (
@@ -52,56 +88,58 @@ const PerfilProfesional = () => {
               })}
             </div>
           </div>
-        </Tab>
-        <Tab
-          eventKey="profile"
-          title="Presupuestos aceptados"
-          className=" mensajesRecibidos border border-top-0"
-        >
-
-          <div className="container">
+          </MDBTabsPane>
+            <MDBTabsPane show={verticalActive === 'tab3'}>
+            <div className="container">
       
-              <div className="scroll-tabla">
-              <table className="text-center tabla-profesiones striped bordered hover">
-                <tr>
-                  <th className="fecha uno">Dia</th>
-                  <th className="fecha uno">Mes</th>
-                  <th className="fecha uno">Año</th>
-                  <th className="table-head uno">Cliente</th>
-                  <th className="table-head uno">Descripcion</th>
-                  <th className="fecha uno">Precio por hora</th>
-                  <th className="fecha uno">Horas de trabajo</th>
-                  <th className="table-head1 uno">Presupuesto estimado</th>
-                </tr>
+      <div className="scroll-tabla">
+      <table className="text-center tabla-profesiones striped bordered hover">
+        <tr>
+          <th className="fecha uno">Dia</th>
+          <th className="fecha uno">Mes</th>
+          <th className="fecha uno">Año</th>
+          <th className="table-head uno">Cliente</th>
+          <th className="table-head uno">Descripcion</th>
+          <th className="fecha uno">Precio por hora</th>
+          <th className="fecha uno">Horas de trabajo</th>
+          <th className="table-head1 uno">Presupuesto estimado</th>
+        </tr>
 
-                {store.trabajosRecibidos.map((element, index) => {
-                  return (
-                    <TablaProfesional
-                      key={index}
-                      dia={element.dia}
-                      mes={element.mes}
-                      anio={element.anio}
-                      cliente={element.cliente}
-                      descripcion={element.descripcion}
-                      precio={element.precio}
-                      horas={element.horas}
-                    />
-                  );
-                })}
-              </table>
-              </div>
-
-            
-            <div className="formularioTrabajos fixed">
-              <FormularioTrabajos user_id={parametros.id} />
-
-            </div>
-          </div>
-         
-        </Tab>
-      </Tabs>
+        {store.trabajosRecibidos.map((element, index) => {
+          return (
+            <TablaProfesional
+              key={index}
+              dia={element.dia}
+              mes={element.mes}
+              anio={element.anio}
+              cliente={element.cliente}
+              descripcion={element.descripcion}
+              precio={element.precio}
+              horas={element.horas}
+            />
+          );
+        })}
+      </table>
       </div>
+
+    
+    <div className="formularioTrabajos fixed">
+      <FormularioTrabajos user_id={parametros.id} />
+
     </div>
+  </div>
+            </MDBTabsPane>
+            <MDBTabsPane show={verticalActive === 'tab4'}>
+            <div className="container">
+            
+            </div>
+            
+            </MDBTabsPane>
+          </MDBTabsContent>
+        </MDBCol>
+      </MDBRow>
+
+        </div>
   );
 };
 
