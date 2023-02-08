@@ -6,8 +6,8 @@
     color:#044E39;
   }
    .text-center pageRequest{
-    height:600px;
-    width: 500px;
+    height:300px;
+    width: 300px;
     padding: auto;
    }
    h1{
@@ -19,8 +19,8 @@
     position: relative;
     top: 200px;
     left: 10px;
-    height: 600px;
-    width:500px;
+    height: 200px;
+    width:200px;
     border-radius: 7px;
     font-size: 16px;
     padding: 20px;
@@ -28,19 +28,18 @@
     background: none;
    }
    
-
    #user_email {
     top:150px;
     position: absolute;
     height: 45px;
-    width: 250px;
+    width: 50px;
     margin-bottom: 17px;
   }
 
    .email input{
     position: relative;
     top: 200px;
-    left: auto;
+    left: 30px;
     height: 50%;
     width: 50px;
     border-radius: 7px;
