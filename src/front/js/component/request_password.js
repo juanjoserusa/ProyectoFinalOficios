@@ -2,6 +2,8 @@ import React, { useState, useRef, useContext,useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import moment from 'moment';
 import { Context } from "../store/appContext.js";
+import '../../styles/requestp.css'
+ 
 
 export const RequestPass  = () => {
     const [email ,setEmail] = useState("")
@@ -79,10 +81,10 @@ export const RequestPass  = () => {
 
 
   return (
-    <div className="container-fluid center">
+    <div className="container-fluid center" id="pageRequest">
       <div className="row">
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
+        <form ref={form} onSubmit={sendEmail} id="request_frm">
+          <div className="formR">
             <label for="user_email">Recupera tu contraseña</label> 
             <input
               type="email"
@@ -97,15 +99,15 @@ export const RequestPass  = () => {
             <small className="form-text text-muted">
               Ingrese su email registrado
             </small>        
-          </div>
-          <button
+          <button 
             type="submit"
             valu="send"
             class="btn btn-primary" 
             onSubmit={sendEmail}
           >
             Enviar
-          </button>
+           </button>
+          </div>
         </form>
       </div>
     </div>

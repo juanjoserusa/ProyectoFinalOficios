@@ -89,7 +89,9 @@ def recibirMensaje(id):
 
 
 @api.route("/request_password", methods=[ "POST"])
+@jwt_required()
 def request_password():
+    email = get_jwt_identity()
     user = User.query.filter_by(email=email).first()  
     email = request.json.get("email") 
     if user:
@@ -112,11 +114,10 @@ def handle_search():
 
 @api.route("/reset_password", methods=["POST"])
 def reset_password():
-    email = get_jwt_identity()
     user = User.query.filter_by(email=email).first()
     data = request.get_json()
     email = data.get("email")
-    password = data.get("key_pass")
+    newpassword = data.get("key_pass")
     key_pass = user.password
     user.key_pass = None
     db.session.commit()

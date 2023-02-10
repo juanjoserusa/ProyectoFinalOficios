@@ -152,13 +152,13 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		 },
-		    reset_password: async (email,key_pass) => {
+		    reset_password: async (email,newpassword) => {
 				const opts = {
 				method: 'POST',
 				headers:{"Content-Type": "application/json"} ,
 				body: JSON.stringify({
 					email: email,
-					key_pass:key_pass
+					key_pass:newpassword
 				  }),
 				};
 				try {
@@ -168,9 +168,10 @@ const getState = ({ getStore, setStore }) => {
 					);
 
 					const data = await resp.json();
+
 					console.log(data)
 					if (data.status === "success") {
-						setStore({ key_pass: data.password });
+						setStore({ newpassword: data.password });
 					  } else {
 						throw new Error(data.message);
 					  }
