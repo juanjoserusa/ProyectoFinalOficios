@@ -114,19 +114,15 @@ def handle_search():
 
 @api.route("/reset_password", methods=["POST"])
 def reset_password():
-    user = User.query.filter_by(email=email).first()
     data = request.get_json()
     email = data.get("email")
-    newpassword = data.get("key_pass")
-    key_pass = user.password
-    user.key_pass = None
-    db.session.commit()
-    if user.key_pass != key_pass:
-       return jsonify({"error": "Key incorrecta."}), 400
+    key_pass = data.get("key_pass")
+    user = User.query.filter_by(email=email).first()
     if not user:
         return jsonify({"error": "Datos incorrectos."}), 400
-    if user:
-      return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
+    user.password = key_pass
+    db.session.commit()
+    return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
     
 @api.route('/enviartrabajos', methods=['POST'])
 def enviar_trabajos():

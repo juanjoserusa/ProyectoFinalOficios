@@ -152,38 +152,39 @@ const getState = ({ getStore, setStore }) => {
 			console.error("there hast been an error login");
 		  }
 		 },
-		    reset_password: async (email,newpassword) => {
-				const opts = {
-				method: 'POST',
-				headers:{"Content-Type": "application/json"} ,
-				body: JSON.stringify({
-					email: email,
-					key_pass:newpassword
-				  }),
-				};
-				try {
-					const resp = await fetch(
-					  process.env.BACKEND_URL + "/api/reset_password",
-					  opts
-					);
+		 
+		reset_password: async (email, newpassword) => {
+			const opts = {
+			method: 'POST',
+			headers:{"Content-Type": "application/json"} ,
+			body: JSON.stringify({
+			email: email,
+			newpassword: newpassword
+			}),
+			};
+			try {
+			const resp = await fetch(
+			process.env.BACKEND_URL + "/api/reset_password",
+			opts
+			);
 
-					const data = await resp.json();
+			const data = await resp.json();
 
-					console.log(data)
-					if (data.status === "success") {
-						setStore({ newpassword: data.password });
-					  } else {
-						throw new Error(data.message);
-					  }
-					} catch (error) {
-					  console.log("Error resetting password:", error);
-					}
+			console.log(data)
+			if (data.status === "success") {
+				setStore({ newpassword: data.password });
+				} else {
+				throw new Error(data.message);
+				}
+			} catch (error) {
+				console.log("Error resetting password:", error);
+			}				
 
-			},			
+		},			
 	    
 		},
 	};
-  };
   
+}
   export default getState;
   

@@ -47,7 +47,7 @@ export const RessetPass  = () => {
                   required
                   className="inputLogin Key"
                 ></input>
-                <label  className="label">Key</label>
+                <label  className="label">newpassword</label>
               </div>
     
               <button className="btn btn-warning submitBtn" type="submit">
