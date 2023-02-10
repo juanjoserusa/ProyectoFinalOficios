@@ -124,6 +124,7 @@ def reset_password():
     db.session.commit()
     return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
     
+    
 @api.route('/enviartrabajos', methods=['POST'])
 def enviar_trabajos():
     body = request.get_json()
