@@ -121,6 +121,7 @@ def reset_password():
     if not user:
         return jsonify({"error": "Datos incorrectos."}), 400
     user.password = key_pass
+    db.session.add()
     db.session.commit()
     return jsonify({"message": "La contraseña ha sido actualizada con éxito."}), 201
     

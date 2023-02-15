@@ -159,7 +159,7 @@ const getState = ({ getStore, setStore }) => {
 			headers:{"Content-Type": "application/json"} ,
 			body: JSON.stringify({
 			email: email,
-			newpassword: newpassword
+			password:newpassword
 			}),
 			};
 			try {
