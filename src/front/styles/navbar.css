@@ -22,7 +22,8 @@ a:link, a:visited, a:active {
 .enlacesNavbar{
     color: #044E39;
     text-decoration: none;
-    font-size: medium;
+    font-size: large;
+    font-weight: bold;
 }
 
 .enlacesNavbar:hover{
@@ -31,11 +32,13 @@ a:link, a:visited, a:active {
 
 .nav-bt{
     background-color: #D0F3C6;
+    
     color:#044E39;
     border: none;
     border-radius: 1.5rem;
     font-size:medium;
     width: 13rem;
+    font-weight: bold;
 }
 .nav-bt:hover{
     background-color: hwb(107 67% 7%);
