@@ -42,11 +42,11 @@ const PerfilProfesional = () => {
       <MDBRow>
         <MDBCol size='3'>
           <MDBTabs pills className='flex-column text-center '>
-            <MDBTabsItem >
+            {/* <MDBTabsItem >
               <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab1')} active={verticalActive === 'tab1'}>
                 Perfil
               </MDBTabsLink>
-            </MDBTabsItem>
+            </MDBTabsItem> */}
             <MDBTabsItem>
               <MDBTabsLink className="tabperfilpro" onClick={() => handleVerticalClick('tab2')} active={verticalActive === 'tab2'}>
                 Mensajes
