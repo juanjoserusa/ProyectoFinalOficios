@@ -1,7 +1,7 @@
 import React from "react";
-import background from "/workspace/ProyectoFinalOficios/src/front/assets/familia.png";
+import background from "../../assets/familia.png";
 import "../../styles/jumbo.css";
-import DropdownHome from "/workspace/ProyectoFinalOficios/src/front/js/component/DropdownHome.js";
+
 
 const JumboCliente = () => {
   return (

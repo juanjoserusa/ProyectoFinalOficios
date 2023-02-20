@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../store/appContext";
 
 
 import "../../styles/prueba.css";

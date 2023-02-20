@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import "/workspace/ProyectoFinalOficios/src/front/styles/dropdown.css"
+import "../../styles/dropdown.css"
 
 const DropdownHome = () => {
   return (

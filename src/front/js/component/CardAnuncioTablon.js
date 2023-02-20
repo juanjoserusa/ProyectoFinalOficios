@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../../js/store/appContext";
 import fontanero from "../../assets/tuberia.png";
 import carpintero from "../../assets/carpintero.png";
 import electricista from "../../assets/electricista.png";

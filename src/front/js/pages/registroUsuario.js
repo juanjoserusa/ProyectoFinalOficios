@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../store/appContext";
 
 
 const RegistroUsuario = () => {

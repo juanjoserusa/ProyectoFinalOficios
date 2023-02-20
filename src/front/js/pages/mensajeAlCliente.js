@@ -1,5 +1,5 @@
 import React, { useState, useContext,} from "react";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../store/appContext";
 import { useNavigate, useParams } from "react-router-dom";
 import '../../styles/mensaje.css'
 import mensajeo from "../../assets/mensajeo.png";

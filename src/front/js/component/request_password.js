@@ -1,11 +1,9 @@
 import React, { useState, useRef, useContext } from "react";
 import emailjs from "@emailjs/browser";
-// import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+
 
 export const RequestPass  = () => {
-  // const { store, actions } = useContext(Context);
-  // const [email, setEmail] = useState("email");
-  // const correo=store.email;
+
 
   const form = useRef();
 

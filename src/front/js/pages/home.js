@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css"
 import "../../styles/descriptionHome.css";
-import profesional from "/workspace/ProyectoFinalOficios/src/front/assets/profesionales.png";
+import profesional from "../../assets/profesionales.png";
 import DropdownHome from "../component/DropdownHome";
-import buscar from "/workspace/ProyectoFinalOficios/src/front/assets/buscar.jpg";
-import registrar from "/workspace/ProyectoFinalOficios/src/front/assets/registrate.jpg";
-import mensajes from "/workspace/ProyectoFinalOficios/src/front/assets/mensajea.jpg";
+import buscar from "../../assets/buscar.jpg";
+import registrar from "../../assets/registrate.jpg";
+import mensajes from "../../assets/assets/mensajea.jpg";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";

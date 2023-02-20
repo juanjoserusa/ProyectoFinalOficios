@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../../js/store/appContext";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../../styles/formTrabajos.css"
 import { MDBInput, MDBRow, MDBCol } from 'mdb-react-ui-kit';

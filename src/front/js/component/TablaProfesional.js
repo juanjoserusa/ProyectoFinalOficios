@@ -1,5 +1,5 @@
 import React from "react";
-import "/workspace/ProyectoFinalOficios/src/front/styles/tablaProfesional.css";
+import "../../styles/tablaProfesional.css";
 
 const TablaProfesional = ({
   cliente,

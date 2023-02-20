@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import DropdownHome from "../component/DropdownHome";
 import { useNavigate } from "react-router-dom";
-import "/workspace/ProyectoFinalOficios/src/front/styles/searchbar.css"
+import "../../styles/searchbar.css"
 import "../../styles/index.css"
 
 export const Searchbar = () => {

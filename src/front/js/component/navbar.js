@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/navbar.css";
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
-import logo from "/workspace/ProyectoFinalOficios/src/front/assets/Handlehome.png";
+import { Context } from "../../js/store/appContext";
+import logo from "../../assets/Handlehome.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
