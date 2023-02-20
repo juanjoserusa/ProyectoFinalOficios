@@ -21,7 +21,7 @@ python-dotenv
 python-editor
 pyyaml
 six
-sqlalchemy
+sqlalchemy==1.4.46
 urllib3
 werkzeug
 wtforms
