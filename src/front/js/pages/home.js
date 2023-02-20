@@ -6,7 +6,7 @@ import profesional from "../../assets/profesionales.png";
 import DropdownHome from "../component/DropdownHome";
 import buscar from "../../assets/buscar.jpg";
 import registrar from "../../assets/registrate.jpg";
-import mensajes from "../../assets/assets/mensajea.jpg";
+import mensajes from "../../assets/mensajea.jpg";
 
 import JumboCliente from "../component/Jumbocliente";
 import RegistroUsuario from "./registroUsuario";

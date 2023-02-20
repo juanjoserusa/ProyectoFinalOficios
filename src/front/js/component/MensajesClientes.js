@@ -21,7 +21,7 @@ import Card from "react-bootstrap/Card";
 import "../../styles/mensajeCliente.css";
 import Button from "react-bootstrap/Button";
 
-import { Context } from "/workspace/ProyectoFinalOficios/src/front/js/store/appContext.js";
+import { Context } from "../../js/store/appContext";
 import swal from "sweetalert";
 
 
