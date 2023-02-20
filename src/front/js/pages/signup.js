@@ -64,7 +64,7 @@ export const SignUp = () => {
         {swal(`Lo siento, algo ha fallado`, `Puede que su email y contraseña ya esten registrados, o mal escritos`, "error") 
         navigate("/signup")
       } else {
-        swal(`enhorabuena`, `Su cuenta se ha registrado con exito`, "success")
+        swal(`Enhorabuena`, `Su cuenta se ha registrado con exito`, "success")
         navigate("/login")}
       })
       .catch((error) => swal(`Lo siento`, `Compruebe que su email y contraseña están registrados, o bien escritos`, "error"));

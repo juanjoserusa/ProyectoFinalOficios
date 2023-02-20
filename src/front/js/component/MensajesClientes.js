@@ -38,7 +38,7 @@ const MensajesClientes = ({ sender, subject, message, from, to }) => {
       }, (error) => {
           console.log(error.text);
       });
-      swal("bien", "Mensaje enviado con exito", "success")
+      swal("Enhorabuena", "Mensaje enviado con exito", "success")
       setBasicModal(!basicModal)
 
   };
