@@ -9,6 +9,7 @@ flask-cors
 flask-migrate
 flask-sqlalchemy
 flask-swagger
+flask-jwt-extended
 gunicorn
 itsdangerous
 jinja2

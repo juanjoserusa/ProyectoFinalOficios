@@ -5,6 +5,6 @@ set -o errexit
 npm install --force
 npm run build
 
-pipenv install
+pip install -r requirements.txt
 
 pipenv run upgrade
