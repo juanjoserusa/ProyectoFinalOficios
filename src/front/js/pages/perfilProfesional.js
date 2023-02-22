@@ -27,7 +27,7 @@ const PerfilProfesional = () => {
     actions.loadTabla(parametros.id);
   }, []);
 
-  const [verticalActive, setVerticalActive] = useState('tab1');
+  const [verticalActive, setVerticalActive] = useState('tab2');
 
   const handleVerticalClick = (value) => {
     if (value === verticalActive) {

@@ -34,7 +34,7 @@ export const Home = () => {
             <p className="parrafoscta">Registrate para poder acceder a mas informacion</p>
           </div>
           <div class="col-lg-4 text-center">
-          <Link to={"/login"} className="linkHome"><img class="rounded-circle mb-2" src={mensajes} alt="Generic placeholder image" width="250" height="250"/>
+          <Link to={"/"} className="linkHome"><img class="rounded-circle mb-2" src={mensajes} alt="Generic placeholder image" width="250" height="250"/>
             <h3>Contacta</h3></Link>
             <p className="parrafoscta">Habla directamente con tu profesional a traves de HandleHome</p>
             
