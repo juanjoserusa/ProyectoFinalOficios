@@ -82,7 +82,7 @@ export const SignUp = () => {
 
               <div className='d-flex flex-row mt-2 justify-content-center'>
                 
-                <img className="h1 fw-bold mb-0 " src={handlehome} width="75%"/>
+                <img className="h1 fw-bold mb-0 logologin" src={handlehome} width="75%"/>
               </div>
 
               <h3 className="fw-normal mt-4 mb-2 pb-3 text-center" style={{letterSpacing: '1px'}}>Crea un nuevo usuario</h3>
