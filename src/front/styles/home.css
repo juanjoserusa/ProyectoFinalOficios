@@ -173,7 +173,11 @@
     width: 8vw !important;
     height: 7vw !important;
   }
+
+
 }
+
+
 
 @media (min-width: 320px) and (max-width: 767px) {
   .columnasdescription {
@@ -339,5 +343,10 @@
   .formanuncio{
     width: 90% !important;
     
+  }
+  .pruebacontainer{
+    max-width: 100% !important;
+    margin: 1% auto !important;
+    padding: 0 !important;
   }
 }
